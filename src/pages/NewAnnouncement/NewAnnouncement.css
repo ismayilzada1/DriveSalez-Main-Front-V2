@@ -1,0 +1,153 @@
+
+.image-upload-label {
+    background-color: rgba(245,65,20,.85);
+    border: none;
+    border-radius: 14px !important;
+    cursor: pointer;
+}
+
+.required-input{
+    color: red;
+    margin:5px;
+}
+
+
+.image-upload-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    height: 120px;
+    border: 2px dashed rgba(255,255,255,.5);
+    border-radius: 8px;
+    background-color: rgba(255,255,255,.20);
+    color: #fff;
+    font-size: 24px;
+    flex-direction: column;
+}
+
+.image-upload-box-with-icon, .images-upload-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    height: 120px;
+    border: 2px dashed rgba(255,255,255,.5);
+    border-radius: 8px;
+    background-color: rgba(255,255,255,.20);
+    color: #fff;
+    font-size: 24px;
+    flex-direction: column;
+}
+
+.image-upload-box-text{
+    font-size: 18px;
+}
+
+.image-upload-box-img{
+    width: 50px;
+}
+
+
+.plus-sign {
+    font-size: 42px;
+}
+
+.uploaded-image {
+    width: 140px;
+    height: 120px;
+    object-fit: cover !important;
+    border-radius: 6px;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    border-radius: 18px;
+}
+
+
+
+
+
+
+.delete-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 65px;
+    z-index:4;
+}
+
+.image-boxes-container{
+    display:flex;
+    align-items: center;
+}
+
+.image-box-input-group{
+    width: auto;
+    margin-bottom: .5rem;
+    margin-right: .5rem;
+}
+
+
+.image-upload-text{
+    text-shadow: 1px 2px 0 #969696, 1px 13px 5px #f3f4f5;
+    color: #FFFFFF;
+    font-size: 21px;
+}
+
+.image-boxes-container{
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+
+@media only screen and (max-width: 985px) {
+    .uploaded-image {
+        width: 120px;
+        height: 80px;
+        border-radius: 10px;
+    }
+    .image-container {
+        position: relative;
+        display: inline-block;
+        border-radius: 16px;
+        margin-bottom: .4rem;
+    }
+
+    .image-upload-text{
+        font-size: 18px;
+        margin-top: 1.8rem !important;
+    }
+
+    .image-box-input-group{
+        width: 150px;
+        margin-bottom: .4rem;
+    }
+
+    .image-upload-box-with-icon{
+        width: 90px;
+        height: 80px;
+        border: 1px dashed rgba(255,255,255,.5);
+        border-radius: 6px;
+    }
+
+    .images-box-input {
+        width: 120px;
+        height: 100px;
+        margin-bottom: .4rem !important;
+    }
+    .images-upload-box{
+        width: 90px;
+        height: 80px;
+    }
+}
+
+
