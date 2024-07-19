@@ -71,15 +71,17 @@ const AnnouncementCard = (props) => {
                 <div className="card-body announcement-card-body">
                 <h4 className="card-title">{make?.makeName} {model?.modelName}</h4>
 
-                    <ul className="list-group list-group-flush m-0 p-0 b-0">
-                        {createLabelValue("fuelType", t(fuelType?.fuelType))}
-                        {createLabelValue("year", year?.year)}
-                        {createLabelValue("mileage", `${mileage} ${mileageType}`)}
-                        {createLabelValue("engineVolume", engineVolume)}
+                    <div className="details-row">
+                        <span className="value">{t(fuelType?.fuelType)}</span>
+                        <span>•</span>
+                        <span className="value">{year?.year}</span>
+                        <span>•</span>
+                        <span className="value">{`${mileage} ${mileageType}`}</span>
+                        <span>•</span>
+                        <span className="value">{` ${engineVolume}`}</span>
+                    </div>
 
-                    </ul>
-
-                    <h5 className="card-title text-success float-start h3 mt-2">{price} {currency?.currencyName}</h5>
+                <h5 className="card-title text-success float-start h3 mt-2">{price} {currency?.currencyName}</h5>
                 </div>
             </div>
         </a>
