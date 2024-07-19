@@ -1,309 +1,296 @@
 .announcement-card {
-    height: 100%;
-    min-width: 300px;
+  height: 90%;
+  min-width: 270px;
 }
 
 .card-img-top {
-    object-fit: cover;
-    height: 200px;
+  object-fit: cover;
+  height: 200px;
 }
 
 .announcement-card-body {
-    min-height: 150px;
+  min-height: 150px;
 }
 
 .tall-image {
-    height: 180px;
+  height: 180px;
 }
 
-.premium-announcement-icon{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    height: 3em;
-    width: 3em;
-    position: absolute;
-    top:27%;
-    bottom: 0;
-    right: 1%;
-    z-index: 990009;
+.premium-announcement-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3em;
+  width: 3em;
+  position: absolute;
+  top: 27%;
+  bottom: 0;
+  right: 1%;
+  z-index: 990009;
 }
 
 .premium-announcement-icon i {
-    border-radius: 10px;
-    color: #f54114 !important;
-    font-size:1.4em !important;
-    background-color:antiquewhite;
-    padding:0 4px;
+  border-radius: 10px;
+  color: #f54114 !important;
+  font-size: 1.4em !important;
+  background-color: antiquewhite;
+  padding: 0 4px;
 }
 
-.vin-code-icon{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    height: 1.7em;
-    width: 2em;
-    position: absolute;
-    top:29%;
-    left:2%;
-    bottom: 0;
-    z-index: 990009;
-    background-color: #fff;
-    border-radius: 6px;
-    font-size: 1em;
+.vin-code-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.7em;
+  width: 2em;
+  position: absolute;
+  top: 29%;
+  left: 2%;
+  bottom: 0;
+  z-index: 990009;
+  background-color: #fff;
+  border-radius: 6px;
+  font-size: 1em;
 }
 
-
-.barter-and-credit-icon{
-    display:flex;
-    align-items: center;
-    justify-content: flex-start;
-    height: 3em;
-    width: 6em;
-    position: absolute;
-    top:0;
-    bottom: 0;
-    left:0;
-    z-index: 990009;
-    padding-left: 6px;
-    gap:6px;
-
+.barter-and-credit-icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 3em;
+  width: 6em;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 990009;
+  padding-left: 6px;
+  gap: 6px;
 }
 
-.barter-and-credit-icon .barter-icon{
-    border-radius: 10px;
-    color: #fff !important;
-    font-size:1.1em !important;
-    background-color: #2db40a;
-    padding:2px 6px 4px 6px;
+.barter-and-credit-icon .barter-icon {
+  border-radius: 10px;
+  color: #fff !important;
+  font-size: 1.1em !important;
+  background-color: #2db40a;
+  padding: 2px 6px 4px 6px;
 }
 
-.barter-and-credit-icon .percent-icon{
-    border-radius: 10px;
-    color: #fff !important;
-    font-size:1.1em !important;
-    background-color: #f5a623;
-    padding:2px 5px 2px 6px;
+.barter-and-credit-icon .percent-icon {
+  border-radius: 10px;
+  color: #fff !important;
+  font-size: 1.1em !important;
+  background-color: #f5a623;
+  padding: 2px 5px 2px 6px;
 }
-
-
 
 @media (max-width: 768px) {
-    .premium-announcement-icon i {
-        font-size: 1.2em !important;
-    }
-
+  .premium-announcement-icon i {
+    font-size: 1.2em !important;
+  }
 }
 
-
-
-
-
 .announcement-card {
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .announcement-card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
 .list-group-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .info-key {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 @media screen and (max-width: 1440px) {
-    .announcement-card {
-        min-width: 300px;
-        margin-bottom: 20px;
-    }
+  .announcement-card {
+    min-width: 300px;
+    margin-bottom: 20px;
+  }
 
-    .tall-image {
-        height: 150px;
-    }
+  .tall-image {
+    height: 150px;
+  }
 }
 
 @media screen and (max-width: 1400px) {
-    .announcement-card {
-        min-width: 250px !important;
-    }
+  .announcement-card {
+    min-width: 250px !important;
+  }
 
-    .card-body{
-        padding:1rem 1rem;
-    }
+  .card-body {
+    padding: 1rem 1rem;
+  }
 
-    .info-key ,.value
-    {
-        font-size: 90%;
-    }
+  .info-key,
+  .value {
+    font-size: 90%;
+  }
 
-    .card-title {
-        font-size: 100%;
-    }
+  .card-title {
+    font-size: 100%;
+  }
 }
 
 @media screen and (max-width: 1200px) {
-    .announcement-card {
-        min-width: 200px !important;
-        margin-right: .5rem  !important;
-        margin-bottom: 10px !important;
-    }
+  .announcement-card {
+    min-width: 200px !important;
+    margin-right: 0.5rem !important;
+    margin-bottom: 10px !important;
+  }
 
-    .card-body{
-        padding:.8rem .8rem;
-    }
+  .card-body {
+    padding: 0.8rem 0.8rem;
+  }
 
-    .info-key ,.value
-    {
-        font-size: 70%;
-    }
+  .info-key,
+  .value {
+    font-size: 70%;
+  }
 
-    .card-title {
-        font-size: 90%;
-    }
+  .card-title {
+    font-size: 90%;
+  }
 
-    .tall-image {
-        height: 100px;
-    }
+  .tall-image {
+    height: 100px;
+  }
 
-    .premium-announcement-icon i{
-        font-size: 1.2em !important;
-    }
+  .premium-announcement-icon i {
+    font-size: 1.2em !important;
+  }
 
-    .vin-code-icon{
-        font-size: .8em;
-        top:22%
-    }
+  .vin-code-icon {
+    font-size: 0.8em;
+    top: 22%;
+  }
 
-    .barter-and-credit-icon{
-        top:-6px;
-    }
+  .barter-and-credit-icon {
+    top: -6px;
+  }
 
-
-    .barter-and-credit-icon .barter-icon,
-    .barter-and-credit-icon .percent-icon{
-        font-size: .9em !important;
-    }
-
+  .barter-and-credit-icon .barter-icon,
+  .barter-and-credit-icon .percent-icon {
+    font-size: 0.9em !important;
+  }
 }
-
 
 @media screen and (max-width: 512px) {
-    .announcement-card {
-        min-width: 170px !important;
-        margin-right: .35rem  !important;
-        margin-bottom: 6px !important;
-    }
+  .announcement-card {
+    min-width: 170px !important;
+    margin-right: 0.35rem !important;
+    margin-bottom: 6px !important;
+  }
 
-    .card-body{
-        padding:.4rem .4rem;
-    }
+  .card-body {
+    padding: 0.4rem 0.4rem;
+  }
 
-    .info-key ,.value
-    {
-        font-size: 80%;
-    }
+  .info-key,
+  .value {
+    font-size: 80%;
+  }
 
-    .card-title {
-        font-size: 80%;
-    }
+  .card-title {
+    font-size: 80%;
+  }
 
-    .tall-image {
-        height: 80px;
-    }
+  .tall-image {
+    height: 80px;
+  }
 
-    .premium-announcement-icon{
-        top:23%;
-    }
-    .premium-announcement-icon i{
-        font-size: 1em !important;
-    }
+  .premium-announcement-icon {
+    top: 23%;
+  }
+  .premium-announcement-icon i {
+    font-size: 1em !important;
+  }
 
-    .vin-code-icon{
-        font-size: .7em !important;
-    }
+  .vin-code-icon {
+    font-size: 0.7em !important;
+  }
 
-    .barter-and-credit-icon{
-        left: -3px;
-        top:-8px;
-    }
-    .barter-and-credit-icon .barter-icon,
-    .barter-and-credit-icon .percent-icon{
-        font-size: .7em !important;
-    }
-
+  .barter-and-credit-icon {
+    left: -3px;
+    top: -8px;
+  }
+  .barter-and-credit-icon .barter-icon,
+  .barter-and-credit-icon .percent-icon {
+    font-size: 0.7em !important;
+  }
 }
-
 
 @media screen and (max-width: 447px) {
-    .announcement-card {
-        min-width: 150px !important;
-        margin-right: .25rem  !important;
-        margin-bottom: 4px !important;
-    }
+  .announcement-card {
+    min-width: 150px !important;
+    margin-right: 0.25rem !important;
+    margin-bottom: 4px !important;
+  }
 
-    .card-body{
-        padding:.3rem .3rem;
-    }
+  .card-body {
+    padding: 0.3rem 0.3rem;
+  }
 
-    .info-key ,.value
-    {
-        font-size: 80%;
-    }
+  .info-key,
+  .value {
+    font-size: 80%;
+  }
 
-    .card-title {
-        font-size: 80%;
-        margin:0
-    }
+  .card-title {
+    font-size: 80%;
+    margin: 0;
+  }
 
-    .tall-image {
-        height: 70px;
-    }
+  .tall-image {
+    height: 70px;
+  }
 
-    .premium-announcement-icon{
-        top:20%;
-    }
+  .premium-announcement-icon {
+    top: 20%;
+  }
 
-    .premium-announcement-icon i{
-        font-size: 1em !important;
-    }
+  .premium-announcement-icon i {
+    font-size: 1em !important;
+  }
 
-    .vin-code-icon{
-        top:23%;
-    }
+  .vin-code-icon {
+    top: 23%;
+  }
 
-    .barter-and-credit-icon{
-        left:1px;
-    }
-    .barter-and-credit-icon .barter-icon,
-    .barter-and-credit-icon .percent-icon
-    {
-        font-size: .5em !important;
-    }
+  .barter-and-credit-icon {
+    left: 1px;
+  }
+  .barter-and-credit-icon .barter-icon,
+  .barter-and-credit-icon .percent-icon {
+    font-size: 0.5em !important;
+  }
 
+  .announcement-card-body .list-group-item {
+    padding: 0.3rem !important;
+  }
 
-    .announcement-card-body .list-group-item{
-        padding: .3rem !important;
-    }
-
-    .infinite-scroll-component .container-fluid{
-        padding-right: 0;
-        padding-left: 0;
-        display:flex;
-        flex:1;
-        justify-content: center;
-        align-items: center;
-    }
-
+  .infinite-scroll-component .container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
-
+.details-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 15px 0;
+}

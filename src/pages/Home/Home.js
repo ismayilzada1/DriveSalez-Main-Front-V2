@@ -60,6 +60,25 @@ const Home = () => {
     //     return <p>Error: {error}</p>;
     // }
 
+
+    const car={
+        id:1,
+        make:{id:2,makeName:"BMW"},
+        model:{id:3,modelName:"M5"},
+        price:"49900",
+        mileage:144000,
+        mileageType:"KM",
+        engineVolume:4400,
+        fuelType:{id:5,fuelType:"Gasoline"},
+        year:{id:6,year:"2021"},
+        currency:{id:7,currencyName:"AZN"},
+        imageUrl:{url:"https://i.ytimg.com/vi/iZt7Fwu91FI/maxresdefault.jpg"},
+        isPremium:false,
+        barter:false,
+        onCredit:false,
+        vinCode:"dsa56d16as1d2sad16as5d1s6das"
+    }
+
     return (
         <Row className="wrapper">
 
@@ -71,73 +90,67 @@ const Home = () => {
             <HomeFilter />
 
 
-            <div className="container-fluid pt-3">
-                {premiumAnnouncements.length > 0 && (
+            {/*<div className="container-fluid pt-3">*/}
+            {/*    {premiumAnnouncements.length > 0 && (*/}
 
-                <div className="pt-3">
+            {/*    <div className="pt-3">*/}
 
-                    <div className="d-flex justify-content-between align-items-center">
-                        <h2 className="text-dark">Premium Announcements</h2>
-                        <div>
-                            <a href="">Show All</a>
-                        </div>
-                    </div>
+            {/*        <div className="d-flex justify-content-between align-items-center">*/}
+            {/*            <h2 className="text-dark">Premium Announcements</h2>*/}
+            {/*            <div>*/}
+            {/*                <a href="">Show All</a>*/}
+            {/*            </div>*/}
+            {/*        </div>*/}
+            {/*        */}
+            {/*            <div className="pt-3">*/}
+            {/*                <div*/}
+            {/*                    className="d-flex flex-row flex-wrap justify-content-start align-items-center announcement-cards-container">*/}
+            {/*                    {premiumAnnouncements?.map((car, index) => (*/}
+            {/*                        <div key={index} className="col-lg-3 mb-2">*/}
+            {/*                            <AnnouncementCard {...car} />*/}
+            {/*                        </div>*/}
+            {/*                    ))}*/}
+            {/*                </div>*/}
+            {/*            </div>*/}
+            {/*        */}
 
+            {/*    </div>*/}
 
-                    {/*<InfiniteScroll*/}
-                    {/*    dataLength={premiumAnnouncements.length}*/}
-                    {/*    next={fetchData}*/}
-                    {/*    hasMore={hasMore}*/}
-                    {/*    scrollThreshold={0.6}*/}
-                    {/*>*/}
-                        <div className="pt-3">
-                            <div
-                                className="d-flex flex-row flex-wrap justify-content-start align-items-center announcement-cards-container">
-                                {premiumAnnouncements?.map((car, index) => (
-                                    <div key={index} className="col-lg-3 mb-2">
-                                        <AnnouncementCard {...car} />
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-
-                    {/*</InfiniteScroll>*/}
+            {/*    )}*/}
 
 
-                </div>
+            {/*    <div className="regular-announcements-container pt-3">*/}
 
-                )}
-
-
-                <div className="regular-announcements-container pt-3">
-
-                    <div className="d-flex justify-content-between align-items-center">
-                        <h2 className="text-dark">All Announcements</h2>
-                    </div>
+            {/*        <div className="d-flex justify-content-between align-items-center">*/}
+            {/*            <h2 className="text-dark">All Announcements</h2>*/}
+            {/*        </div>*/}
 
 
-                    <InfiniteScroll
-                        dataLength={allAnnouncements.length}
-                        next={fetchData}
-                        hasMore={hasMore}
-                        scrollThreshold={0.6}
-                    >
-                        <div className="pt-3 ">
-                            <div
-                                className="d-flex flex-row flex-wrap justify-content-start align-items-center announcement-cards-container">
-                                {allAnnouncements?.map((car, index) => (
-                                    <div key={index} className="col-lg-3 mb-2">
-                                        <AnnouncementCard {...car} />
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
+            {/*        <InfiniteScroll*/}
+            {/*            dataLength={allAnnouncements.length}*/}
+            {/*            next={fetchData}*/}
+            {/*            hasMore={hasMore}*/}
+            {/*            scrollThreshold={0.6}*/}
+            {/*        >*/}
+            {/*            <div className="pt-3 ">*/}
+            {/*                <div*/}
+            {/*                    className="d-flex flex-row flex-wrap justify-content-start align-items-center announcement-cards-container">*/}
+            {/*                    {allAnnouncements?.map((car, index) => (*/}
+            {/*                        <div key={index} className="col-lg-3 mb-2">*/}
+            {/*                            <AnnouncementCard {...car} />*/}
+            {/*                        </div>*/}
+            {/*                    ))}*/}
+            {/*                </div>*/}
+            {/*            </div>*/}
 
-                    </InfiniteScroll>
+            {/*        </InfiniteScroll>*/}
 
-                </div>
+            {/*    </div>*/}
+            {/*</div>*/}
+
+            <div className="col-lg-3 mb-2">
+                 <AnnouncementCard {...car}/>
             </div>
-
 
         </Row>
     );
