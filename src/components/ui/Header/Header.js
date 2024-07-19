@@ -152,23 +152,6 @@ const Header = () => {
     }
 
 
-    const handleSearchById= async()=>{
-        try {
-            if(searchByAnnouncementId){
-                const url = `/AnnouncementDetails/${searchByAnnouncementId}`;
-
-                if (isMobile) {
-                    navigate(url);
-                } else {
-                    window.open(url, "_blank");
-                }
-            }
-
-        }
-        catch (err){
-            // console.log(err);
-        }
-    }
 
     const [activeLink, setActiveLink] = useState('home');
 
@@ -184,12 +167,6 @@ const Header = () => {
 
                 <a href="/" className="navbar-brand p-0">
                     <Logo size="190px"/>
-                    {/*<span style={{*/}
-                    {/*    fontSize: "1.4em",*/}
-                    {/*    color: "#f52123",*/}
-                    {/*    fontWeight: "550",*/}
-                    {/*    marginLeft: ".4em"*/}
-                    {/*}}>DriveSalez</span>*/}
                 </a>
 
                 <div className="sidebar-toggle sidebar-toggle-responsive" data-toggle="sidebar" data-active="true">
@@ -216,27 +193,6 @@ const Header = () => {
 
                     <ul className="navbar-nav ms-auto align-items-center navbar-list mb-2 mb-lg-0">
 
-                        <li className="nav-item  d-lg-block me-2">
-                            <button data-bs-toggle="collapse"
-                                    data-bs-target="#searchBoxInput"
-                                    className='btn btn-plus btn-square d-flex justify-content-center align-items-center'
-                                    style={{backgroundColor: '#f54114', color: '#ffffff', border: 'none'}}>
-                                {isTablet ? <i className="fa fa-search"></i> : <><i
-                                    className="fa fa-search me-2"></i>{t('find')}</>}
-
-
-                            </button>
-
-
-                            <form action="#" id={"searchBoxInput"} className="search-box collapse">
-                                <input type="text" onChange={handleSearchInputChange} className="text nav-search-input"
-                                       placeholder={t('enter_announcement_id')}/>
-                                <a onClick={handleSearchById} className={"ms-2"} style={{cursor: "pointer"}}>
-                                    <i className="bi bi-search" style={{color: "#000"}}></i>
-                                </a>
-                            </form>
-                        </li>
-
 
                         <li className={`nav-item d-none d-lg-block me-3 ${activeLink === 'home' ? 'active' : ''}`}>
                             <NavLink exact to="/" onClick={handleHomeButton} className="nav-link" activeclassname="active">
@@ -253,17 +209,6 @@ const Header = () => {
                                 {t('trucks')}
                             </NavLink>
                         </li>
-                        <li className={`nav-item d-none d-lg-block me-3 ${activeLink === 'boats' ? 'active' : ''}`}>
-                            <NavLink to="/coming-soon" onClick={() => setActiveLink('boats')} className="nav-link" activeclassname="active">
-                                {t('boats')}
-                            </NavLink>
-                        </li>
-                        <li className={`nav-item d-none d-lg-block me-3 ${activeLink === 'aircrafts' ? 'active' : ''}`}>
-                            <NavLink to="/coming-soon" onClick={() => setActiveLink('aircrafts')} className="nav-link" activeclassname="active">
-                                {t('aircrafts')}
-                            </NavLink>
-                        </li>
-
 
 
 
@@ -345,17 +290,6 @@ const Header = () => {
                                         {t('motorcycles')}
                                     </a>
                                 </li>
-                                <li>
-                                    <a className="dropdown-item" href="/coming-soon">
-                                        {t('boats')}
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className="dropdown-item" href="/coming-soon">
-                                        {t('aircrafts')}
-                                    </a>
-                                </li>
-
 
                             </ul>
                         </li>
@@ -445,7 +379,7 @@ const Header = () => {
                                 <li className='nav-item'>
                                     <button onClick={handleAddVehicleButton}
                                             className='btn btn-plus btn-square d-flex justify-content-center align-items-center'
-                                            style={{backgroundColor: '#f54114', color: '#ffffff', border: 'none'}}>
+                                            style={{backgroundColor: '#f32223', color: '#ffffff', border: 'none'}}>
                                         {isMobile ? <i className="fas fa-plus"></i> : <><i
                                             className="fas fa-plus me-2"></i>{t('addVehicle')}</>}
                                     </button>
@@ -479,7 +413,7 @@ const Header = () => {
                                 <li className='nav-item ms-2'>
                                     <button onClick={handleSignUpButton}
                                             className='btn btn-plus btn-square d-flex justify-content-center align-items-center'
-                                            style={{backgroundColor: '#f54114', color: '#ffffff', border: 'none'}}>
+                                            style={{backgroundColor: '#f32223', color: '#ffffff', border: 'none'}}>
                                         {isMobile ? <i className="fas fa-user"></i> : <><i
                                             className="fas fa-user me-2"></i>{t('sign_up')}</>}
                                     </button>
