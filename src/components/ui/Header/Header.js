@@ -183,13 +183,13 @@ const Header = () => {
             <div className="container w-100 navbar-inner">
 
                 <a href="/" className="navbar-brand p-0">
-                    <Logo size="50px"/>
-                    <span style={{
-                        fontSize: "1.4em",
-                        color: "#f52123",
-                        fontWeight: "550",
-                        marginLeft: ".4em"
-                    }}>DriveSalez</span>
+                    <Logo size="190px"/>
+                    {/*<span style={{*/}
+                    {/*    fontSize: "1.4em",*/}
+                    {/*    color: "#f52123",*/}
+                    {/*    fontWeight: "550",*/}
+                    {/*    marginLeft: ".4em"*/}
+                    {/*}}>DriveSalez</span>*/}
                 </a>
 
                 <div className="sidebar-toggle sidebar-toggle-responsive" data-toggle="sidebar" data-active="true">

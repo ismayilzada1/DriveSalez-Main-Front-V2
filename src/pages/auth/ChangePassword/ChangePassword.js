@@ -82,7 +82,7 @@ const ChangePassword = () => {
     return(
         <div className="wrapper">
             <div className="main-auth-page">
-                <Logo size="80px" />
+                <Logo size="190px" />
                 <div className="clip-board">
                     <div className="container">
                         <div className="row auth-details-card">

@@ -130,7 +130,7 @@ function Register() {
                 </ul>
             </div>
             <div className="main-auth-page">
-                <Logo size="80px" />
+                <Logo size="190px" />
 
                 <div className="clip-board">
                     <div className="container">
