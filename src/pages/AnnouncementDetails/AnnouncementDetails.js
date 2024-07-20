@@ -14,6 +14,7 @@ const AnnouncementDetails = () => {
 
     const {announcement, loading, error} = useSelector ((state) => state.announcement);
 
+
     const navigate = useNavigate();
 
     const{t}=useTranslation();

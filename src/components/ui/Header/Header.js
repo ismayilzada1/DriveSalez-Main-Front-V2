@@ -161,7 +161,7 @@ const Header = () => {
 
     return (
 
-        <nav className="nav navbar navbar-expand-lg navbar-light iq-navbar rounded">
+        <nav className="nav navbar navbar-expand-lg iq-navbar rounded" >
 
             <div className="container w-100 navbar-inner">
 
@@ -194,14 +194,30 @@ const Header = () => {
                     <ul className="navbar-nav ms-auto align-items-center navbar-list mb-2 mb-lg-0">
 
 
+                        <li className={`nav-item d-none d-lg-block me-3`}>
+
+                            <div className="w-100 d-flex justify-content-center">
+                                <div className="checkbox d-flex align-items-center justify-content-center">
+                                    <input type="checkbox" id="cbx" style={{display: "none"}}/>
+                                    <label htmlFor="cbx" className="toggle">
+                                        <span></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                        </li>
+
+
                         <li className={`nav-item d-none d-lg-block me-3 ${activeLink === 'home' ? 'active' : ''}`}>
-                            <NavLink exact to="/" onClick={handleHomeButton} className="nav-link" activeclassname="active">
+                            <NavLink exact to="/" onClick={handleHomeButton} className="nav-link"
+                                     activeclassname="active">
                                 {t('home')}
                             </NavLink>
                         </li>
                         <li className={`nav-item d-none d-lg-block me-3 ${activeLink === 'motorcycle' ? 'active' : ''}`}>
-                            <NavLink exact to="/" className="nav-link" onClick={handleMotorcycleButton} activeclassname="active">
-                            {t('motorcycles')}
+                            <NavLink exact to="/" className="nav-link" onClick={handleMotorcycleButton}
+                                     activeclassname="active">
+                                {t('motorcycles')}
                             </NavLink>
                         </li>
                         <li className={`nav-item d-none d-lg-block me-3 ${activeLink === 'truck' ? 'active' : ''}`}>
@@ -211,6 +227,16 @@ const Header = () => {
                         </li>
 
 
+                        <li className="nav-item dropdown d-lg-none position-relative">
+                            <div className="w-100 d-flex justify-content-center">
+                                <div className="checkbox">
+                                    <input type="checkbox" id="cbx" style={{display: "none"}}/>
+                                    <label htmlFor="cbx" className="toggle">
+                                        <span></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </li>
 
 
                         <li className="nav-item dropdown">
