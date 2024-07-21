@@ -73,11 +73,11 @@ const AnnouncementCard = (props) => {
 
                     <div className="details-row">
                         <span className="value">{t(fuelType?.fuelType)}</span>
-                        <span>•</span>
+                        <span className="signDetail">•</span>
                         <span className="value">{year?.year}</span>
-                        <span>•</span>
+                        <span className="signDetail">•</span>
                         <span className="value">{`${mileage} ${mileageType}`}</span>
-                        <span>•</span>
+                        <span className="signDetail">•</span>
                         <span className="value">{` ${engineVolume}`}</span>
                     </div>
 
