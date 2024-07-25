@@ -72,13 +72,9 @@ const AnnouncementCard = (props) => {
                 <h4 className="card-title">{make?.makeName} {model?.modelName}</h4>
 
                     <div className="details-row">
-                        <span className="value">{t(fuelType?.fuelType)}</span>
-                        <span>•</span>
-                        <span className="value">{year?.year}</span>
-                        <span>•</span>
+                        <span className="value">{year?.year},</span>
+                        <span className="value">{` ${engineVolume}`},</span>
                         <span className="value">{`${mileage} ${mileageType}`}</span>
-                        <span>•</span>
-                        <span className="value">{` ${engineVolume}`}</span>
                     </div>
 
                 <h5 className="card-title text-success float-start h3 mt-2">{price} {currency?.currencyName}</h5>

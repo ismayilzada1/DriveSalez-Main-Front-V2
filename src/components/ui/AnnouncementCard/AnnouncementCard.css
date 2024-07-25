@@ -44,7 +44,7 @@
   height: 1.7em;
   width: 2em;
   position: absolute;
-  top: 29%;
+  top: 42%;
   left: 2%;
   bottom: 0;
   z-index: 990009;
@@ -88,6 +88,7 @@
   .premium-announcement-icon i {
     font-size: 1.2em !important;
   }
+
 }
 
 .announcement-card {
@@ -120,13 +121,20 @@
   .tall-image {
     height: 150px;
   }
+  .vin-code-icon {
+    top: 39% !important;
+  }
 }
 
 @media screen and (max-width: 1400px) {
   .announcement-card {
     min-width: 250px !important;
+    height:83%!important ;
   }
 
+  .vin-code-icon {
+    top: 42%!important;
+  }
   .card-body {
     padding: 1rem 1rem;
   }
@@ -139,6 +147,7 @@
   .card-title {
     font-size: 100%;
   }
+
 }
 
 @media screen and (max-width: 1200px) {
@@ -158,7 +167,7 @@
   }
 
   .card-title {
-    font-size: 90%;
+    font-size: 1.5em;
   }
 
   .tall-image {
@@ -168,10 +177,12 @@
   .premium-announcement-icon i {
     font-size: 1.2em !important;
   }
-
+  .value{
+    font-size:1.1em  !important;
+  }
   .vin-code-icon {
     font-size: 0.8em;
-    top: 22%;
+    top: 31% !important;
   }
 
   .barter-and-credit-icon {
@@ -182,6 +193,24 @@
   .barter-and-credit-icon .percent-icon {
     font-size: 0.9em !important;
   }
+
+
+  .announcement-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .col-lg-3 {
+    flex: 0 0 50%; 
+    max-width: 50%;
+  }
+
+  .announcement-card {
+    height: 93%  !important;
+
+  }
+
 }
 
 @media screen and (max-width: 512px) {
@@ -217,6 +246,7 @@
 
   .vin-code-icon {
     font-size: 0.7em !important;
+    top: 30% !important;
   }
 
   .barter-and-credit-icon {
@@ -226,6 +256,9 @@
   .barter-and-credit-icon .barter-icon,
   .barter-and-credit-icon .percent-icon {
     font-size: 0.7em !important;
+  }
+  .announcement-card{
+    height: 85% !important;
   }
 }
 
@@ -246,7 +279,7 @@
   }
 
   .card-title {
-    font-size: 80%;
+    font-size: 1.2em;
     margin: 0;
   }
 
@@ -263,7 +296,7 @@
   }
 
   .vin-code-icon {
-    top: 23%;
+    top: 30%!important;
   }
 
   .barter-and-credit-icon {
@@ -286,11 +319,43 @@
     justify-content: center;
     align-items: center;
   }
+  .announcement-card{
+    height: 80% !important;
+  }
+
 }
 
 .details-row {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   margin: 15px 0;
+gap: 1.5%;
+}
+.value{
+  font-size: medium;
+}
+
+@media (max-width: 765px) {
+  .announcement-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .col-lg-3 {
+    flex: 0 0 50%; 
+    max-width: 50%;
+  }
+
+  .announcement-card {
+    height: 85%;
+  }
+  .card-title {
+    font-size: 1.4em;
+  }
+
+  .vin-code-icon {
+    font-size: 0.8em;
+    top: 34%;
+  }
 }
