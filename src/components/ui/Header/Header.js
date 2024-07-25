@@ -12,11 +12,14 @@ import commonDataService from "../../../api-services/CommonDataService";
 import {setAnnouncements, setPageNumber, setFilterParams} from '../../../Store/Announcement/AnnouncementSlice';
 import '../../../i18n'
 import {useTranslation} from "react-i18next";
+import { toggleTheme } from '../../../Store/Theme/ThemeSlice';
+
 
 const Header = () => {
 
 
     const {user, accessToken} = useSelector ((state) => state.auth);
+    const theme = useSelector((state) => state.theme.theme);
     const isLoggedIn = useSelector ((state) => state.auth.isLoggedIn);
     const dispatch = useDispatch ();
     const CommonDataService = new commonDataService ();
@@ -32,6 +35,8 @@ const Header = () => {
     };
 
     const pageSize = 4;
+
+
 
     useEffect (() => {
         Promise.all ([
@@ -152,23 +157,6 @@ const Header = () => {
     }
 
 
-    const handleSearchById= async()=>{
-        try {
-            if(searchByAnnouncementId){
-                const url = `/AnnouncementDetails/${searchByAnnouncementId}`;
-
-                if (isMobile) {
-                    navigate(url);
-                } else {
-                    window.open(url, "_blank");
-                }
-            }
-
-        }
-        catch (err){
-            // console.log(err);
-        }
-    }
 
     const [activeLink, setActiveLink] = useState('home');
 
@@ -176,20 +164,27 @@ const Header = () => {
         setActiveLink(link);
     };
 
+    const [isLightThemeChecked, setIsLightThemeChecked] = useState(true);
+    useEffect(() => {
+        setIsLightThemeChecked(theme === 'light');
+    }, [theme]);
+
+
+    const handleDarkLightToggle = () => {
+        console.log(theme);
+        dispatch(toggleTheme());
+        setIsLightThemeChecked(!isLightThemeChecked);
+        console.log(theme);
+    };
+
     return (
 
-        <nav className="nav navbar navbar-expand-lg navbar-light iq-navbar rounded">
+        <nav className="nav navbar navbar-expand-lg iq-navbar rounded" >
 
             <div className="container w-100 navbar-inner">
 
                 <a href="/" className="navbar-brand p-0">
-                    <Logo size="50px"/>
-                    <span style={{
-                        fontSize: "1.4em",
-                        color: "#f52123",
-                        fontWeight: "550",
-                        marginLeft: ".4em"
-                    }}>DriveSalez</span>
+                    <Logo size="190px"/>
                 </a>
 
                 <div className="sidebar-toggle sidebar-toggle-responsive" data-toggle="sidebar" data-active="true">
@@ -216,36 +211,31 @@ const Header = () => {
 
                     <ul className="navbar-nav ms-auto align-items-center navbar-list mb-2 mb-lg-0">
 
-                        <li className="nav-item  d-lg-block me-2">
-                            <button data-bs-toggle="collapse"
-                                    data-bs-target="#searchBoxInput"
-                                    className='btn btn-plus btn-square d-flex justify-content-center align-items-center'
-                                    style={{backgroundColor: '#f54114', color: '#ffffff', border: 'none'}}>
-                                {isTablet ? <i className="fa fa-search"></i> : <><i
-                                    className="fa fa-search me-2"></i>{t('find')}</>}
 
+                        <li className={`nav-item d-none d-lg-block me-3`}>
 
-                            </button>
+                            <div className="w-100 d-flex justify-content-center">
+                                <div className="checkbox d-flex align-items-center justify-content-center">
+                                    <input type="checkbox" id="cbx" checked={isLightThemeChecked} onClick={handleDarkLightToggle} style={{display: "none"}}/>
+                                    <label htmlFor="cbx" className="toggle">
+                                        <span></span>
+                                    </label>
+                                </div>
+                            </div>
 
-
-                            <form action="#" id={"searchBoxInput"} className="search-box collapse">
-                                <input type="text" onChange={handleSearchInputChange} className="text nav-search-input"
-                                       placeholder={t('enter_announcement_id')}/>
-                                <a onClick={handleSearchById} className={"ms-2"} style={{cursor: "pointer"}}>
-                                    <i className="bi bi-search" style={{color: "#000"}}></i>
-                                </a>
-                            </form>
                         </li>
 
 
                         <li className={`nav-item d-none d-lg-block me-3 ${activeLink === 'home' ? 'active' : ''}`}>
-                            <NavLink exact to="/" onClick={handleHomeButton} className="nav-link" activeclassname="active">
+                            <NavLink exact to="/" onClick={handleHomeButton} className="nav-link"
+                                     activeclassname="active">
                                 {t('home')}
                             </NavLink>
                         </li>
                         <li className={`nav-item d-none d-lg-block me-3 ${activeLink === 'motorcycle' ? 'active' : ''}`}>
-                            <NavLink exact to="/" className="nav-link" onClick={handleMotorcycleButton} activeclassname="active">
-                            {t('motorcycles')}
+                            <NavLink exact to="/" className="nav-link" onClick={handleMotorcycleButton}
+                                     activeclassname="active">
+                                {t('motorcycles')}
                             </NavLink>
                         </li>
                         <li className={`nav-item d-none d-lg-block me-3 ${activeLink === 'truck' ? 'active' : ''}`}>
@@ -253,19 +243,18 @@ const Header = () => {
                                 {t('trucks')}
                             </NavLink>
                         </li>
-                        <li className={`nav-item d-none d-lg-block me-3 ${activeLink === 'boats' ? 'active' : ''}`}>
-                            <NavLink to="/coming-soon" onClick={() => setActiveLink('boats')} className="nav-link" activeclassname="active">
-                                {t('boats')}
-                            </NavLink>
+
+
+                        <li className="nav-item dropdown d-lg-none position-relative">
+                            <div className="w-100 d-flex justify-content-center">
+                                <div className="checkbox">
+                                    <input type="checkbox" id="cbx" style={{display: "none"}}/>
+                                    <label htmlFor="cbx" className="toggle">
+                                        <span></span>
+                                    </label>
+                                </div>
+                            </div>
                         </li>
-                        <li className={`nav-item d-none d-lg-block me-3 ${activeLink === 'aircrafts' ? 'active' : ''}`}>
-                            <NavLink to="/coming-soon" onClick={() => setActiveLink('aircrafts')} className="nav-link" activeclassname="active">
-                                {t('aircrafts')}
-                            </NavLink>
-                        </li>
-
-
-
 
 
                         <li className="nav-item dropdown">
@@ -345,17 +334,6 @@ const Header = () => {
                                         {t('motorcycles')}
                                     </a>
                                 </li>
-                                <li>
-                                    <a className="dropdown-item" href="/coming-soon">
-                                        {t('boats')}
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className="dropdown-item" href="/coming-soon">
-                                        {t('aircrafts')}
-                                    </a>
-                                </li>
-
 
                             </ul>
                         </li>
@@ -445,7 +423,7 @@ const Header = () => {
                                 <li className='nav-item'>
                                     <button onClick={handleAddVehicleButton}
                                             className='btn btn-plus btn-square d-flex justify-content-center align-items-center'
-                                            style={{backgroundColor: '#f54114', color: '#ffffff', border: 'none'}}>
+                                            style={{backgroundColor: '#f32223', color: '#ffffff', border: 'none'}}>
                                         {isMobile ? <i className="fas fa-plus"></i> : <><i
                                             className="fas fa-plus me-2"></i>{t('addVehicle')}</>}
                                     </button>
@@ -479,7 +457,7 @@ const Header = () => {
                                 <li className='nav-item ms-2'>
                                     <button onClick={handleSignUpButton}
                                             className='btn btn-plus btn-square d-flex justify-content-center align-items-center'
-                                            style={{backgroundColor: '#f54114', color: '#ffffff', border: 'none'}}>
+                                            style={{backgroundColor: '#DE303A', color: '#ffffff', border: 'none'}}>
                                         {isMobile ? <i className="fas fa-user"></i> : <><i
                                             className="fas fa-user me-2"></i>{t('sign_up')}</>}
                                     </button>

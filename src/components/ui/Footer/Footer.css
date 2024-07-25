@@ -17,3 +17,11 @@
     margin-bottom:0;
     margin-right: 8px;
 }
+
+.footer-link{
+    color:#8C8F94;
+}
+
+.footer-link:hover{
+    color:#D63338;
+}

@@ -12,7 +12,102 @@ const AnnouncementDetails = () => {
 
     const {id} = useParams ();
 
-    const {announcement, loading, error} = useSelector ((state) => state.announcement);
+    // const {announcement, loading, error} = useSelector ((state) => state.announcement);
+
+
+    //HARD CODE TEMP DATA FOR FRONT
+    const announcement={
+        make:{
+            id:1,
+            makeName:"BMW"
+        },
+        model:{
+            id:2,
+            modelName:"M5"
+        },
+        year:{
+            id:3,
+            year:2020
+        },
+        fuelType:{
+            id:4,
+            fuelType:"Diesel"
+        },
+        isBrandNew:false,
+        bodyType:{
+            id:5,
+            bodyType:"Sedan"
+        },
+        color:{
+            id:6,
+            color:"Black"
+        },
+        horsePower:440,
+        gearboxType:{
+            id:7,
+            gearboxType: "Manual"
+        },
+        drivetrainType:{
+            id:8,
+            drivetrainType:"RWD"
+        },
+        conditions:[{
+            id:1,
+            condition:"Colored",
+            description: "the car is colored"
+        }],
+        marketVersion:{
+            id:9,
+            marketVersion:"US"
+        },
+        ownerQuantity:6,
+        seatCount:5,
+        viewCount:40,
+        vinCode:"sdad51a6sd15as",
+        options:[{
+            id:1,
+            option:"ABS"
+        },{
+            id:1,
+            option:"ABS"
+        },{
+            id:1,
+            option:"ABS"
+        },{
+            id:1,
+            option:"ABS"
+        }],
+        engineVolume:4200,
+        mileage:49000,
+        mileageType:"KM",
+        imageUrls:[{url:"https://www.bmw.az/content/dam/bmw/common/all-models/m-series/series-overview/bmw-m-series-seo-overview-ms-04.jpg"},{url:"https://www.topgear.com/sites/default/files/2023/08/P90492179_highRes_bmw-i7-xdrive60-m-sp%20%281%29.jpg"}],
+        barter:false,
+        onCredit:false,
+        description:"no description",
+        price:49000,
+        currency:{
+            id:8,
+            currencyName:"AZN"
+        },
+        announcementState:"waiting",
+        country:{
+            id:9,
+            countryName:"Azerbaijan"
+        },
+        city:{
+            id:14,
+            cityName:"Quba"
+        },
+        expirationDate:"2022-14-16",
+        userId:"5sad16as",
+        userName:"maga",
+        email:"isma@gmail.com",
+        firstName:"maga",
+        lastName:"isma",
+        phoneNumbers:[{phoneNumber:"0505555555"},{phoneNumber:"09055451542"},{phoneNumber:"07057755752"}]
+    }
+    const loading=false;
+
 
     const navigate = useNavigate();
 
@@ -101,15 +196,16 @@ const AnnouncementDetails = () => {
 
 
     useEffect (() => {
-        const fetchData = async () => {
-            try {
-                dispatch(SetAnnouncement(id));
-            } catch (error) {
-                console.error ('Error fetching announcement:', error);
-            }
-        };
+        // const fetchData = async () => {
+        //     try {
+        //         dispatch(SetAnnouncement(id));
+        //     } catch (error) {
+        //         console.error ('Error fetching announcement:', error);
+        //     }
+        // };
 
-        fetchData ();
+        // fetchData ();
+
 
     }, [dispatch, id]);
 
@@ -117,10 +213,10 @@ const AnnouncementDetails = () => {
         return <LoadingPage/>;
     }
 
-    if (!announcement) {
-        navigate("/NotFound");
-        return null;
-    }
+    // if (!announcement) {
+    //     navigate("/NotFound");
+    //     return null;
+    // }
 
     const {
         make,
@@ -165,18 +261,19 @@ const AnnouncementDetails = () => {
     } = announcement;
 
     function formatTimestamp(timestamp) {
-        const dateObject = new Date (timestamp);
-        const options = {
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit',
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit',
-            hour12: false
-        };
-        const formattedDate = dateObject.toLocaleString ('en-GB', options);
-        return formattedDate;
+        // const dateObject = new Date (timestamp);
+        // const options = {
+        //     year: 'numeric',
+        //     month: '2-digit',
+        //     day: '2-digit',
+        //     hour: '2-digit',
+        //     minute: '2-digit',
+        //     second: '2-digit',
+        //     hour12: false
+        // };
+        // const formattedDate = dateObject.toLocaleString ('en-GB', options);
+        // return formattedDate;
+        return timestamp
     }
 
     return (
