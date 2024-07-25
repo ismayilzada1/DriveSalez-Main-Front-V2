@@ -1,0 +1,9 @@
+.custom-dropdown-with-checkboxes{
+    color:#D03539;
+    border-color:#D13539;
+}
+
+.custom-dropdown-with-checkboxes:hover{
+    color:#fff;
+    background-color:#D13539;
+}

@@ -29,7 +29,7 @@
 }
 
 .nav-item.active a{
-    color:#f54114 !important;
+    color: #D63338 !important;
 }
 
 @keyframes fade-in-bottom {
@@ -45,6 +45,7 @@
 
 .nav-item a{
     text-align: center;
+    color: #8C8F94;
 }
 
 .nav-search-input {

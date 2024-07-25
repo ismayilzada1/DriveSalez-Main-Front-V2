@@ -457,7 +457,7 @@ const Header = () => {
                                 <li className='nav-item ms-2'>
                                     <button onClick={handleSignUpButton}
                                             className='btn btn-plus btn-square d-flex justify-content-center align-items-center'
-                                            style={{backgroundColor: '#f32223', color: '#ffffff', border: 'none'}}>
+                                            style={{backgroundColor: '#DE303A', color: '#ffffff', border: 'none'}}>
                                         {isMobile ? <i className="fas fa-user"></i> : <><i
                                             className="fas fa-user me-2"></i>{t('sign_up')}</>}
                                     </button>
