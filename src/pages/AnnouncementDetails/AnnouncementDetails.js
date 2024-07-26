@@ -379,7 +379,7 @@ const AnnouncementDetails = () => {
                                             <div className="salonMainDiv">
                                                 <div className="salonMainTop">
                                                     <div className="salonMainTop1">
-                                                        <img className="imgTopSalon" src="https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp"/>
+                                                        <img className="imgTopSalon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6YY1dAud4mB5-5N0T3vGW0QlgNfF1PAIc4A&s"/>
                                                         <span className="spanTopSalon">Lorem Ipsum</span>
                                                     </div>
                                                     <button className="callButtonTopSalon">

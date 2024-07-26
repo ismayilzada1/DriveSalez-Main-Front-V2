@@ -133,7 +133,7 @@
   }
 
   .vin-code-icon {
-    top: 42%!important;
+    top: 44% !important;
   }
   .card-body {
     padding: 1rem 1rem;
@@ -146,6 +146,10 @@
 
   .card-title {
     font-size: 100%;
+  }
+  .card-img-top {
+    object-fit: cover;
+    height: 70% !important;
   }
 
 }
@@ -182,7 +186,7 @@
   }
   .vin-code-icon {
     font-size: 0.8em;
-    top: 31% !important;
+    top: 59% !important;
   }
 
   .barter-and-credit-icon {
@@ -211,6 +215,13 @@
 
   }
 
+}
+
+@media screen and (max-width: 991px){
+  .vin-code-icon {
+    font-size: 0.8em;
+    top: 50% !important;
+  }
 }
 
 @media screen and (max-width: 512px) {
@@ -356,6 +367,11 @@ gap: 1.5%;
 
   .vin-code-icon {
     font-size: 0.8em;
-    top: 34%;
+    top: 40% !important;
   }
+  .card-img-top {
+    object-fit: cover;
+    height: 70%;
+  }
+  
 }
