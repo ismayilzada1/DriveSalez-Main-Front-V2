@@ -378,11 +378,12 @@
 
 @media  screen and (max-width: 440px) {
   .announcement-card {
-    height: 69% !important;
+    height: 88.5% !important;
+    margin-bottom:-45px !important;
   }
   .vin-code-icon {
     font-size: 0.8em;
-    top: 46% !important;
+    top: 43.6% !important;
   }
-  
+
 }
