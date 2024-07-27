@@ -1,5 +1,5 @@
 .announcement-card {
-  height: 90%;
+  height: 80%;
   min-width: 270px;
 }
 
@@ -44,7 +44,7 @@
   height: 1.7em;
   width: 2em;
   position: absolute;
-  top: 42%;
+  top: 45%;
   left: 2%;
   bottom: 0;
   z-index: 990009;
@@ -116,24 +116,25 @@
   .announcement-card {
     min-width: 300px;
     margin-bottom: 20px;
+    height: 87%;
   }
 
   .tall-image {
-    height: 150px;
+    height: 160px;
   }
   .vin-code-icon {
-    top: 39% !important;
+    top: 45% ;
   }
 }
 
 @media screen and (max-width: 1400px) {
   .announcement-card {
     min-width: 250px !important;
-    height:83%!important ;
+    height:75% ;
   }
 
   .vin-code-icon {
-    top: 44% !important;
+    top: 48% ;
   }
   .card-body {
     padding: 1rem 1rem;
@@ -157,8 +158,8 @@
 @media screen and (max-width: 1200px) {
   .announcement-card {
     min-width: 200px !important;
-    margin-right: 0.5rem !important;
-    margin-bottom: 10px !important;
+    height: 86%;
+
   }
 
   .card-body {
@@ -186,7 +187,7 @@
   }
   .vin-code-icon {
     font-size: 0.8em;
-    top: 59% !important;
+    top: 62% ;
   }
 
   .barter-and-credit-icon {
@@ -210,17 +211,19 @@
     max-width: 50%;
   }
 
-  .announcement-card {
-    height: 93%  !important;
 
-  }
 
 }
 
 @media screen and (max-width: 991px){
   .vin-code-icon {
     font-size: 0.8em;
-    top: 50% !important;
+    top: 53% !important;
+  }
+  .announcement-card {
+    min-width: 200px !important;
+    height: 83% !important;
+
   }
 }
 
@@ -339,11 +342,11 @@
 .details-row {
   display: flex;
   flex-direction: row;
-  margin: 15px 0;
-gap: 1.5%;
+  gap: 1.5%;
 }
 .value{
   font-size: medium;
+  color: #707070;
 }
 
 @media (max-width: 765px) {
@@ -359,7 +362,7 @@ gap: 1.5%;
   }
 
   .announcement-card {
-    height: 85%;
+    height: 79% !important;
   }
   .card-title {
     font-size: 1.4em;
@@ -367,7 +370,7 @@ gap: 1.5%;
 
   .vin-code-icon {
     font-size: 0.8em;
-    top: 40% !important;
+    top: 43% !important;
   }
   .card-img-top {
     object-fit: cover;
@@ -375,3 +378,4 @@ gap: 1.5%;
   }
   
 }
+
