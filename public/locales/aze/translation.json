@@ -198,5 +198,9 @@
   "find": "Tapmaq",
   "enter_announcement_id": "Elan Nömrəsini Daxil Edin...",
   "makeInactive": "Deaktiv Edin",
-  "makeActive": "Aktiv Edin"
+  "makeActive": "Aktiv Edin",
+  "Call":"Zəng et",
+  "Visit salon":"Salona keç",
+  "announcements":"elan"
+
 }

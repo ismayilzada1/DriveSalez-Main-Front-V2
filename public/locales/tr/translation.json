@@ -199,6 +199,8 @@
   "find": "Bulmak",
   "enter_announcement_id": "Ilan Numarasını Girin...",
   "makeInactive": "Deaktif Yap",
-  "makeActive": "Aktif Yap"
-
+  "makeActive": "Aktif Yap",
+  "Call":"Ara",
+  "Visit salon":"Salona geç",
+  "announcements":"duyuru"
 }

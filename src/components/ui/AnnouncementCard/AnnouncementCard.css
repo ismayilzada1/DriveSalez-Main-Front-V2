@@ -1,5 +1,5 @@
 .announcement-card {
-  height: 90%;
+  height: 80%;
   min-width: 270px;
 }
 
@@ -44,7 +44,7 @@
   height: 1.7em;
   width: 2em;
   position: absolute;
-  top: 42%;
+  top: 45%;
   left: 2%;
   bottom: 0;
   z-index: 990009;
@@ -116,24 +116,25 @@
   .announcement-card {
     min-width: 300px;
     margin-bottom: 20px;
+    height: 87%;
   }
 
   .tall-image {
-    height: 150px;
+    height: 160px;
   }
   .vin-code-icon {
-    top: 39% !important;
+    top: 45% ;
   }
 }
 
 @media screen and (max-width: 1400px) {
   .announcement-card {
     min-width: 250px !important;
-    height:83%!important ;
+    height:75% ;
   }
 
   .vin-code-icon {
-    top: 42%!important;
+    top: 48% ;
   }
   .card-body {
     padding: 1rem 1rem;
@@ -147,14 +148,18 @@
   .card-title {
     font-size: 100%;
   }
+  .card-img-top {
+    object-fit: cover;
+    height: 70% !important;
+  }
 
 }
 
 @media screen and (max-width: 1200px) {
   .announcement-card {
     min-width: 200px !important;
-    margin-right: 0.5rem !important;
-    margin-bottom: 10px !important;
+    height: 86%;
+
   }
 
   .card-body {
@@ -182,7 +187,7 @@
   }
   .vin-code-icon {
     font-size: 0.8em;
-    top: 31% !important;
+    top: 62% ;
   }
 
   .barter-and-credit-icon {
@@ -206,11 +211,20 @@
     max-width: 50%;
   }
 
+
+
+}
+
+@media screen and (max-width: 991px){
+  .vin-code-icon {
+    font-size: 0.8em;
+    top: 53% !important;
+  }
   .announcement-card {
-    height: 93%  !important;
+    min-width: 200px !important;
+    height: 83% !important;
 
   }
-
 }
 
 @media screen and (max-width: 512px) {
@@ -218,6 +232,7 @@
     min-width: 170px !important;
     margin-right: 0.35rem !important;
     margin-bottom: 6px !important;
+ 
   }
 
   .card-body {
@@ -257,20 +272,18 @@
   .barter-and-credit-icon .percent-icon {
     font-size: 0.7em !important;
   }
-  .announcement-card{
-    height: 85% !important;
-  }
+
 }
 
 @media screen and (max-width: 447px) {
   .announcement-card {
     min-width: 150px !important;
-    margin-right: 0.25rem !important;
-    margin-bottom: 4px !important;
+    height: 50% !important;
   }
 
   .card-body {
-    padding: 0.3rem 0.3rem;
+    height: 40% !important;
+    
   }
 
   .info-key,
@@ -319,23 +332,21 @@
     justify-content: center;
     align-items: center;
   }
-  .announcement-card{
-    height: 80% !important;
-  }
+
 
 }
 
 .details-row {
   display: flex;
   flex-direction: row;
-  margin: 15px 0;
-gap: 1.5%;
+  gap: 1.5%;
 }
 .value{
   font-size: medium;
+  color: #707070;
 }
 
-@media (max-width: 765px) {
+@media screen and (max-width: 765px) {
   .announcement-cards-container {
     display: flex;
     flex-wrap: wrap;
@@ -348,7 +359,7 @@ gap: 1.5%;
   }
 
   .announcement-card {
-    height: 85%;
+    height: 79% !important;
   }
   .card-title {
     font-size: 1.4em;
@@ -356,6 +367,23 @@ gap: 1.5%;
 
   .vin-code-icon {
     font-size: 0.8em;
-    top: 34%;
+    top: 43% !important;
   }
+  .card-img-top {
+    object-fit: cover;
+    height: 70%;
+  }
+  
+}
+
+@media  screen and (max-width: 440px) {
+  .announcement-card {
+    height: 88.5% !important;
+    margin-bottom:-45px !important;
+  }
+  .vin-code-icon {
+    font-size: 0.8em;
+    top: 43.6% !important;
+  }
+
 }

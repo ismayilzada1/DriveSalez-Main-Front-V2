@@ -199,5 +199,8 @@
   "makeInactive": "Make Inactive",
   "makeActive": "Make Active",
   "makeInactiveLoading": "Make Inactive...",
-  "makeActiveLoading": "Make Active..."
+  "makeActiveLoading": "Make Active...",
+  "Call":"Call",
+  "Visit salon":"Visit salon",
+  "announcements":"announcements"
 }
