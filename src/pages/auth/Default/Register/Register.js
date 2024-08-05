@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Logo from '../../../components/ui/Logo';
+import Logo from '../../../../components/ui/Logo';
 import { useNavigate } from 'react-router-dom';
 import {useSelector} from "react-redux";
 import { useDispatch } from 'react-redux';
-import { registerUser } from '../../../Store/Auth/authActions';
+import { registerUser } from '../../../../Store/Auth/authActions';
 import {useTranslation} from "react-i18next";
 import './Register.css'
 import {Helmet} from "react-helmet";
@@ -86,7 +86,7 @@ function Register() {
                  <li className="nav-item dropdown">
                     <a href="#" className="search-toggle nav-link" id="flagDropdown"
                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src={`../assets/images/flag/flag-${i18n.language}.png`} className="img-fluid"
+                        <img src={`../../assets/images/flag/flag-${i18n.language}.png`} className="img-fluid"
                              alt="user" style={{height: '30px', minWidth: '30px', width: '30px'}}/>
                         <span className="bg-primary"></span>
                     </a>
@@ -273,7 +273,7 @@ function Register() {
                                             <div className="new-account mt-3 text-center">
                                                 <p className="mb-0">
                                                     {t("nav.alreadyHaveAccount")}{' '}
-                                                    <a className="text-primary" href="/auth/Login">
+                                                    <a className="text-primary" href="/auth/Default/Login">
                                                         {t("nav.signIn")}
                                                     </a>
                                                 </p>

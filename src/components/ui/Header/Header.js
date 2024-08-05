@@ -83,7 +83,7 @@ const Header = () => {
 
     const handleAddVehicleButton = () => navigate ('/new-announcement');
 
-    const handleSignUpButton = () => navigate ('/auth/register');
+    const handleSignUpButton = () => navigate ('/auth/Default/register');
 
 
     const handleLanguageChange = async (lang,e) => {
