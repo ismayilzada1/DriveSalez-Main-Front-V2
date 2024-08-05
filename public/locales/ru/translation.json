@@ -95,6 +95,7 @@
 
   "nav.signUp": "Регистрация",
   "nav.createAccount": "Создайте свой DriveSalez аккаунт.",
+  "nav.createAccountBusiness": "Создайте свой DriveSalez Бизнес-аккаунт.",
   "nav.firstName": "Имя",
   "nav.lastName": "Фамилия",
   "nav.phoneNo": "Номер телефона",
