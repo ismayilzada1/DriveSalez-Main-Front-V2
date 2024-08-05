@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Logo = ({ size }) => {
+
     const logoStyle = {
         backgroundColor: 'transparent',
         filter: 'url(#colorFilter)',
@@ -16,7 +17,6 @@ const Logo = ({ size }) => {
                 className="img-fluid"
                 alt=""
             />
-
 
             {/* for black theme */}
             {/*<img*/}
