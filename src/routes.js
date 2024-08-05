@@ -24,6 +24,7 @@ import InternalServerError from "./pages/errors/InternalServerError";
 import Admin from "./pages/Admin";
 import AboutUs from "./pages/AboutUs";
 import PremiumAnnouncements from "./pages/PremiumAnnouncements";
+import RegisterBusiness from "./pages/auth/Business/Register"
 
 
 const routes=[
@@ -126,6 +127,10 @@ const routes=[
             {
                 path: 'Login',
                 element: <LoginBusiness/>
+            },
+            {
+                path: 'Register',
+                element: <RegisterBusiness/>
             },
         ]
     },

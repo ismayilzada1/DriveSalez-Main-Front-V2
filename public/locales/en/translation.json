@@ -94,6 +94,7 @@
 
   "nav.signUp": "Sign Up",
   "nav.createAccount": "Create Your DriveSalez Account.",
+  "nav.createAccountBusiness": "Create Your DriveSalez Business Account.",
   "nav.firstName": "First Name",
   "nav.lastName": "Last Name",
   "nav.phoneNo": "Phone No",
