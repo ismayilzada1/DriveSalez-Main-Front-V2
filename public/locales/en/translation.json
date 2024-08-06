@@ -203,7 +203,10 @@
   "makeActive": "Make Active",
   "makeInactiveLoading": "Make Inactive...",
   "makeActiveLoading": "Make Active...",
-
   "dealerships": "Dealerships",
   "officialRepresentatives": "OFFICIAL REPRESENTATIVES"
+  "Call":"Call",
+  "Visit salon":"Visit salon",
+  "announcements":"announcements"
+
 }

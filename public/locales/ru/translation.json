@@ -202,7 +202,10 @@
   "enter_announcement_id": "Введите номер объявления...",
   "makeInactive": "Сделать неактивным",
   "makeActive": "Сделать активным",
-
   "dealerships": "Автосалоны",
   "officialRepresentatives": "ОФИЦИАЛЬНЫЕ ПРЕДСТАВИТЕЛИ"
+  "Call":"Позвони",
+  "Visit salon":"Перейти в салон",
+  "announcements":"объявлений"
+
 }
