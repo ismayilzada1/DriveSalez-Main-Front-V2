@@ -202,5 +202,8 @@
   "makeInactive": "Make Inactive",
   "makeActive": "Make Active",
   "makeInactiveLoading": "Make Inactive...",
-  "makeActiveLoading": "Make Active..."
+  "makeActiveLoading": "Make Active...",
+
+  "dealerships": "Dealerships",
+  "officialRepresentatives": "OFFICIAL REPRESENTATIVES"
 }

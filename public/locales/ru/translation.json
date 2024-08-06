@@ -201,5 +201,8 @@
   "find": "Найти",
   "enter_announcement_id": "Введите номер объявления...",
   "makeInactive": "Сделать неактивным",
-  "makeActive": "Сделать активным"
+  "makeActive": "Сделать активным",
+
+  "dealerships": "Автосалоны",
+  "officialRepresentatives": "ОФИЦИАЛЬНЫЕ ПРЕДСТАВИТЕЛИ"
 }
