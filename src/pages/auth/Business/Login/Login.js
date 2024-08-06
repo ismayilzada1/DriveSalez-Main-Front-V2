@@ -200,7 +200,7 @@ const LoginBusiness = () => {
                                             <div className="new-account mt-3 text-center">
                                                 <p>
                                                     {t("nav.dontHaveAnAccount")}?{' '}
-                                                    <a className="blue-link" href="/auth/Default/Register">
+                                                    <a className="blue-link" href="/auth/Business/Register">
                                                         {t("nav.clickHereToSignUp")}
                                                     </a>
                                                 </p>
