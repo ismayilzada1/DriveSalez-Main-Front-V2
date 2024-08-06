@@ -94,6 +94,7 @@
 
   "nav.signUp": "Sign Up",
   "nav.createAccount": "Create Your DriveSalez Account.",
+  "nav.createAccountBusiness": "Create Your DriveSalez Business Account.",
   "nav.firstName": "First Name",
   "nav.lastName": "Last Name",
   "nav.phoneNo": "Phone No",
@@ -111,7 +112,9 @@
   "nav.dontHaveAnAccount": "Don't have an account",
   "nav.clickHereToSignUp": "Click here to sign up",
 
+  "nav.areyouabusinessowner": "Are you a business owner",
 
+  "nav.businessAccount": "Business Account",
 
   "fuelType": "Fuel Type",
   "year": "Year",
@@ -200,7 +203,10 @@
   "makeActive": "Make Active",
   "makeInactiveLoading": "Make Inactive...",
   "makeActiveLoading": "Make Active...",
+  "dealerships": "Dealerships",
+  "officialRepresentatives": "OFFICIAL REPRESENTATIVES"
   "Call":"Call",
   "Visit salon":"Visit salon",
   "announcements":"announcements"
+
 }

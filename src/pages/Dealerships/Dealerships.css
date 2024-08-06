@@ -1,0 +1,56 @@
+.wrapper{
+    padding-top:40px !important;
+}
+
+.input-group-rounded {
+    border-radius: 10px;
+}
+
+.short-input {
+    max-width: 4.5rem;
+}
+
+
+
+.form-check{
+    margin-left:5px;
+}
+
+.custom-form-check,.custom-form-label{
+    cursor: pointer !important;
+}
+
+.custom-form-check:hover{
+    background-color: #f6542c;
+    color:white;
+}
+
+.custom-dropdown{
+    background-color: #f6542c !important;
+    border:0;
+}
+
+.announcement-cards-container{
+    box-sizing: border-box;
+}
+
+.regular-announcements-container{
+    border-top:2px solid #d3d3d3;
+
+}
+
+@media screen and (max-width: 1440px) {
+    .announcement-card-div {
+        width: 70%;
+    }
+
+
+}
+
+@media screen and (max-width: 765px)
+{
+    .announcement-cards-container{
+        justify-content: center !important;
+    }
+}
+

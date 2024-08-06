@@ -11,18 +11,21 @@ import UpdateAccount from "./pages/UpdateAccount";
 import AnnouncementDetailsUserProfile from "./pages/AnnouncementDetailsUserProfile";
 import LoadingPage from "./components/ui/LoadingPage";
 import AuthLayout from "./pages/auth/AuthLayout";
-import Login from "./pages/auth/Login";
-import Register from "./pages/auth/Register";
-import ResetPassword from "./pages/auth/ResetPassword";
-import ForgotPassword from "./pages/auth/ForgotPassword";
-import VerifyEmail from "./pages/auth/VerifyEmail";
-import ChangePassword from "./pages/auth/ChangePassword";
+import Login from "./pages/auth/Default/Login";
+import LoginBusiness from "./pages/auth/Business/Login";
+import Register from "./pages/auth/Default/Register";
+import ResetPassword from "./pages/auth/Default/ResetPassword";
+import ForgotPassword from "./pages/auth/Default/ForgotPassword";
+import VerifyEmail from "./pages/auth/Default/VerifyEmail";
+import ChangePassword from "./pages/auth/Default/ChangePassword";
 import NotFound from "./pages/errors/NotFound";
 import React from "react";
 import InternalServerError from "./pages/errors/InternalServerError";
 import Admin from "./pages/Admin";
 import AboutUs from "./pages/AboutUs";
 import PremiumAnnouncements from "./pages/PremiumAnnouncements";
+import Dealerships from "./pages/Dealerships";
+import RegisterBusiness from "./pages/auth/Business/Register"
 
 
 const routes=[
@@ -33,6 +36,10 @@ const routes=[
             {
                 index:true,
                 element:<Home/>
+            },
+            {
+                path:'dealerships',
+                element: <Dealerships/>
             },
             {
                 path:'premium-announcements',
@@ -87,7 +94,7 @@ const routes=[
         element: <LoadingPage/>
     },
     {
-        path: '/auth',
+        path: '/auth/Default',
         element: <AuthLayout/>,
         children: [
             {
@@ -117,6 +124,22 @@ const routes=[
             },
         ]
     },
+
+    {
+        path: '/auth/Business',
+        element: <AuthLayout/>,
+        children: [
+            {
+                path: 'Login',
+                element: <LoginBusiness/>
+            },
+            {
+                path: 'Register',
+                element: <RegisterBusiness/>
+            },
+        ]
+    },
+
     {
         path: '/500',
         element: <InternalServerError/>
