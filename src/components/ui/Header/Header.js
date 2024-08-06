@@ -214,6 +214,11 @@ const Header = () => {
                                 {t('home')}
                             </NavLink>
                         </li>
+                        <li className={`nav-item d-none d-lg-block me-3 ${activeLink === 'dealerships' ? 'active' : ''}`}>
+                            <NavLink to="/dealerships"  className="nav-link" activeclassname="active">
+                                {t('dealerships')}
+                            </NavLink>
+                        </li>
                         <li className={`nav-item d-none d-lg-block me-3 ${activeLink === 'motorcycle' ? 'active' : ''}`}>
                             <NavLink exact to="/" className="nav-link" onClick={handleMotorcycleButton}
                                      activeclassname="active">
@@ -307,6 +312,11 @@ const Header = () => {
                                     </a>
                                 </li>
                                 <li>
+                                    <a className="dropdown-item" href="/dealerships">
+                                        {t('dealerships')}
+                                    </a>
+                                </li>
+                                <li>
                                     <a className="dropdown-item" href="/">
                                         {t('trucks')}
                                     </a>
@@ -316,6 +326,7 @@ const Header = () => {
                                         {t('motorcycles')}
                                     </a>
                                 </li>
+
 
                             </ul>
                         </li>

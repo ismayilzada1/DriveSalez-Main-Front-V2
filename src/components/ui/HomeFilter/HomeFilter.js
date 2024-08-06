@@ -538,7 +538,7 @@ const HomeFilter = () => {
             <section className="featured-places mb-2">
                 <Row className="container">
                     <Form onSubmit={search}>
-                        <Row id={'Home-filter'}>
+                        <Row id={'Dealerships-filter'}>
                             <Col lg={3}  md={4} sm={6} xs={6}>
                                 <CustomDropdown
                                     mainLabel={t('mainLabelMake')}

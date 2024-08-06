@@ -23,6 +23,7 @@ import InternalServerError from "./pages/errors/InternalServerError";
 import Admin from "./pages/Admin";
 import AboutUs from "./pages/AboutUs";
 import PremiumAnnouncements from "./pages/PremiumAnnouncements";
+import Dealerships from "./pages/Dealerships";
 
 
 const routes=[
@@ -33,6 +34,10 @@ const routes=[
             {
                 index:true,
                 element:<Home/>
+            },
+            {
+                path:'dealerships',
+                element: <Dealerships/>
             },
             {
                 path:'premium-announcements',
