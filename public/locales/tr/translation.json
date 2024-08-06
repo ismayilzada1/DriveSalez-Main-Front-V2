@@ -96,6 +96,7 @@
 
   "nav.signUp": "Kayıt Ol",
   "nav.createAccount": "DriveSalez Hesabınızı Oluşturun.",
+  "nav.createAccountBusiness": "DriveSalez İş Hesabınızı Oluşturun.",
   "nav.firstName": "Ad",
   "nav.lastName": "Soyad",
   "nav.phoneNo": "Telefon Numarası",
@@ -112,6 +113,8 @@
   "nav.forgotPassword": "Şifremi unuttum",
   "nav.dontHaveAnAccount": "Hesabınız yok mu",
   "nav.clickHereToSignUp": "Kayıt olmak için buraya tıklayın",
+  "nav.areyouabusinessowner": "Bir işletme sahibi misiniz?",
+  "nav.businessAccount": "İş Hesabı",
 
   "fuelType": "Yakıt Tipi",
   "year": "Yıl",

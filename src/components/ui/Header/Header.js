@@ -12,11 +12,14 @@ import commonDataService from "../../../api-services/CommonDataService";
 import {setAnnouncements, setPageNumber, setFilterParams} from '../../../Store/Announcement/AnnouncementSlice';
 import '../../../i18n'
 import {useTranslation} from "react-i18next";
+import { toggleTheme } from '../../../Store/Theme/ThemeSlice';
+
 
 const Header = () => {
 
 
     const {user, accessToken} = useSelector ((state) => state.auth);
+    const theme = useSelector((state) => state.theme.theme);
     const isLoggedIn = useSelector ((state) => state.auth.isLoggedIn);
     const dispatch = useDispatch ();
     const CommonDataService = new commonDataService ();
@@ -32,6 +35,8 @@ const Header = () => {
     };
 
     const pageSize = 4;
+
+
 
     useEffect (() => {
         Promise.all ([
@@ -78,7 +83,7 @@ const Header = () => {
 
     const handleAddVehicleButton = () => navigate ('/new-announcement');
 
-    const handleSignUpButton = () => navigate ('/auth/register');
+    const handleSignUpButton = () => navigate ('/auth/Default/register');
 
 
     const handleLanguageChange = async (lang,e) => {
@@ -159,6 +164,19 @@ const Header = () => {
         setActiveLink(link);
     };
 
+    const [isLightThemeChecked, setIsLightThemeChecked] = useState(true);
+    useEffect(() => {
+        setIsLightThemeChecked(theme === 'light');
+    }, [theme]);
+
+
+    const handleDarkLightToggle = () => {
+        console.log(theme);
+        dispatch(toggleTheme());
+        setIsLightThemeChecked(!isLightThemeChecked);
+        console.log(theme);
+    };
+
     return (
 
         <nav className="nav navbar navbar-expand-lg iq-navbar rounded" >
@@ -198,7 +216,7 @@ const Header = () => {
 
                             <div className="w-100 d-flex justify-content-center">
                                 <div className="checkbox d-flex align-items-center justify-content-center">
-                                    <input type="checkbox" id="cbx" style={{display: "none"}}/>
+                                    <input type="checkbox" id="cbx" checked={isLightThemeChecked} onClick={handleDarkLightToggle} style={{display: "none"}}/>
                                     <label htmlFor="cbx" className="toggle">
                                         <span></span>
                                     </label>
@@ -450,7 +468,7 @@ const Header = () => {
                                 <li className='nav-item ms-2'>
                                     <button onClick={handleSignUpButton}
                                             className='btn btn-plus btn-square d-flex justify-content-center align-items-center'
-                                            style={{backgroundColor: '#f32223', color: '#ffffff', border: 'none'}}>
+                                            style={{backgroundColor: '#DE303A', color: '#ffffff', border: 'none'}}>
                                         {isMobile ? <i className="fas fa-user"></i> : <><i
                                             className="fas fa-user me-2"></i>{t('sign_up')}</>}
                                     </button>

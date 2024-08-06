@@ -1,0 +1,54 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* Ensure it's on top of other content */
+}
+
+.signinbtn{
+    background-color: #226fd3;
+    border-color: #6082A3;
+}
+
+.signinbtn:hover,
+.signinbtn:active,
+.signinbtn:focus,
+.signinbtn:disabled
+{
+    background-color: #4d82c7;
+    border-color: #235aa1;
+}
+
+.blue-link{
+    color: #0064e8;
+}
+
+.blue-link:hover{
+    color: #006cff;
+}
+
+.business-auth-page:before{
+    background-color: #bed6f8;
+}
+
+.business-login-card{
+    background-color: #bed6f8 !important;
+}
+
+.checbox-blue{
+    border-color: blue !important;
+}
+
+.checbox-blue:checked{
+    background-image:url("data:image/svg+xml,%3csvg width='16' height='14' viewBox='0 0 16 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.51662 8.59792C-0.172207 7.90067 -0.172207 6.77019 0.51662 6.07293C1.20545 5.37567 2.32225 5.37567 3.01108 6.07293L5.25609 8.34542C5.39386 8.48488 5.61722 8.48488 5.75499 8.34542L12.9889 1.02294C13.6777 0.325686 14.7946 0.325686 15.4834 1.02294C16.1722 1.7202 16.1722 2.85068 15.4834 3.54794L5.75499 13.3954C5.61722 13.5349 5.39386 13.5349 5.25609 13.3954L0.51662 8.59792Z' fill='%230000FF'/%3e%3c/svg%3e") !important;
+}
+
+.input-blue{
+    border-color: #00c4a7 !important;
+}
