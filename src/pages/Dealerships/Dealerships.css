@@ -35,7 +35,7 @@
 }
 
 .regular-announcements-container{
-    border-top:2px solid #d3d3d3;
+    border-top:0 solid ;
 
 }
 
@@ -54,3 +54,21 @@
     }
 }
 
+.dealership-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; 
+}
+
+.dealership-card {
+    flex: 1 1 calc(50% - 16px);
+    max-width: calc(50% - 16px);
+    box-sizing: border-box;
+}
+
+@media (max-width: 1000px) {
+    .dealership-card {
+        flex: 1 1 100%; /* One card per row */
+        max-width: 100%; /* Full width of the container */
+    }
+}
