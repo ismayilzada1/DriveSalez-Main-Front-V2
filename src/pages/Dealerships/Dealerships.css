@@ -10,7 +10,11 @@
     max-width: 4.5rem;
 }
 
-
+.pt-3{
+    display: flex;
+    flex-direction: column;
+    gap:0.7em;
+}
 
 .form-check{
     margin-left:5px;
@@ -66,9 +70,3 @@
     box-sizing: border-box;
 }
 
-@media (max-width: 1000px) {
-    .dealership-card {
-        flex: 1 1 100%; /* One card per row */
-        max-width: 100%; /* Full width of the container */
-    }
-}

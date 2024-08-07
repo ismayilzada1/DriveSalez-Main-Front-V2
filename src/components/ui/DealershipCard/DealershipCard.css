@@ -1,7 +1,7 @@
 .mainCard {
   display: flex;
   flex-direction: row;
-  width: 45%;
+  width: 49%;
   height: 9em;
   border: 2px solid rgba(1, 0, 0, 0.2);
   border-radius: 10px;
@@ -78,7 +78,7 @@
 .AnnouncementsDataContainer{
     font-size: 0.88em;
     color: blue;
-    margin-top: 1.5%;
+    margin-top: 1.3%;
     cursor: pointer;
   
 }
@@ -87,4 +87,15 @@
     height: 100%;
     width: 1px;
     background: rgba(1, 0, 0, 0.2);
+}
+
+@media (max-width: 1000px) {
+    .mainCard {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 9em;
+        border: 2px solid rgba(1, 0, 0, 0.2);
+        border-radius: 10px;
+      }
 }
