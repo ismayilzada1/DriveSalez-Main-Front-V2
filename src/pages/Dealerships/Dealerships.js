@@ -10,8 +10,8 @@ import {GetAllFilterAnnouncements, GetAnnouncements, SetPageNumber} from '../../
 import InfiniteScroll from 'react-infinite-scroll-component';
 import {setAnnouncements, setFilterParams, setPageNumber} from '../../Store/Announcement/AnnouncementSlice';
 import {useTranslation} from "react-i18next";
-
-
+import DealershipCard from "../../components/ui/DealershipCard/DealershipCard"
+ 
 const Dealerships = () => {
     const dispatch = useDispatch();
     const { allAnnouncements,premiumAnnouncements,filterParams, loading, error, pageNumber,hasMore } = useSelector((state) => state.announcement);
