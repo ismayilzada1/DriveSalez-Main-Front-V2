@@ -26,6 +26,7 @@ import AboutUs from "./pages/AboutUs";
 import PremiumAnnouncements from "./pages/PremiumAnnouncements";
 import Dealerships from "./pages/Dealerships";
 import RegisterBusiness from "./pages/auth/Business/Register"
+import DealershipDetails from "./pages/DealershipDetails";
 
 
 const routes=[
@@ -69,6 +70,10 @@ const routes=[
             {
                 path:'AnnouncementDetails/:id',
                 element:<AnnouncementDetails/>
+            },
+            {
+                path:'dealerships/:id',
+                element:<DealershipDetails/>
             },
             {
                 path:'profile',
