@@ -77,36 +77,51 @@ const Dealerships = () => {
   // if (error) {
   //     return <p>Error: {error}</p>;
   // }
+
   const ann = [
     {
-        imgSrc: "https://logowik.com/content/uploads/images/land-rover9557.jpg",
-        description: 'Land Rover is a British brand of predominantly four-wheel drive, off-road capable vehicles, owned by multinational car manufacturer Jaguar Land Rover (JLR), since 2008 a subsidiary of Indias Tata Motors.',
-        phoneNumber: '(050)225 26 24, (055)877 49 65',
-        name: 'Land Rover',
-        announcementNumber: 10
+      imgSrc: "https://logowik.com/content/uploads/images/land-rover9557.jpg",
+      description:
+        "Land Rover is a British brand of predominantly four-wheel drive, off-road capable vehicles, owned by multinational car manufacturer Jaguar Land Rover (JLR), since 2008 a subsidiary of Indias Tata Motors.",
+      phoneNumber: "(050)225 26 24, (055)877 49 65",
+      name: "Land Rover",
+      announcementNumber: 10,
+      isOfficial: true,
     },
     {
-        imgSrc: "https://i.pinimg.com/736x/90/c6/2a/90c62a04093a897e0cdc5ac249e4334f.jpg",
-        description: 'Lexus (レクサス, Rekusasu) is the luxury vehicle division of the Japanese automaker Toyota Motor Corporation. The Lexus brand is marketed in more than 90 countries and territories worldwide and is Japans largest-selling make of premium cars.',
-        phoneNumber: '123-456-7890',
-        name: 'Lexus',
-        announcementNumber: 10
+      imgSrc:
+        "https://i.pinimg.com/736x/90/c6/2a/90c62a04093a897e0cdc5ac249e4334f.jpg",
+      description:
+        "Lexus (レクサス, Rekusasu) is the luxury vehicle division of the Japanese automaker Toyota Motor Corporation. The Lexus brand is marketed in more than 90 countries and territories worldwide and is Japans largest-selling make of premium cars.",
+      phoneNumber: "123-456-7890",
+      name: "Lexus",
+      announcementNumber: 10,
     },
     {
-        imgSrc: "https://logowik.com/content/uploads/images/bugatti.jpg",
-        description: 'Automobiles Ettore Bugatti was a German then French manufacturer of high-performance automobiles. The company was founded in 1909 in the then-German city of Molsheim, Alsace, by the Italian-born industrial designer Ettore Bugatti. ',
-        phoneNumber: '123-456-7890',
-        name: 'Bugatti',
-        announcementNumber: 10
+      imgSrc: "https://logowik.com/content/uploads/images/bugatti.jpg",
+      description:
+        "Automobiles Ettore Bugatti was a German then French manufacturer of high-performance automobiles. The company was founded in 1909 in the then-German city of Molsheim, Alsace, by the Italian-born industrial designer Ettore Bugatti. ",
+      phoneNumber: "123-456-7890",
+      name: "Bugatti",
+      announcementNumber: 10,
+      isOfficial: true,
     },
     {
-        imgSrc: "https://i.pinimg.com/736x/38/a0/25/38a025fc4ca62f5b95b435e0b43e9169.jpg",
-        description: 'To us, quality, safety and innovation are just as important as — and integral parts of — every vehicle that drives out of our plants. So, when you join the Chevrolet family, youre really joining a 100-year-old practice of protection, caring for others and evolving technology.',
-        phoneNumber: '123-456-7890',
-        name: 'Chevrolet',
-        announcementNumber: 10
+      imgSrc:
+        "https://i.pinimg.com/736x/38/a0/25/38a025fc4ca62f5b95b435e0b43e9169.jpg",
+      description:
+        "To us, quality, safety and innovation are just as important as — and integral parts of — every vehicle that drives out of our plants. So, when you join the Chevrolet family, youre really joining a 100-year-old practice of protection, caring for others and evolving technology.",
+      phoneNumber: "123-456-7890",
+      name: "Chevrolet",
+      announcementNumber: 10,
     },
-];
+  ];
+
+  const handleCardClick = (dealership) => {
+    console.log("Dealership clicked:", dealership);
+    // Click logic here (when card clicked)!!
+  };
+
   return (
     <Row className="wrapper">
       <Helmet>
@@ -133,15 +148,17 @@ const Dealerships = () => {
               scrollThreshold={0.6}
             >
               <div className="dealership-cards-container">
-              {ann.map((announcement, index) => (
-                    <DealershipCard
-                        key={index}
-                        imgSrc={announcement.imgSrc}
-                        description={announcement.description}
-                        phoneNumber={announcement.phoneNumber}
-                        name={announcement.name}
-                        announcementNumber={announcement.announcementNumber}
-                    />
+                {ann.map((announcement, index) => (
+                  <DealershipCard
+                    key={index}
+                    imgSrc={announcement.imgSrc}
+                    description={announcement.description}
+                    phoneNumber={announcement.phoneNumber}
+                    name={announcement.name}
+                    announcementNumber={announcement.announcementNumber}
+                    isOfficial={announcement.isOfficial}
+                    onClick={handleCardClick}
+                  />
                 ))}
               </div>
             </InfiniteScroll>
@@ -161,16 +178,18 @@ const Dealerships = () => {
           >
             <div className="dealership-cards-container">
               {ann.map((announcement, index) => (
-                    <DealershipCard
-                        key={index}
-                        imgSrc={announcement.imgSrc}
-                        description={announcement.description}
-                        phoneNumber={announcement.phoneNumber}
-                        name={announcement.name}
-                        announcementNumber={announcement.announcementNumber}
-                    />
-                ))}
-              </div>
+                <DealershipCard
+                  key={index}
+                  imgSrc={announcement.imgSrc}
+                  description={announcement.description}
+                  phoneNumber={announcement.phoneNumber}
+                  name={announcement.name}
+                  announcementNumber={announcement.announcementNumber}
+                  isOfficial={announcement.isOfficial}
+                  onClick={handleCardClick}
+                />
+              ))}
+            </div>
           </InfiniteScroll>
         </div>
       </div>
