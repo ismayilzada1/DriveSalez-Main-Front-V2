@@ -2,9 +2,9 @@ import React, { useState,useEffect } from 'react';
 import './ChangePassword.css';
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
-import {resetPassword} from "../../../Store/Auth/authActions";
-import Logo from "../../../components/ui/Logo";
-import {changePassword} from "../../../Store/Account/AccountActions";
+import {resetPassword} from "../../../../Store/Auth/authActions";
+import Logo from "../../../../components/ui/Logo";
+import {changePassword} from "../../../../Store/Account/AccountActions";
 import {useTranslation} from "react-i18next";
 
 const ChangePassword = () => {
@@ -82,7 +82,7 @@ const ChangePassword = () => {
     return(
         <div className="wrapper">
             <div className="main-auth-page">
-                <Logo size="80px" />
+                <Logo size="190px" />
                 <div className="clip-board">
                     <div className="container">
                         <div className="row auth-details-card">

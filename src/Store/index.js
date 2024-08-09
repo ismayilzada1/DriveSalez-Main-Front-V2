@@ -5,9 +5,10 @@ import storage from 'redux-persist/lib/storage'
 import persistReducer from "redux-persist/es/persistReducer";
 import authReducer from "./Auth/AuthSlice"
 import announcementReducer from "./Announcement/AnnouncementSlice"
+import themeReducer from "./Theme/ThemeSlice"
 
 const reducers=combineReducers(
-    {auth:authReducer,announcement:announcementReducer}
+    {auth:authReducer,announcement:announcementReducer,theme:themeReducer}
 );
 
 const config={

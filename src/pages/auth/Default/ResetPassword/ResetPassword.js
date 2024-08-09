@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Logo from '../../../components/ui/Logo';
-import Service from "../../../api-services/AuthService";
+import Logo from '../../../../components/ui/Logo';
+import Service from "../../../../api-services/AuthService";
 import { useNavigate } from 'react-router-dom';
 import {useDispatch, useSelector} from "react-redux";
-import {resetPassword} from "../../../Store/Auth/authActions";
+import {resetPassword} from "../../../../Store/Auth/authActions";
 import {useTranslation} from "react-i18next";
 
 const ResetPassword=()=> {
@@ -56,7 +56,7 @@ const ResetPassword=()=> {
     return(
         <div className="wrapper">
             <div className="main-auth-page">
-                <Logo size="80px" />
+                <Logo size="190px" />
                 <div className="clip-board">
                     <div className="container">
                         <div className="row auth-details-card">

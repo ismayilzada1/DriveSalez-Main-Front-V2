@@ -95,6 +95,7 @@
 
   "nav.signUp": "Регистрация",
   "nav.createAccount": "Создайте свой DriveSalez аккаунт.",
+  "nav.createAccountBusiness": "Создайте свой DriveSalez Бизнес-аккаунт.",
   "nav.firstName": "Имя",
   "nav.lastName": "Фамилия",
   "nav.phoneNo": "Номер телефона",
@@ -111,7 +112,8 @@
   "nav.forgotPassword": "Забыли пароль",
   "nav.dontHaveAnAccount": "Нет аккаунта",
   "nav.clickHereToSignUp": "Нажмите здесь, чтобы зарегистрироваться",
-
+  "nav.areyouabusinessowner": "Вы владелец бизнеса?",
+  "nav.businessAccount": "Бизнес-аккаунт",
 
 
   "fuelType": "Тип топлива",
@@ -199,5 +201,13 @@
   "find": "Найти",
   "enter_announcement_id": "Введите номер объявления...",
   "makeInactive": "Сделать неактивным",
-  "makeActive": "Сделать активным"
+  "makeActive": "Сделать активным",
+  "dealerships": "Автосалоны",
+  "officialRepresentatives": "ОФИЦИАЛЬНЫЕ ПРЕДСТАВИТЕЛИ",
+  "Call":"Позвони",
+  "Visit salon":"Перейти в салон",
+  "announcements":"объявлений",
+  "Official":"Официальный"
+
+
 }

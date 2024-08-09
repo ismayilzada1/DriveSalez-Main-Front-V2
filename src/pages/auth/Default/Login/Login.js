@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import Logo from '../../../components/ui/Logo';
+import Logo from '../../../../components/ui/Logo';
 import './Login.css';
 import {useNavigate} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
-import {loginUser} from '../../../Store/Auth/authActions';
+import {loginUser} from '../../../../Store/Auth/authActions';
 import {useTranslation} from "react-i18next";
 import {Helmet} from "react-helmet";
 
@@ -62,7 +62,7 @@ const Login = () => {
                     <li className="nav-item dropdown">
                         <a href="#" className="search-toggle nav-link" id="flagDropdown"
                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src={`../assets/images/flag/flag-${i18n.language}.png`} className="img-fluid"
+                            <img src={`../../assets/images/flag/flag-${i18n.language}.png`} className="img-fluid"
                                  alt="user" style={{height: '30px', minWidth: '30px', width: '30px'}}/>
                             <span className="bg-primary"></span>
                         </a>
@@ -109,7 +109,7 @@ const Login = () => {
                 </ul>
             </div>
             <div className="main-auth-page">
-                <Logo size="80px"/>
+                <Logo size="190px"/>
                 <div className="clip-board">
                     <div className="container">
                         <div className="row auth-details-card">
@@ -174,7 +174,7 @@ const Login = () => {
                                                         </div>
                                                     </div>
                                                     <div className="form-group">
-                                                        <a href="/auth/forgot-password">{t("nav.forgotPassword")}?</a>
+                                                        <a href="/auth/Default/forgot-password">{t("nav.forgotPassword")}?</a>
                                                     </div>
                                                 </div>
                                                 <div className="text-center">
@@ -200,8 +200,13 @@ const Login = () => {
                                             <div className="new-account mt-3 text-center">
                                                 <p>
                                                     {t("nav.dontHaveAnAccount")}?{' '}
-                                                    <a className="" href="/auth/Register">
+                                                    <a className="" href="/auth/Default/Register">
                                                         {t("nav.clickHereToSignUp")}
+                                                    </a>
+                                                </p>
+                                                <p>
+                                                    <a className="" href="/auth/Business/Login">
+                                                        {t("nav.areyouabusinessowner")}?{' '}
                                                     </a>
                                                 </p>
                                             </div>
@@ -328,7 +333,7 @@ const Login = () => {
                             <div className="new-account mt-3 text-center">
                                 <p>
                                     {t("nav.dontHaveAnAccount")}?{' '}
-                                    <a className="" href="/auth/Register">
+                                    <a className="" href="/auth/Default/Register">
                                         {t("nav.clickHereToSignUp")}
                                     </a>
                                 </p>

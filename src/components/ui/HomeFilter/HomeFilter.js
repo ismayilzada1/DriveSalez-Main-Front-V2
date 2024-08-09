@@ -538,7 +538,7 @@ const HomeFilter = () => {
             <section className="featured-places mb-2">
                 <Row className="container">
                     <Form onSubmit={search}>
-                        <Row id={'Home-filter'}>
+                        <Row id={'Dealerships-filter'}>
                             <Col lg={3}  md={4} sm={6} xs={6}>
                                 <CustomDropdown
                                     mainLabel={t('mainLabelMake')}
@@ -845,7 +845,7 @@ const HomeFilter = () => {
                                         <Button
                                             className='border-0 pe-4 ps-4 mt-auto '
                                             style={{
-                                                backgroundColor: isBarterFilter ? 'rgb(255, 85, 10)' : 'rgb(200, 200, 200)',
+                                                backgroundColor: isBarterFilter ? 'rgb(209, 53, 57)' : 'rgb(200, 200, 200)',
                                                 color: isBarterFilter ? 'white' : 'black',
                                             }}
                                             onClick={handleIsBarterFilterToggle}
@@ -856,7 +856,7 @@ const HomeFilter = () => {
                                         <Button
                                             className='border-0 ms-2 pe-4 ps-4 mt-auto'
                                             style={{
-                                                backgroundColor: isOnCreditFilter ? 'rgb(255, 85, 10)' : 'rgb(200, 200, 200)',
+                                                backgroundColor: isOnCreditFilter ? 'rgb(209, 53, 57' : 'rgb(200, 200, 200)',
                                                 color: isOnCreditFilter ? 'white' : 'black',
                                             }}
                                             onClick={handleIsOnCreditFilterToggle}
@@ -877,14 +877,14 @@ const HomeFilter = () => {
 
 
                         <div className=" filter-search-buttons d-flex justify-content-end mt-3">
-                            <Button  className="btn round-btn text-white me-2" onClick={clearForm}>
+                            <Button  className="btn round-btn text-white me-2 clear-btn-filter" onClick={clearForm}>
                                 <i className="fas fa-broom"></i>
                             </Button>
                             {/*<Button variant="primary" className="me-2" onClick={toggleDetails}>*/}
                             {/*    {showDetails ? 'Less Filters ↑' : 'More Filters ↓'}*/}
                             {/*</Button>*/}
 
-                            <Button variant="primary" className="me-2 p-2" onClick={toggleDetails}>
+                            <Button variant="primary" className="me-2 p-2 show-details-btn-filter" onClick={toggleDetails}>
                                     {showDetails ?
                                         <svg width="32" className={"icon-filter-search-btn"} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path opacity="0.4" d="M2 12C2 6.485 6.486 2 12 2C17.514 2 22 6.485 22 12C22 17.514 17.514 22 12 22C6.486 22 2 17.514 2 12Z" fill="currentColor"></path>
@@ -898,7 +898,7 @@ const HomeFilter = () => {
                                     }
                             </Button>
 
-                            <Button variant='primary' type="submit"  className="border-2">
+                            <Button variant='primary' type="submit"  className="border-2 search-btn-filter">
                                 {t('search')}
                                 <svg className='ms-2 icon-filter-search-btn' style={{color:'whitesmoke'}} width="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <ellipse cx="10.5992" cy="10.6532" rx="8.59922" ry="8.65324" fill="currentColor"></ellipse>

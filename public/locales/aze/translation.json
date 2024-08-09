@@ -95,6 +95,7 @@
 
   "nav.signUp": "Qeydiyyat",
   "nav.createAccount": "DriveSalez Hesabınızı Yaradın.",
+  "nav.createAccountBusiness": "DriveSalez Biznes Hesabınızı Yaradın.",
   "nav.firstName": "Ad",
   "nav.lastName": "Soyad",
   "nav.phoneNo": "Telefon Nömrəsi",
@@ -111,6 +112,9 @@
   "nav.forgotPassword": "Şifrəmi unuttum",
   "nav.dontHaveAnAccount": "Hesabınız yoxdur?",
   "nav.clickHereToSignUp": "Qeydiyyat üçün buraya basın",
+  "nav.areyouabusinessowner": "Siz biznes sahibisiniz?",
+  "nav.businessAccount": "Biznes Hesabı",
+
 
   "fuelType": "Yanacaq növü",
   "year": "İl",
@@ -198,5 +202,12 @@
   "find": "Tapmaq",
   "enter_announcement_id": "Elan Nömrəsini Daxil Edin...",
   "makeInactive": "Deaktiv Edin",
-  "makeActive": "Aktiv Edin"
+  "makeActive": "Aktiv Edin",
+  "dealerships": "Salonlar",
+  "officialRepresentatives": "RƏSMİ NÜMAYƏNDƏLƏR",
+  "Call":"Zəng et",
+  "Visit salon":"Salona keç",
+  "announcements":"elan",
+  "Official":"Rəsmi"
+
 }

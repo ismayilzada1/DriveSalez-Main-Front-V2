@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from "react";
 import "./ForgotPassword.css";
-import Logo from "../../../components/ui/Logo";
-import Service from "../../../api-services/OtpService";
+import Logo from "../../../../components/ui/Logo";
+import Service from "../../../../api-services/OtpService";
 import {useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {sendOtp, verifyEmail} from "../../../Store/Auth/authActions";
+import {sendOtp, verifyEmail} from "../../../../Store/Auth/authActions";
 
 const ForgotPassword = () => {
     const dispatch = useDispatch();
@@ -41,7 +41,7 @@ const ForgotPassword = () => {
     return (
             <div className="wrapper">
                 <div className="main-auth-page">
-                    <Logo size="80px" />
+                    <Logo size="190px" />
                     <div className="clip-board">
                         <div className="container">
                             <div className="row auth-details-card">

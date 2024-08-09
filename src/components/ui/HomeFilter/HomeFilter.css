@@ -4,6 +4,34 @@
     }
 }
 
+.clear-btn-filter,
+.show-details-btn-filter,
+.search-btn-filter{
+    background-color: #D13539;
+    border-color:#D13539
+}
+.clear-btn-filter:hover,
+.show-details-btn-filter:hover,
+.search-btn-filter:hover{
+    background-color: #ea3035;
+    border-color:#ea3035
+}
+
+.dropdown-item.active,
+.dropdown-item:active{
+    background-color: #D13539;
+    color:white;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus
+{
+    color:#D63338 ;
+    background-color: transparent;
+}
+
+
+
 
 @media (max-width: 767px) {
     .custom-dropdown {

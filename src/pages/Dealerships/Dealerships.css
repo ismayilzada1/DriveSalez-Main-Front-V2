@@ -10,7 +10,10 @@
     max-width: 4.5rem;
 }
 
-
+.pt-3{
+    display: flex;
+    flex-direction: column;
+}
 
 .form-check{
     margin-left:5px;
@@ -26,7 +29,7 @@
 }
 
 .custom-dropdown{
-    background-color: #D13539 !important;
+    background-color: #f6542c !important;
     border:0;
 }
 
@@ -35,7 +38,7 @@
 }
 
 .regular-announcements-container{
-    border-top:2px solid #d3d3d3;
+    border-top:0 solid ;
 
 }
 
@@ -52,5 +55,18 @@
     .announcement-cards-container{
         justify-content: center !important;
     }
+}
+
+.dealership-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+    padding: 18px 0 0 0;
+}
+
+.dealership-card {
+    flex: 1 1 calc(50% - 16px);
+    max-width: calc(50% - 16px);
+    box-sizing: border-box;
 }
 
