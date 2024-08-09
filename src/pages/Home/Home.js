@@ -167,11 +167,11 @@ const Home = () => {
       {/*    </div>*/}
       {/*</div>*/}
 
-      {cars.map((car) => (
+       {cars.map((car) => (
         <div className="col-lg-3 mb-2" key={car.id}>
           <AnnouncementCard {...car} />
         </div>
-      ))}
+      ))} 
     </Row>
   );
 };

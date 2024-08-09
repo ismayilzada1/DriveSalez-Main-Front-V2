@@ -125,7 +125,61 @@
   background: rgba(1, 0, 0, 0.2);
 }
 
-@media (max-width: 1000px) {
+
+
+@media (max-width: 1400px) {
+  .mainCard {
+    display: flex;
+    flex-direction: row;
+    width: 49%;
+    height: 9em;
+    border: 2px solid rgba(1, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+  .imgContainer {
+    width: 25%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  
+  .dataContainer {
+    width: 75%;
+    height: 100%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 1200px) {
+  .mainCard {
+    display: flex;
+    flex-direction: row;
+    width: 48%;
+    height: 9em;
+    border: 2px solid rgba(1, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+  .imgContainer {
+    width: 30%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  
+  .dataContainer {
+    width: 70%;
+    height: 100%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 990px) {
   .mainCard {
     display: flex;
     flex-direction: row;
