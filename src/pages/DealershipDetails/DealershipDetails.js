@@ -17,6 +17,7 @@ import {
     setFilterParams,
     setPageNumber,
 } from "../../Store/Announcement/AnnouncementSlice";
+import {useTranslation} from "react-i18next";
 
 const DealershipDetails = () => {
     const dispatch = useDispatch();
@@ -97,6 +98,9 @@ const DealershipDetails = () => {
         id: index + 1, // Unique ID for each car
     }));
 
+
+    const{t}=useTranslation();
+
     return (
         <Row className="wrapper">
             <Helmet>
@@ -110,7 +114,11 @@ const DealershipDetails = () => {
             </Helmet>
 
 
-
+            <div className={"d-flex  align-items-center mb-3 mt-3"}>
+                <a href="/dealerships" className={"blue-link"}>{t("dealerships")}</a>
+                <span className="divider">•</span>
+                <p className={"p-0 m-0"}>Prestige Auto</p>
+            </div>
 
             <div className="dealership-details-card container">
 
