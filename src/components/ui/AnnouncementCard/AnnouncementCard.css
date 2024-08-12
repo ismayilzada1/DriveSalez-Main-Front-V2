@@ -8,9 +8,7 @@
   height: 200px;
 }
 
-.announcement-card-body {
-  min-height: 150px;
-}
+
 
 .tall-image {
   height: 180px;
@@ -44,7 +42,7 @@
   height: 1.7em;
   width: 2em;
   position: absolute;
-  top: 45%;
+  top: 44%;
   left: 2%;
   bottom: 0;
   z-index: 990009;
@@ -112,6 +110,12 @@
   margin-right: 10px;
 }
 
+
+/*.announcement-card-body {*/
+/*    min-height: 150px;*/
+/*  }*/
+
+
 @media screen and (max-width: 1440px) {
   .announcement-card {
     min-width: 300px;
@@ -123,8 +127,10 @@
     height: 160px;
   }
   .vin-code-icon {
-    top: 45% ;
+    top: 40% ;
   }
+
+
 }
 
 @media screen and (max-width: 1400px) {
@@ -134,7 +140,7 @@
   }
 
   .vin-code-icon {
-    top: 48% ;
+    top: 38% ;
   }
   .card-body {
     padding: 1rem 1rem;
@@ -186,8 +192,8 @@
     font-size:1.1em  !important;
   }
   .vin-code-icon {
-    font-size: 0.8em;
-    top: 62% ;
+    font-size: 1em;
+    top: 54%;
   }
 
   .barter-and-credit-icon {
@@ -218,7 +224,7 @@
 @media screen and (max-width: 991px){
   .vin-code-icon {
     font-size: 0.8em;
-    top: 53% !important;
+    top: 47% ;
   }
   .announcement-card {
     min-width: 200px !important;
@@ -226,6 +232,8 @@
 
   }
 }
+
+
 
 @media screen and (max-width: 512px) {
   .announcement-card {
@@ -260,8 +268,9 @@
   }
 
   .vin-code-icon {
-    font-size: 0.7em !important;
-    top: 30% !important;
+    font-size: 0.9em;
+    top: 45% ;
+    border-radius: 30%;
   }
 
   .barter-and-credit-icon {
@@ -309,7 +318,7 @@
   }
 
   .vin-code-icon {
-    top: 30%!important;
+    top: 40% ;
   }
 
   .barter-and-credit-icon {
@@ -367,7 +376,7 @@
 
   .vin-code-icon {
     font-size: 0.8em;
-    top: 43% !important;
+    top: 38%;
   }
   .card-img-top {
     object-fit: cover;
@@ -377,13 +386,22 @@
 }
 
 @media  screen and (max-width: 440px) {
-  .announcement-card {
-    height: 88.5% !important;
-    margin-bottom:-45px !important;
+  .announcement-card-body {
+    min-height: 85px ;
   }
   .vin-code-icon {
     font-size: 0.8em;
-    top: 43.6% !important;
+    top: 42% ;
+    border-radius: 20%;
+  }
+
+}
+
+@media  screen and (max-width: 400px) {
+  .vin-code-icon {
+    font-size: 0.8em;
+    top: 40% ;
+    border-radius: 20%;
   }
 
 }
