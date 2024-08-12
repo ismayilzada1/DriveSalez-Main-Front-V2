@@ -33,6 +33,10 @@
 
 
 
+.divider {
+ padding: 0 10px;
+ color: #626161;
+}
 
 
 @media (max-width: 768px) {

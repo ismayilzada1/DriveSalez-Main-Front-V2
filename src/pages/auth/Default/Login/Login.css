@@ -11,3 +11,11 @@
     z-index: 999; /* Ensure it's on top of other content */
 }
 
+
+
+.auth-details-card{
+    height: 90vh !important;
+}
+.clip-board{
+    height: 90vh !important;
+}

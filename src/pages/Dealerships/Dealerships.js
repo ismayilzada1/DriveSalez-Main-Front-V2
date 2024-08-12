@@ -65,7 +65,7 @@ const Dealerships = () => {
     // }
 
     return (
-        <Row className="wrapper">
+        <Row className="wrapper dealerships-container">
 
             <Helmet>
                 <title>Drivesalez - Dealerships</title>
