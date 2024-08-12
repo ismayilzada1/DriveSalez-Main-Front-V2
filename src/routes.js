@@ -65,7 +65,7 @@ const routes=[
             {
                 path:'new-announcement',
                 element:<NewAnnouncement/>,
-                // auth:true
+                // auth:false
             },
             {
                 path:'AnnouncementDetails/:id',
@@ -78,17 +78,17 @@ const routes=[
             {
                 path:'profile',
                 element:<Profile/>,
-                auth:true
+                auth:false
             },
             {
                 path:'updateAccount',
                 element:<UpdateAccount/>,
-                auth:true
+                auth:false
             },
             {
                 path:'AnnouncementDetailsUserProfile/:id',
                 element:<AnnouncementDetailsUserProfile/>,
-                auth:true
+                auth:false
             },
 
         ]
@@ -125,7 +125,7 @@ const routes=[
             {
                 path:'changePassword',
                 element:<ChangePassword/>,
-                auth:true
+                auth:false
             },
         ]
     },
