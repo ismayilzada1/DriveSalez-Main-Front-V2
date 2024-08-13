@@ -14,3 +14,27 @@
     }
 
 }
+
+.custom-edit-btn{
+    background-color: white;
+    border-radius: 100% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-width:0;
+    transition: .15s ease-in-out;
+}
+
+.custom-edit-btn-icon{
+    color: #524a4a;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+.custom-edit-btn:hover{
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.15);
+}
+
