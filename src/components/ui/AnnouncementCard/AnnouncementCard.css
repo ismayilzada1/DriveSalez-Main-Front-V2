@@ -21,7 +21,7 @@
   height: 3em;
   width: 3em;
   position: absolute;
-  top: 27%;
+  top: 40%;
   bottom: 0;
   right: 1%;
   z-index: 990009;
@@ -33,6 +33,9 @@
   font-size: 1.4em !important;
   background-color: antiquewhite;
   padding: 0 4px;
+
+
+
 }
 
 .vin-code-icon {
@@ -82,12 +85,7 @@
   padding: 2px 5px 2px 6px;
 }
 
-@media (max-width: 768px) {
-  .premium-announcement-icon i {
-    font-size: 1.2em !important;
-  }
 
-}
 
 .announcement-card {
   cursor: pointer;
@@ -127,8 +125,13 @@
     height: 160px;
   }
   .vin-code-icon {
-    top: 40% ;
+    /* top: 40% ; */
+    top:41%;
   }
+  .premium-announcement-icon{
+    top: 37% ;
+  }
+
 
 
 }
@@ -140,8 +143,12 @@
   }
 
   .vin-code-icon {
-    top: 38% ;
+    top: 44% ;
   }
+  .premium-announcement-icon{
+    top: 39% ;
+  }
+
   .card-body {
     padding: 1rem 1rem;
   }
@@ -193,8 +200,12 @@
   }
   .vin-code-icon {
     font-size: 1em;
-    top: 54%;
+    top: 58%;
   }
+  .premium-announcement-icon{
+    top:55% ;
+  }
+
 
   .barter-and-credit-icon {
     top: -6px;
@@ -224,7 +235,10 @@
 @media screen and (max-width: 991px){
   .vin-code-icon {
     font-size: 0.8em;
-    top: 47% ;
+    top: 51% ;
+  }
+  .premium-announcement-icon{
+    top: 46% ;
   }
   .announcement-card {
     min-width: 200px !important;
@@ -232,7 +246,56 @@
 
   }
 }
+.details-row {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5%;
+}
+.value{
+  font-size: medium;
+  color: #707070;
+}
+@media (max-width: 768px) {
+  .premium-announcement-icon i {
+    font-size: 1.2em !important;
+  }
 
+}
+
+@media screen and (max-width: 765px) {
+  .announcement-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .col-lg-3 {
+    flex: 0 0 50%; 
+    max-width: 50%;
+  }
+
+  .announcement-card {
+    height: 79% !important;
+  }
+  .card-title {
+    font-size: 1.4em;
+  }
+
+  .vin-code-icon {
+    font-size: 0.8em;
+    /* top: 38%; */
+    top: 42%;
+  }
+  .premium-announcement-icon{
+    top: 36% ;
+  }
+
+  .card-img-top {
+    object-fit: cover;
+    height: 70%;
+  }
+  
+}
 
 
 @media screen and (max-width: 512px) {
@@ -261,7 +324,7 @@
   }
 
   .premium-announcement-icon {
-    top: 23%;
+    top: 42%;
   }
   .premium-announcement-icon i {
     font-size: 1em !important;
@@ -269,9 +332,11 @@
 
   .vin-code-icon {
     font-size: 0.9em;
-    top: 45% ;
+    /* top: 45% ; */
+    top: 47%;
     border-radius: 30%;
   }
+
 
   .barter-and-credit-icon {
     left: -3px;
@@ -281,6 +346,36 @@
   .barter-and-credit-icon .percent-icon {
     font-size: 0.7em !important;
   }
+
+}
+
+
+@media  screen and (max-width: 500px) {
+
+  .vin-code-icon {
+    font-size: 0.8em;
+    /* top: 42% ; */
+    top: 52%;
+    border-radius: 20%;
+  }
+  .premium-announcement-icon {
+    top: 47%;
+  }
+
+
+}
+@media  screen and (max-width: 480px) {
+
+  .vin-code-icon {
+    font-size: 0.8em;
+    /* top: 42% ; */
+    top: 50%;
+    border-radius: 20%;
+  }
+  .premium-announcement-icon {
+    top: 44%;
+  }
+
 
 }
 
@@ -310,7 +405,7 @@
   }
 
   .premium-announcement-icon {
-    top: 20%;
+    top: 43%;
   }
 
   .premium-announcement-icon i {
@@ -318,7 +413,9 @@
   }
 
   .vin-code-icon {
-    top: 40% ;
+    /* top: 40% ; */
+    top: 48% ;
+
   }
 
   .barter-and-credit-icon {
@@ -344,64 +441,62 @@
 
 
 }
-
-.details-row {
-  display: flex;
-  flex-direction: row;
-  gap: 1.5%;
-}
-.value{
-  font-size: medium;
-  color: #707070;
-}
-
-@media screen and (max-width: 765px) {
-  .announcement-cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .col-lg-3 {
-    flex: 0 0 50%; 
-    max-width: 50%;
-  }
-
-  .announcement-card {
-    height: 79% !important;
-  }
-  .card-title {
-    font-size: 1.4em;
-  }
-
-  .vin-code-icon {
-    font-size: 0.8em;
-    top: 38%;
-  }
-  .card-img-top {
-    object-fit: cover;
-    height: 70%;
-  }
-  
-}
-
 @media  screen and (max-width: 440px) {
   .announcement-card-body {
     min-height: 85px ;
   }
   .vin-code-icon {
     font-size: 0.8em;
-    top: 42% ;
+    /* top: 42% ; */
+    top: 47%;
     border-radius: 20%;
   }
+  .premium-announcement-icon {
+    top: 41%;
+  }
+
+
+}
+@media  screen and (max-width: 430px) {
+  .vin-code-icon {
+    font-size: 0.8em;
+    /* top: 40% ; */
+    top: 45% ;
+
+    border-radius: 20%;
+  }
+  .premium-announcement-icon {
+    top: 39%;
+  }
+
+
+}
+@media  screen and (max-width: 415px) {
+  .vin-code-icon {
+    font-size: 0.8em;
+    /* top: 40% ; */
+    top: 44% ;
+
+    border-radius: 20%;
+  }
+  .premium-announcement-icon {
+    top: 38%;
+  }
+
 
 }
 
 @media  screen and (max-width: 400px) {
   .vin-code-icon {
     font-size: 0.8em;
-    top: 40% ;
+    /* top: 40% ; */
+    top: 42% ;
+
     border-radius: 20%;
   }
+  .premium-announcement-icon {
+    top: 36%;
+  }
+
 
 }
