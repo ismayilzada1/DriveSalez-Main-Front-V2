@@ -1,6 +1,10 @@
 import React from 'react';
+import {useSelector} from "react-redux";
 
 const Logo = ({ size }) => {
+
+
+    const theme = useSelector((state) => state.theme.theme);
 
     const logoStyle = {
         backgroundColor: 'transparent',
@@ -12,7 +16,7 @@ const Logo = ({ size }) => {
     return (
         <a href={'/'}>
             <img
-                src="/assets/images/logo_black.png"
+                src={theme === 'dark' ? '/assets/images/logo_white.png' : '/assets/images/logo_black.png' }
                 style={logoStyle}
                 className="img-fluid"
                 alt=""
