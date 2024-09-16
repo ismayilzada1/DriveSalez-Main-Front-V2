@@ -156,12 +156,16 @@ const Header = () => {
         }
     }
 
+    const handleDealershipsButton = async () => {
+        setActiveLink("dealerships");
+    }
 
 
     const [activeLink, setActiveLink] = useState('home');
 
     const handleNavLinkClick = (link) => {
         setActiveLink(link);
+        console.log(activeLink);
     };
 
     const [isLightThemeChecked, setIsLightThemeChecked] = useState(true);
@@ -171,15 +175,13 @@ const Header = () => {
 
 
     const handleDarkLightToggle = () => {
-        console.log(theme);
         dispatch(toggleTheme());
         setIsLightThemeChecked(!isLightThemeChecked);
-        console.log(theme);
     };
 
     return (
 
-        <nav className="nav navbar navbar-expand-lg iq-navbar rounded" >
+        <nav className={`nav navbar navbar-expand-lg iq-navbar rounded ${theme === 'dark' ? 'dark-mode-bg' : ''}`}>
 
             <div className="container w-100 navbar-inner">
 
@@ -198,21 +200,22 @@ const Header = () => {
 
 
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        data-bs-target={theme === 'dark' ? '#navbarSupportedContent-dark' : '#navbarSupportedContent'}
+                        aria-controls={theme === 'dark' ? 'navbarSupportedContent-dark' : 'navbarSupportedContent'}
                         aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon">
-                  <span className="navbar-toggler-bar bar1 mt-2"></span>
-                  <span className="navbar-toggler-bar bar2"></span>
-                  <span className="navbar-toggler-bar bar3"></span>
+                  <span className={`${theme === 'dark' ? 'navbar-toggler-bar-light' : ''} navbar-toggler-bar bar1 mt-2`}></span>
+                  <span className={`${theme === 'dark' ? 'navbar-toggler-bar-light' : ''} navbar-toggler-bar bar2`}></span>
+                  <span className={`${theme === 'dark' ? 'navbar-toggler-bar-light' : ''} navbar-toggler-bar bar3`}></span>
                 </span>
                 </button>
 
-                <div className="collapse navbar-collapse rounded" id="navbarSupportedContent">
+                    <div className={`collapse navbar-collapse rounded `} id={`${theme === 'dark' ? 'navbarSupportedContent-dark' : 'navbarSupportedContent'}`}>
 
-                    <ul className="navbar-nav ms-auto align-items-center navbar-list mb-2 mb-lg-0">
+                    <ul className={`navbar-nav ms-auto align-items-center navbar-list mb-2 mb-lg-0`}>
 
 
-                        <li className={`nav-item d-none d-lg-block me-3`}>
+                        <li className={"nav-item d-none d-lg-block me-3"}>
 
                             <div className="w-100 d-flex justify-content-center">
                                 <div className="checkbox d-flex align-items-center justify-content-center">
@@ -226,24 +229,24 @@ const Header = () => {
                         </li>
 
 
-                        <li className={`nav-item d-none d-lg-block me-3 ${activeLink === 'home' ? 'active' : ''}`}>
+                        <li className={`d-none d-lg-block me-3 ${theme === 'dark' ? 'nav-item-dark' : 'nav-item'} ${activeLink === 'home' ? 'active' : ''}`}>
                             <NavLink exact to="/" onClick={handleHomeButton} className="nav-link"
                                      activeclassname="active">
                                 {t('home')}
                             </NavLink>
                         </li>
-                        <li className={`nav-item d-none d-lg-block me-3 ${activeLink === 'dealerships' ? 'active' : ''}`}>
-                            <NavLink to="/dealerships"  className="nav-link" activeclassname="active">
+                        <li className={`${theme === 'dark' ? 'nav-item-dark' : 'nav-item'} d-none d-lg-block me-3 ${activeLink === 'dealerships' ? 'active' : ''}`}>
+                            <NavLink to="/dealerships" onClick={handleDealershipsButton}  className="nav-link" activeclassname="active">
                                 {t('dealerships')}
                             </NavLink>
                         </li>
-                        <li className={`nav-item d-none d-lg-block me-3 ${activeLink === 'motorcycle' ? 'active' : ''}`}>
+                        <li className={`${theme === 'dark' ? 'nav-item-dark' : 'nav-item'} d-none d-lg-block me-3 ${activeLink === 'motorcycle' ? 'active' : ''}`}>
                             <NavLink exact to="/" className="nav-link" onClick={handleMotorcycleButton}
                                      activeclassname="active">
                                 {t('motorcycles')}
                             </NavLink>
                         </li>
-                        <li className={`nav-item d-none d-lg-block me-3 ${activeLink === 'truck' ? 'active' : ''}`}>
+                        <li className={`${theme === 'dark' ? 'nav-item-dark' : 'nav-item'} d-none d-lg-block me-3 ${activeLink === 'truck' ? 'active' : ''}`}>
                             <NavLink to="/" onClick={handleTruckButton} className="nav-link" activeclassname="active">
                                 {t('trucks')}
                             </NavLink>
@@ -252,8 +255,9 @@ const Header = () => {
 
                         <li className="nav-item dropdown d-lg-none position-relative">
                             <div className="w-100 d-flex justify-content-center">
-                                <div className="checkbox">
-                                    <input type="checkbox" id="cbx" style={{display: "none"}}/>
+                                <div className="checkbox d-flex align-items-center justify-content-center">
+                                    <input type="checkbox" id="cbx" checked={isLightThemeChecked}
+                                           onClick={handleDarkLightToggle} style={{display: "none"}}/>
                                     <label htmlFor="cbx" className="toggle">
                                         <span></span>
                                     </label>
@@ -274,14 +278,14 @@ const Header = () => {
                                 <div className="card shadow-none m-0 border-0">
                                     <div className=" p-0 ">
                                         <ul className="list-group list-group-flush p-0">
-                                            <li className="iq-sub-card list-group-item"
+                                            <li className={`iq-sub-card  ${theme === 'dark' ? 'dark-mode-bg' : 'list-group-item'}`}
                                                 onClick={(e) => handleLanguageChange('en', e)}><a className="p-0"
                                                                                                   href="#"><img
                                                 src="../assets/images/flag/flag-en.png" alt="img-flaf"
                                                 className="img-fluid me-2"
                                                 style={{height: '30px', minWidth: '30px', width: '30px'}}/>English</a>
                                             </li>
-                                            <li className="iq-sub-card list-group-item"
+                                            <li className={`iq-sub-card  ${theme === 'dark' ? 'dark-mode-bg' : 'list-group-item'}`}
                                                 onClick={(e) => handleLanguageChange('aze', e)}><a className="p-0"
                                                                                                    href="#"><img
                                                 src="../assets/images/flag/flag-aze.png" alt="img-flaf"
@@ -290,14 +294,14 @@ const Header = () => {
                                                 minWidth: '30px',
                                                 width: '30px'
                                             }}/>Azerbaijani</a></li>
-                                            <li className="iq-sub-card list-group-item"
+                                            <li className={`iq-sub-card  ${theme === 'dark' ? 'dark-mode-bg' : 'list-group-item'}`}
                                                 onClick={(e) => handleLanguageChange('ru', e)}><a className="p-0"
                                                                                                   href="#"><img
                                                 src="../assets/images/flag/flag-ru.png" alt="img-flaf"
                                                 className="img-fluid me-2"
                                                 style={{height: '30px', minWidth: '30px', width: '30px'}}/>Russian</a>
                                             </li>
-                                            <li className="iq-sub-card list-group-item"
+                                            <li className={`iq-sub-card  ${theme === 'dark' ? 'dark-mode-bg' : 'list-group-item'}`}
                                                 onClick={(e) => handleLanguageChange('tr', e)}><a className="p-0"
                                                                                                   href="#"><img
                                                 src="../assets/images/flag/flag-tr.png" alt="img-flaf"
@@ -312,7 +316,7 @@ const Header = () => {
 
                         <li className="nav-item dropdown d-lg-none position-relative">
                             <a
-                                className="nav-link dropdown-toggle"
+                                className={`${theme === 'dark' ? 'dropdown-link-dark' : ''} nav-item nav-link dropdown-toggle`}
                                 href="#"
                                 id="navbarDropdown"
                                 role="button"
@@ -323,7 +327,7 @@ const Header = () => {
                             </a>
 
 
-                            <ul className="dropdown-menu mx-auto" aria-labelledby="navbarDropdown">
+                            <ul className={` ${theme === 'dark' ? 'dark-mode-bg' : ''} dropdown-menu mx-auto`} aria-labelledby="navbarDropdown">
                                 <li>
                                     <a className="dropdown-item" href="/">
                                         {t('home')}
@@ -468,7 +472,7 @@ const Header = () => {
                                 <li className='nav-item ms-2'>
                                     <button onClick={handleSignUpButton}
                                             className='btn btn-plus btn-square d-flex justify-content-center align-items-center'
-                                            style={{backgroundColor: '#DE303A', color: '#ffffff', border: 'none'}}>
+                                            style={{backgroundColor: '#DE303A', color: '#FFF1F5', border: 'none'}}>
                                         {isMobile ? <i className="fas fa-user"></i> : <><i
                                             className="fas fa-user me-2"></i>{t('sign_up')}</>}
                                     </button>

@@ -58,11 +58,7 @@ const AnnouncementCard = (props) => {
           />
         )}
 
-        {isPremium && (
-          <div className="premium-announcement-icon" title="Premium">
-            <i className="bi bi-gem"></i>
-          </div>
-        )}
+  
 
         <div className="barter-and-credit-icon">
           {barter && (
@@ -76,6 +72,12 @@ const AnnouncementCard = (props) => {
         {vinCode && (
           <div className="vin-code-icon" title="VIN CODE">
             VIN
+          </div>
+          
+        )}
+        {isPremium && (
+          <div className="premium-announcement-icon" title="Premium">
+            <i className="bi bi-gem"></i>
           </div>
         )}
 
