@@ -27,21 +27,18 @@ function App() {
         console.log("remember me yoxla, servere login request at eger ok dusa qalsin eger deyilse logout ele");
     }, []);
 
-    // useEffect(() => {
-    //     if (theme === 'dark') {
-    //         document.body.style.backgroundColor = '#121212';
-    //         document.body.style.color = '#e8e8e8';
-    //     } else {
-    //         document.body.style.backgroundColor = '#fff';
-    //         document.body.style.color = '#010101';
-    //     }
-    //
-    //     return () => {
-    //         document.body.style.backgroundColor = '';
-    //         document.body.style.color = '';
-    //         document.documentElement.style.backgroundColor = '';
-    //     };
-    // }, [theme]);
+    useEffect(() => {
+        if (theme === 'dark') {
+            document.body.classList.add('body-dark');
+            document.documentElement.classList.add('html-dark');
+        }
+        else{
+            document.body.classList.remove('body-dark');
+            document.documentElement.classList.remove('html-dark');
+        }
+
+
+    }, [theme]);
 
     return(
         <div className={`app-container ${getFontClass()}`}>

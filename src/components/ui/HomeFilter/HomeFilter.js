@@ -16,6 +16,7 @@ const HomeFilter = () => {
 
     const {  user } = useSelector((state) => state.auth);
     const { allAnnouncements,filterParams, loading, error } = useSelector((state) => state.announcement);
+    const theme = useSelector((state) => state.theme.theme);
 
     const dispatch = useDispatch();
 
@@ -500,7 +501,7 @@ const HomeFilter = () => {
     //version for closing all other dropdowns when one opens
     const CustomDropdown = ({ options, onChange, value, mainLabel, dataProperty, id, isOpen, onToggle }) => (
         <Form.Group controlId={`form${id}`}>
-            <Form.Label>{mainLabel}</Form.Label>
+            <Form.Label className={`${theme === 'dark' ? 'dark-theme-label' : ''}`}>{mainLabel}</Form.Label>
             <div className="dropdown">
                 <button
                     className="btn btn-secondary btn-md dropdown-toggle custom-dropdown"
@@ -554,7 +555,7 @@ const HomeFilter = () => {
 
                             <Col lg={3} md={4} sm={6} xs={6}>
                                 <Form.Group controlId="formModel">
-                                    <Form.Label>{t('labelVehicleModel')}</Form.Label>
+                                    <Form.Label className={`${theme === 'dark' ? 'dark-theme-label' : ''}`}>{t('labelVehicleModel')}</Form.Label>
                                     <DropDownSelectWithCheckboxes
                                         options={filteredVehicleModels}
                                         selectedValues={selectedValuesModels}
@@ -570,7 +571,7 @@ const HomeFilter = () => {
 
                             <Col lg={3} md={4} sm={6} xs={6}>
                                 <Form.Group controlId="formGearboxType">
-                                    <Form.Label>{t('labelGearboxType')}</Form.Label>
+                                    <Form.Label className={`${theme === 'dark' ? 'dark-theme-label' : ''}`}>{t('labelGearboxType')}</Form.Label>
                                     <DropDownSelectWithCheckboxes
                                         options={carGearboxTypes}
                                         selectedValues={selectedValuesGearboxTypes}
@@ -586,7 +587,7 @@ const HomeFilter = () => {
 
                             <Col lg={3} md={4} sm={6} xs={6}>
                                 <Form.Group controlId="formBodyType">
-                                    <Form.Label>{t('labelBodyType')}</Form.Label>
+                                    <Form.Label className={`${theme === 'dark' ? 'dark-theme-label' : ''}`}>{t('labelBodyType')}</Form.Label>
                                     <DropDownSelectWithCheckboxes
                                         options={carBodyTypes}
                                         selectedValues={selectedValuesBodyTypes}
@@ -618,7 +619,7 @@ const HomeFilter = () => {
 
                             <Col lg={3} md={4} sm={6} xs={6}>
                                 <Form.Group controlId="formBodyType">
-                                    <Form.Label>{t('labelFuelType')}</Form.Label>
+                                    <Form.Label className={`${theme === 'dark' ? 'dark-theme-label' : ''}`}>{t('labelFuelType')}</Form.Label>
                                     <DropDownSelectWithCheckboxes
                                         options={carFuelTypes}
                                         selectedValues={selectedValuesFuelTypes}
@@ -634,7 +635,7 @@ const HomeFilter = () => {
 
                             <Col lg={3} md={4} sm={6} xs={12}>
                                 <Form.Group controlId="formPrice">
-                                    <Form.Label>{t('labelPrice')}</Form.Label>
+                                    <Form.Label className={`${theme === 'dark' ? 'dark-theme-label' : ''}`}>{t('labelPrice')}</Form.Label>
                                     <div className="input-group input-group-rounded">
                                         <input type="number" value={selectedMinPrice} onChange={handleMinPriceChange} className="form-control triple-input" placeholder="Min" min='0' aria-label="Minimum Price" />
                                         <input type="number"  value={selectedMaxPrice} onChange={handleMaxPriceChange} className="form-control triple-input" placeholder="Max" min='0' aria-label="Maximum Price" />
@@ -651,7 +652,7 @@ const HomeFilter = () => {
 
                             <Col lg={3} md={4} sm={6} xs={12}>
                                 <Form.Group controlId="formMileage">
-                                    <Form.Label>{t('labelMileage')}</Form.Label>
+                                    <Form.Label className={`${theme === 'dark' ? 'dark-theme-label' : ''}`}>{t('labelMileage')}</Form.Label>
                                     <div className="input-group input-group-rounded">
                                         <input type="number" value={selectedMinMileage} onChange={handleMinMileage} className="form-control triple-input" placeholder="Min" min='0' aria-label="Minimum Mileage" />
                                         <input type="number" value={selectedMaxMileage} onChange={handleMaxMileage} className="form-control triple-input" placeholder="Max" min='0' aria-label="Maximum Mileage" />
@@ -674,7 +675,7 @@ const HomeFilter = () => {
 
                             <Col lg={3} md={4} sm={6} xs={6}>
                                 <Form.Group controlId="formSeats">
-                                    <Form.Label>{t('labelVehicleColor')}</Form.Label>
+                                    <Form.Label className={`${theme === 'dark' ? 'dark-theme-label' : ''}`}>{t('labelVehicleColor')}</Form.Label>
                                     <DropDownSelectWithCheckboxes
                                         options={carColors}
                                         selectedValues={selectedValuesColors}
@@ -721,7 +722,7 @@ const HomeFilter = () => {
 
                             <Col lg={3} md={4} sm={6} xs={6}>
                                 <Form.Group controlId="formBodyType">
-                                    <Form.Label>{t('labelMarketVersion')}</Form.Label>
+                                    <Form.Label className={`${theme === 'dark' ? 'dark-theme-label' : ''}`}>{t('labelMarketVersion')}</Form.Label>
                                     <DropDownSelectWithCheckboxes
                                         options={carMarketVersions}
                                         selectedValues={selectedValuesMarketVersion}
@@ -757,7 +758,7 @@ const HomeFilter = () => {
 
                                     <Col lg={3} md={4} sm={6} xs={6}>
                                         <Form.Group controlId="formWheelDrive">
-                                            <Form.Label>{t('labelWheelDrive')}</Form.Label>
+                                            <Form.Label className={`${theme === 'dark' ? 'dark-theme-label' : ''}`}>{t('labelWheelDrive')}</Form.Label>
                                             <DropDownSelectWithCheckboxes
                                                 options={carDriveTrainTypes}
                                                 selectedValues={selectedValuesDriveTrainType}
@@ -788,7 +789,7 @@ const HomeFilter = () => {
 
                                     <Col lg={3} md={4} sm={6}  xs={6}>
                                         <Form.Group controlId="formCity">
-                                            <Form.Label>{t('labelCity')}</Form.Label>
+                                            <Form.Label className={`${theme === 'dark' ? 'dark-theme-label' : ''}`}>{t('labelCity')}</Form.Label>
                                             <DropDownSelectWithCheckboxes
                                                 options={filteredCities}
                                                 selectedValues={selectedValuesCities}
@@ -821,7 +822,7 @@ const HomeFilter = () => {
 
                                     <Col lg={3} md={4} sm={6} xs={12}>
                                         <Form.Group controlId="formPrice">
-                                            <Form.Label>{t('labelHorsePower')}</Form.Label>
+                                            <Form.Label className={`${theme === 'dark' ? 'dark-theme-label' : ''}`}>{t('labelHorsePower')}</Form.Label>
                                             <div className="input-group input-group-rounded">
                                                 <input type="number"  value={selectedMinHorsePower} onChange={handleMinHorsePower} className="form-control triple-input" placeholder="Min" min='0' aria-label="Minimum" />
                                                 <input type="number"  value={selectedMaxHorsePower} onChange={handleMaxHorsePower} className="form-control triple-input" placeholder="Max" min='0' aria-label="Maximum" />
@@ -832,7 +833,7 @@ const HomeFilter = () => {
 
                                     <Col lg={3} md={4} sm={6} xs={12}>
                                         <Form.Group controlId="formEngineVolume">
-                                            <Form.Label>{t('labelEngineVolume')}</Form.Label>
+                                            <Form.Label className={`${theme === 'dark' ? 'dark-theme-label' : ''}`}>{t('labelEngineVolume')}</Form.Label>
                                             <div className="input-group input-group-rounded">
                                                 <input type="number"   value={selectedMinEngineVolume} onChange={handleMinEngineVolume} className="form-control triple-input" placeholder="Min" min='0' aria-label="Minimum" />
                                                 <input type="number" value={selectedMaxEngineVolume} onChange={handleMaxEngineVolume} className="form-control triple-input" placeholder="Max" min='0' aria-label="Maximum" />

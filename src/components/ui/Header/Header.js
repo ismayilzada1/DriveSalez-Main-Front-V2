@@ -279,14 +279,14 @@ const Header = () => {
                                     <div className=" p-0 ">
                                         <ul className="list-group list-group-flush p-0">
                                             <li className={`iq-sub-card  ${theme === 'dark' ? 'dark-mode-bg' : 'list-group-item'}`}
-                                                onClick={(e) => handleLanguageChange('en', e)}><a className="p-0"
+                                                onClick={(e) => handleLanguageChange('en', e)}><a className={`p-0 ${theme === 'dark' ? 'dark-theme-label' : ''}`}
                                                                                                   href="#"><img
                                                 src="../assets/images/flag/flag-en.png" alt="img-flaf"
-                                                className="img-fluid me-2"
+                                                className={`img-fluid me-2 `}
                                                 style={{height: '30px', minWidth: '30px', width: '30px'}}/>English</a>
                                             </li>
                                             <li className={`iq-sub-card  ${theme === 'dark' ? 'dark-mode-bg' : 'list-group-item'}`}
-                                                onClick={(e) => handleLanguageChange('aze', e)}><a className="p-0"
+                                                onClick={(e) => handleLanguageChange('aze', e)}><a className={`p-0 ${theme === 'dark' ? 'dark-theme-label' : ''}`}
                                                                                                    href="#"><img
                                                 src="../assets/images/flag/flag-aze.png" alt="img-flaf"
                                                 className="img-fluid me-2" style={{
@@ -295,14 +295,14 @@ const Header = () => {
                                                 width: '30px'
                                             }}/>Azerbaijani</a></li>
                                             <li className={`iq-sub-card  ${theme === 'dark' ? 'dark-mode-bg' : 'list-group-item'}`}
-                                                onClick={(e) => handleLanguageChange('ru', e)}><a className="p-0"
+                                                onClick={(e) => handleLanguageChange('ru', e)}><a className={`p-0 ${theme === 'dark' ? 'dark-theme-label' : ''}`}
                                                                                                   href="#"><img
                                                 src="../assets/images/flag/flag-ru.png" alt="img-flaf"
                                                 className="img-fluid me-2"
                                                 style={{height: '30px', minWidth: '30px', width: '30px'}}/>Russian</a>
                                             </li>
                                             <li className={`iq-sub-card  ${theme === 'dark' ? 'dark-mode-bg' : 'list-group-item'}`}
-                                                onClick={(e) => handleLanguageChange('tr', e)}><a className="p-0"
+                                                onClick={(e) => handleLanguageChange('tr', e)}><a className={`p-0 ${theme === 'dark' ? 'dark-theme-label' : ''}`}
                                                                                                   href="#"><img
                                                 src="../assets/images/flag/flag-tr.png" alt="img-flaf"
                                                 className="img-fluid me-2"
