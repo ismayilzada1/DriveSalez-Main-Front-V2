@@ -37,6 +37,24 @@
 }
 
 
+*{
+    transition: background-color 0.5s ease-in-out !important;
+}
+
+html,
+body {
+    background: #F9FAFA;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.body-dark,
+.html-dark{
+    background:#141412;
+}
+
+
+
 
 @media screen and (max-width: 500px) {
     body {

@@ -29,6 +29,7 @@ const Home = () => {
     pageNumber,
     hasMore,
   } = useSelector((state) => state.announcement);
+    const theme = useSelector((state) => state.theme.theme);
 
   const pageSize = 4;
 
@@ -117,7 +118,7 @@ const Home = () => {
           <div className="pt-3">
 
               <div className="d-flex justify-content-between align-items-center">
-                  <h2 className="text-dark">Premium Announcements</h2>
+                  <h2 className={`text-dark ${theme === 'dark' ? 'dark-theme-label' : ''}`}>Premium Announcements</h2>
                   <div>
                       <a href="">Show All</a>
                   </div>
@@ -142,7 +143,7 @@ const Home = () => {
           <div className="regular-announcements-container pt-3">
 
               <div className="d-flex justify-content-between align-items-center">
-                  <h2 className="text-dark">All Announcements</h2>
+                  <h2 className={` ${theme === 'dark' ? 'dark-theme-label' : 'text-dark'}`}>All Announcements</h2>
               </div>
 
               <InfiniteScroll

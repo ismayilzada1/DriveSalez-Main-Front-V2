@@ -1,0 +1,26 @@
+.custom-card-title{
+    font-size:1.6rem;
+}
+
+.custom-card-body p{
+    font-size: 1.3rem;
+}
+
+.privacy-policy-card-dark{
+    background-color: #292929;
+
+    .card-header{
+        background-color: #292929;
+
+        .custom-card-title{
+            color:#FAFAFA;
+        }
+    }
+
+
+    .card-body{
+        p{
+            color:#FAFAFA;
+        }
+    }
+}
