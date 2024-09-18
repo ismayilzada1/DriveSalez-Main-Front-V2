@@ -1,0 +1,34 @@
+.accordion-dark {
+    .accordion-header {
+        background-color: #141414;
+
+        .accordion-button {
+            color: #FAFAFA;
+            background-color: #292929;
+        }
+
+        .accordion-button:after {
+            filter: invert(1) brightness(2);
+        }
+
+    }
+
+    .accordion-collapse{
+        background-color: #292929;
+
+        .accordion-body{
+
+
+            .list-group-item{
+                background-color: #222222;
+                color: #FAFAFA;
+                border:1px solid #b8b8b8;
+            }
+
+            p{
+                color: #eaeaea;
+            }
+        }
+    }
+}
+

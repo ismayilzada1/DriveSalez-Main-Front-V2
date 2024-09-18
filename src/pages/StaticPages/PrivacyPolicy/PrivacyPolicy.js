@@ -2,10 +2,25 @@ import React from "react";
 import './PrivacyPolicy.css';
 import {useTranslation} from "react-i18next";
 import {Helmet} from "react-helmet";
+import {useSelector} from "react-redux";
+import PrivacyPolicyCard from "../../../components/ui/PrivacyPolicyCard";
 
 const PrivacyPolicy = () => {
 
     const {t} = useTranslation ();
+    const theme = useSelector((state) => state.theme.theme);
+
+
+    const sections = [
+        { title: t("privacyPolicy.title"), content: t("privacyPolicy.intro") },
+        { title: t("privacyPolicy.informationWeCollect"), content: t("privacyPolicy.informationWeCollectContent") },
+        { title: t("privacyPolicy.howWeUseYourInformation"), content: t("privacyPolicy.howWeUseYourInformationContent") },
+        { title: t("privacyPolicy.sharingYourInformation"), content: t("privacyPolicy.sharingYourInformationContent") },
+        { title: t("privacyPolicy.cookiesAndTechnologies"), content: t("privacyPolicy.cookiesAndTechnologiesContent") },
+        { title: t("privacyPolicy.security"), content: t("privacyPolicy.securityContent") },
+        { title: t("privacyPolicy.changesToPrivacyPolicy"), content: t("privacyPolicy.changesToPrivacyPolicyContent") },
+        { title: t("privacyPolicy.contactUs"), content: t("privacyPolicy.contactUsContent") }
+    ];
 
     return (
         <>
@@ -18,115 +33,16 @@ const PrivacyPolicy = () => {
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-lg-12">
-                            <div className="card">
-                                <div className="card-header d-flex justify-content-between">
-                                    <div className="header-title">
-                                        <h4 className="card-title custom-card-title">{t("privacyPolicy.title")}</h4>
-                                    </div>
-                                </div>
-                                <div className="card-body custom-card-body">
-                                    <p>
-                                        {t("privacyPolicy.intro")}
-                                    </p>
-                                </div>
-                            </div>
 
-                            <div className="card">
-                                <div className="card-header d-flex justify-content-between">
-                                    <div className="header-title">
-                                        <h4 className="card-title custom-card-title">{t("privacyPolicy.informationWeCollect")}</h4>
-                                    </div>
-                                </div>
-                                <div className="card-body custom-card-body">
-                                    <p>
-                                        {t("privacyPolicy.informationWeCollectContent")}
-                                    </p>
-                                </div>
-                            </div>
+                            {sections.map((section, index) => (
+                                <PrivacyPolicyCard
+                                    key={index}
+                                    title={section.title}
+                                    content={section.content}
+                                    theme={theme}
+                                />
+                            ))}
 
-                            <div className="card">
-                                <div className="card-header d-flex justify-content-between">
-                                    <div className="header-title">
-                                        <h4 className="card-title custom-card-title">{t("privacyPolicy.howWeUseYourInformation")}</h4>
-                                    </div>
-                                </div>
-                                <div className="card-body custom-card-body">
-                                    <p>
-                                        {t("privacyPolicy.howWeUseYourInformationContent")}
-                                    </p>
-                                </div>
-                            </div>
-
-
-
-                            <div className="card">
-                                <div className="card-header d-flex justify-content-between">
-                                    <div className="header-title">
-                                        <h4 className="card-title custom-card-title">{t("privacyPolicy.sharingYourInformation")}</h4>
-                                    </div>
-                                </div>
-                                <div className="card-body custom-card-body">
-                                    <p>
-                                        {t("privacyPolicy.sharingYourInformationContent")}
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="card">
-                                <div className="card-header d-flex justify-content-between">
-                                    <div className="header-title">
-                                        <h4 className="card-title custom-card-title">
-                                            {t("privacyPolicy.cookiesAndTechnologies")}
-                                        </h4>
-                                    </div>
-                                </div>
-                                <div className="card-body custom-card-body">
-                                    <p>
-                                        {t("privacyPolicy.cookiesAndTechnologiesContent")}
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="card">
-                                <div className="card-header d-flex justify-content-between">
-                                    <div className="header-title">
-                                        <h4 className="card-title custom-card-title">{t("privacyPolicy.security")}</h4>
-                                    </div>
-                                </div>
-                                <div className="card-body custom-card-body">
-                                    <p>
-                                        {t("privacyPolicy.securityContent")}
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="card">
-                                <div className="card-header d-flex justify-content-between">
-                                    <div className="header-title">
-                                        <h4 className="card-title custom-card-title">
-                                            {t("privacyPolicy.changesToPrivacyPolicy")}
-                                        </h4>
-                                    </div>
-                                </div>
-                                <div className="card-body custom-card-body">
-                                    <p>
-                                        {t("privacyPolicy.changesToPrivacyPolicyContent")}
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="card">
-                                <div className="card-header d-flex justify-content-between">
-                                    <div className="header-title">
-                                        <h4 className="card-title custom-card-title">{t("privacyPolicy.contactUs")}</h4>
-                                    </div>
-                                </div>
-                                <div className="card-body custom-card-body">
-                                    <p>
-                                        {t("privacyPolicy.contactUsContent")}
-                                    </p>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

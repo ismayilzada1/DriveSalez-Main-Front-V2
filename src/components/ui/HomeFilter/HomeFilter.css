@@ -31,7 +31,9 @@
 }
 
 
-
+.dark-theme-label{
+    color:#FDFDFD !important;
+}
 
 @media (max-width: 767px) {
     .custom-dropdown {
