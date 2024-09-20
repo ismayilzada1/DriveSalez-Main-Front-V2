@@ -7,6 +7,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {SetAnnouncement} from '../../Store/Announcement/AnnouncementActions'
 import LoadingPage from "../../components/ui/LoadingPage";
 import {useTranslation} from "react-i18next";
+import AnnouncementDetailisSalon from "../../components/ui/AnnouncementDetailisSalon/AnnouncementDetailisSalon";
 
 const AnnouncementDetails = () => {
 
@@ -276,6 +277,27 @@ const AnnouncementDetails = () => {
         return timestamp
     }
 
+
+
+    const salonDetails = {
+        isSalon: true,
+        phoneNumber: "0555778899",
+        salonName: "Suraxanı Salonu",
+        adress: "Suraxanı, Neriman Nerimanov 34a",
+        workinTime: "7:00-10:00",
+        announcementNumber: "15",
+        description: "Suraxanı Salonu – Azərbaycanda avtomobil dünyasının ən prestijli məkanlarından biridir. Biz, ən son model avtomobilləri və lüks markaları bir araya gətirərək, müştərilərimizə üstün keyfiyyət və rahatlıq təqdim edirik.",
+        SalonImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6YY1dAud4mB5-5N0T3vGW0QlgNfF1PAIc4A&s",
+        slogan: "Adiliyin sərhədlərini aş!",
+        UserName: "Logman",
+        UserSurname: "Dovsaneli",
+        UserCity: "Baki",
+        UserImage: "https://uploads.commoninja.com/searchengine/wordpress/user-avatar-reloaded.png"
+       // Userin nomresinnen salonunki birdi (yani hansi nomre gelse fergi yoxdu at "phoneNumber"-in icine cixacaq orda")
+    };
+
+
+
     return (
         <>
             <Helmet>
@@ -376,50 +398,11 @@ const AnnouncementDetails = () => {
                                             </a>
                                         </li>
                                         <li>
-                                            <div className="salonMainDiv">
-                                                <div className="salonMainTop">
-                                                    <div className="salonMainTop1">
-                                                        <img className="imgTopSalon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6YY1dAud4mB5-5N0T3vGW0QlgNfF1PAIc4A&s"/>
-                                                        <span className="spanTopSalon">Lorem Ipsum</span>
-                                                    </div>
-                                                    <button className="callButtonTopSalon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 17">
-                                                            <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
-                                                        </svg>
-                                                       {t("Call")}
-                                                    </button>
-                                                    
-                                                </div>
-                                                <hr className="salonMainDivHR"/>
-                                                <div className="salonMainCenter">
-                                                    <span className="salonMainCenterSpan">Lorem ipsum dolor sit amet</span>
-                                                    <div className="salonMainCenterDescription">Lorem ipsum dolor sit amet,
-                                                         consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.
-                                                    </div>
-                                                    <span className="salonMainCenterSpan2">17 {t("announcements")}</span>
-                                                </div>
-                                                <hr className="salonMainDivHR"/>
-                                                <div className="salonMainBottom">
-                                                    <div className="salonMainBottom2">
-                                                    <div className="salonMainBottomDate">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-clock-fill" viewBox="0 0 16 16"  className="svgbottom">
-                                                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
-                                                        </svg>
-                                                        <span className="spanBottom">Hər gün: 09:30–20:30</span>
-                                                    </div>
-                                                    <div className="salonMainBottomAdress">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16" className="svgbottom">
-                                                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
-                                                        </svg>
-                                                        <span className="spanBottom">Bakı ş., Nəsimi r., Abbas Səhhət küç., 67-69</span>
-                                                    </div>
-                                                    </div>
-                                                    <button className="salonMainBottomButton">
-                                                        {t("Visit salon")}
-                                                    </button>
+                                          {/* --------------------------------------------- */}
+                                           <AnnouncementDetailisSalon {...salonDetails} />
+                                          
+                                          {/* --------------------------------------------- */}
 
-                                                </div>
-                                            </div>
                                         </li>
                                     </ul>
                                     
