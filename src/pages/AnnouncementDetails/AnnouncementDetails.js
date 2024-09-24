@@ -28,11 +28,11 @@ const AnnouncementDetails = () => {
         },
         year:{
             id:3,
-            year:2020
+            year:2013
         },
         fuelType:{
             id:4,
-            fuelType:"Diesel"
+            fuelType:"Gasoline"
         },
         isBrandNew:false,
         bodyType:{
@@ -41,12 +41,12 @@ const AnnouncementDetails = () => {
         },
         color:{
             id:6,
-            color:"Black"
+            color:"Blue"
         },
-        horsePower:440,
+        horsePower:575,
         gearboxType:{
             id:7,
-            gearboxType: "Manual"
+            gearboxType: "Robotic"
         },
         drivetrainType:{
             id:8,
@@ -69,23 +69,47 @@ const AnnouncementDetails = () => {
             id:1,
             option:"ABS"
         },{
-            id:1,
-            option:"ABS"
+            id:2,
+            option:"Lyuk"
         },{
-            id:1,
-            option:"ABS"
+            id:3,
+            option:"Kondisioner"
         },{
-            id:1,
-            option:"ABS"
+            id:4,
+            option:"Park radar"
         }],
-        engineVolume:4200,
-        mileage:49000,
+        engineVolume:4400,
+        mileage:80000,
         mileageType:"KM",
-        imageUrls:[{url:"https://www.bmw.az/content/dam/bmw/common/all-models/m-series/series-overview/bmw-m-series-seo-overview-ms-04.jpg"},{url:"https://www.topgear.com/sites/default/files/2023/08/P90492179_highRes_bmw-i7-xdrive60-m-sp%20%281%29.jpg"}],
+        imageUrls:[
+            {
+                url:"https://turbo.azstatic.com/uploads/full/2024%2F09%2F23%2F19%2F31%2F09%2Fc2b70444-6b24-4dd9-a1cb-3d0b551a0cfc%2F11375_qXr7-N1ppBcS2a5TEaxWRQ.jpg"}
+            ,
+            {
+                url:"https://turbo.azstatic.com/uploads/full/2024%2F09%2F23%2F19%2F32%2F28%2Fef6d4d73-c722-4c88-ba83-a3d0bd337bf8%2F76402_Kt6M8xdUQ8mUvNPSzi54jw.jpg"},
+            {
+                url:"https://turbo.azstatic.com/uploads/full/2024%2F09%2F23%2F19%2F32%2F47%2Fa1c3e9d4-7218-4d23-a53a-78374b5ffb99%2F26954_DWgEQQqRrb1W5yDQKFgsVA.jpg"},
+            {
+                url:"https://turbo.azstatic.com/uploads/full/2024%2F09%2F23%2F19%2F32%2F28%2F1661f8bd-4b5e-440c-92a9-bfeb37cd5469%2F26954_DWgEQQqRrb1W5yDQKFgsVA.jpg"},
+            {
+                url:"https://turbo.azstatic.com/uploads/full/2024%2F09%2F23%2F19%2F32%2F48%2F84408599-0c0e-4d31-ad04-36e2375b7003%2F26954_DWgEQQqRrb1W5yDQKFgsVA.jpg"},
+
+        ],
         barter:false,
         onCredit:false,
-        description:"no description",
-        price:49000,
+        description:"Bmw M5 F10 Competition Package. 2014 M.Y\n" +
+            "Downpipe.\n" +
+            "Bezkraskadır.\n" +
+            "Maşın ideal vəziyyətdədir.\n" +
+            "Yalnız 98 benzinlə idarə edilib.\n" +
+            "Risk zonaları qoruyucu plenka ilə üzlənib.\n" +
+            "Kasko Siğortalıdır.\n" +
+            "Alıcı istənilən yerdə yoxlatdıra bilər.\n" +
+            "Real alıcı ilə maşına baxdıqdan sonra qiymətdə razılaşmaq olar.\n" +
+            "TEST DRİVE VERİLMİR !!\n" +
+            "Qeyri ciddi şəxslər narahat etməsin !\n" +
+            "Barter edilmir !",
+        price:85000,
         currency:{
             id:8,
             currencyName:"AZN"
@@ -113,7 +137,7 @@ const AnnouncementDetails = () => {
     const navigate = useNavigate();
 
     const{t}=useTranslation();
-
+    const theme = useSelector((state) => state.theme.theme);
 
     const dispatch = useDispatch ();
 
@@ -378,37 +402,23 @@ const AnnouncementDetails = () => {
                                 <div className="col-lg-4">
                                     <ul>
                                         <li>
-                                            <a href='#tabs-1' onClick={() => handleTabClick ('tabs-1')}>
+                                            <AnnouncementDetailisSalon {...salonDetails} />
+                                        </li>
+                                        <li className={`${theme === 'dark' ? 'announcement-details-tab-dark' : ''}`}>
+                                            <a href='#tabs-1' onClick={() => handleTabClick('tabs-1')}>
                                                 <i className="fa fa-cog"></i> {t("vehicleSpecs")}
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href='#tabs-2' onClick={() => handleTabClick ('tabs-2')}>
-                                                <i className="fa fa-info-circle"></i> {t("vehicleDescription")}
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href='#tabs-3' onClick={() => handleTabClick ('tabs-3')}>
+
+                                        <li className={`mb-5 ${theme === 'dark' ? 'announcement-details-tab-dark' : ''}`}>
+                                            <a href='#tabs-2' onClick={() => handleTabClick('tabs-2')}>
                                                 <i className="fa fa-plus-circle"></i> {t("vehicleExtras")}
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href='#tabs-4' onClick={() => handleTabClick ('tabs-4')}>
-                                                <i className="fa fa-phone"></i> {t("contactDetails")}
-                                            </a>
-                                        </li>
-                                        <li>
-                                          {/* --------------------------------------------- */}
-                                           <AnnouncementDetailisSalon {...salonDetails} />
-                                          
-                                          {/* --------------------------------------------- */}
 
-                                        </li>
                                     </ul>
-                                    
+
                                 </div>
-
-
 
 
                                 <div className="col-lg-8">
@@ -417,96 +427,114 @@ const AnnouncementDetails = () => {
                                                  className={`fade-in-element ${activeTab === 'tabs-1' ? 'active-tab' : ''}`}>
 
 
-                                            <h4>{t("vehicleSpecs")}</h4>
+                                            <h4 className={`${theme === 'dark' ? 'announcement-details-tab-label' : ''}`}>{t("vehicleSpecs")}</h4>
 
                                             <div className="row">
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t('mainLabelMake')}</label>
                                                     <p>{make?.makeName}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t('labelVehicleModel')}</label>
                                                     <p>{model?.modelName}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t('labelBodyType')}</label>
                                                     <p>{bodyType?.bodyType}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t("firstRegistration")}</label>
                                                     <p>{year?.year}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t("mileage")}</label>
                                                     <p>{mileage} {mileageType}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t("fuelType")}</label>
                                                     <p>{fuelType?.fuelType}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t("engineVolume")}</label>
                                                     <p>{engineVolume} cc</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t("labelHorsePower")}</label>
                                                     <p>{horsePower}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t("labelGearboxType")}</label>
                                                     <p>{gearboxType?.gearboxType}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t("seatCount")}</label>
                                                     <p>{seatCount}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t("labelMarketVersion")}</label>
                                                     <p>{marketVersion?.marketVersion}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t("labelWheelDrive")}</label>
                                                     <p>{drivetrainType?.drivetrainType}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t("ownerQuantity")}</label>
                                                     <p>{ownerQuantity}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t("brandNew")}</label>
                                                     <p>{isBrandNew ? t("Yes") : t("No")}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t("labelVehicleColor")}</label>
                                                     <p>{color?.color}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t("barter")}</label>
                                                     <p>{barter ? t("Yes") : t("No")}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t("onCredit")}</label>
                                                     <p>{onCredit ? t("Yes") : t("No")}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-12">
+                                                <div
+                                                    className={`col-6 col-sm-12 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label style={{fontSize: '1.4em'}}>{t("labelPrice")}</label>
                                                     <p className="main-price text-success font-weight-bold"
                                                        style={{fontSize: '2.2em'}}>
@@ -514,15 +542,22 @@ const AnnouncementDetails = () => {
                                                     </p>
                                                 </div>
 
-                                                <p>{t("announcementNumber")}:  {id}</p>
 
-                                                <div className=" col-6col-sm-6">
-                                                    <p>{t("expirationDate")}: {formatTimestamp (expirationDate)}</p>
+                                                <div
+                                                    className={`col-6 col-sm-12 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
+                                                    <p>{t("announcementNumber")}: {id}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6 d-flex align-items-center" >
-                                                    <p><i className="far fa-eye me-2" ></i>
-                                                    <span>{viewCount} {t("views")}</span>
+
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
+                                                    <p>{t("expirationDate")}: {formatTimestamp(expirationDate)}</p>
+                                                </div>
+
+                                                <div
+                                                    className={`col-6 col-sm-6 d-flex align-items-center ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
+                                                    <p><i className="far fa-eye me-2"></i>
+                                                        <span>{viewCount} {t("views")}</span>
                                                     </p>
                                                 </div>
 
@@ -532,20 +567,27 @@ const AnnouncementDetails = () => {
                                         </article>
                                         <article id='tabs-2'
                                                  className={`fade-in-element ${activeTab === 'tabs-2' ? 'active-tab' : ''}`}>
-                                            <h4>{t("vehicleDescription")}</h4>
+
+                                        <h4 className={`${theme === 'dark' ? 'announcement-details-tab-label' : ''}`}>{t("vehicleDescription")}</h4>
 
                                             <div className='row'>
-                                                <p className='col-sm-12' style={{maxWidth: '800px', margin: '0 auto',maxHeight: '400px', overflowY: 'auto' }}>
+                                                <p className={`col-sm-12 ${theme === 'dark' ? 'dark-theme-label2' : ''}`} style={{
+                                                    maxWidth: '800px',
+                                                    margin: '0 auto',
+                                                    maxHeight: '400px',
+                                                    overflowY: 'auto'
+                                                }}>
                                                     {description.split('\n').map((line, index) => (
-                                                    <React.Fragment key={index}>
-                                                        {line}
-                                                        <br />
-                                                    </React.Fragment>
+                                                        <React.Fragment key={index}>
+                                                            {line}
+                                                            <br/>
+                                                        </React.Fragment>
                                                     ))}
                                                 </p>
 
                                                 {vinCode && (
-                                                    <p className='col-sm-12 font-weight-bold mt-3' style={{fontSize: '1.2em'}}>
+                                                    <p className={`col-sm-12 font-weight-bold mt-3 ${theme === 'dark' ? 'dark-theme-label2' : ''}`}
+                                                       style={{fontSize: '1.2em'}}>
                                                         {t("vinCode")} :
                                                         <a
                                                             href={`https://www.google.com/search?q=${vinCode}&tbm=isch`}
@@ -562,28 +604,27 @@ const AnnouncementDetails = () => {
 
 
                                             </div>
-                                        </article>
-                                        <article id='tabs-3'
-                                                 className={`fade-in-element ${activeTab === 'tabs-3' ? 'active-tab' : ''}`}>
-                                            <h4>{t("vehicleExtras")}</h4>
+
+
+                                            <h4 className={`${theme === 'dark' ? 'announcement-details-tab-label' : ''}`}>{t("vehicleExtras")}</h4>
 
                                             <div className="row">
-                                                {options?.map ((option, index) => (
-                                                    <div className="col-6 col-sm-6">
-                                                        <p>{option.option}</p>
+                                                {options?.map((option, index) => (
+                                                    <div className={`col-6 col-sm-6`}>
+                                                        <p className={`announcement-details-option ${theme === 'dark' ? 'announcement-details-option-dark' : ''}`}>{option.option}</p>
                                                     </div>
                                                 ))}
                                             </div>
 
                                             {conditions && conditions.length > 0 && (
                                                 <div>
-                                                    <h4>{t("vehicleConditions")}</h4>
+                                                    <h4 className={`${theme === 'dark' ? 'announcement-details-tab-label' : ''}`}>{t("vehicleConditions")}</h4>
                                                     <div className="row">
-                                                        {conditions.map ((condition, index) => (
+                                                        {conditions.map((condition, index) => (
                                                             <div key={condition.id} className="col-sm-6">
-                                                                <p className={'mb-1'}
+                                                                <p className={`mb-1 ${theme === 'dark' ? 'dark-theme-label3' : ''}`}
                                                                    style={{fontWeight: "bold"}}>{condition.condition}</p>
-                                                                <p>{condition.description}</p>
+                                                                <p className={`announcement-details-option ${theme === 'dark' ? 'announcement-details-option-dark' : ''}`}>{condition.description}</p>
                                                             </div>
                                                         ))}
                                                     </div>
@@ -592,45 +633,6 @@ const AnnouncementDetails = () => {
 
 
                                         </article>
-                                        <article id='tabs-4'
-                                                 className={`fade-in-element ${activeTab === 'tabs-4' ? 'active-tab' : ''}`}>
-                                            <h4>{t("contactDetails")}</h4>
-
-                                            <div className="row">
-                                                <div className="col-sm-6">
-                                                    <label>{t("name")} {t("surname")}</label>
-
-                                                    <p>{firstName} {lastName}</p>
-                                                </div>
-
-                                                <div className="col-sm-6">
-                                                    <label>{t("email")}</label>
-                                                    <p><a href="#">{email}</a></p>
-                                                </div>
-
-                                                <div className="col-sm-6">
-                                                    <label>{t("mainLabelCountry")}</label>
-                                                    <p>{country?.countryName}</p>
-                                                </div>
-
-                                                <div className="col-sm-6">
-                                                    <label>{t("labelCity")}</label>
-                                                    <p>{city?.cityName}</p>
-                                                </div>
-
-
-                                                <div className="col-sm-6">
-                                                    <label className="mb-2">{t("mobilePhones")}</label>
-                                                    {phoneNumbers?.map ((phone, index) => (
-                                                        <p key={index} className="m-2">
-                                                            {phone.phoneNumber}
-                                                        </p>
-                                                    ))}
-                                                </div>
-
-                                            </div>
-                                        </article>
-
                                     </section>
                                 </div>
                             </div>
@@ -654,16 +656,16 @@ const AnnouncementDetails = () => {
                                 src={Images[selectedImageIndex]}
                                 alt={`Slide ${selectedImageIndex}`}
                                 className="modal-image"
-                                onClick={(e) => e.stopPropagation ()}
+                                onClick={(e) => e.stopPropagation()}
                             />
                             <div className="thumbnails-container">
-                                {Images?.map ((image, index) => (
+                                {Images?.map((image, index) => (
                                     <img
                                         key={index}
                                         src={image}
                                         alt={`Thumbnail ${index}`}
                                         className={`thumbnail-image ${selectedImageIndex === index ? 'active' : ''}`}
-                                        onClick={() => handleThumbnailClick (index)}
+                                        onClick={() => handleThumbnailClick(index)}
                                     />
                                 ))}
                             </div>

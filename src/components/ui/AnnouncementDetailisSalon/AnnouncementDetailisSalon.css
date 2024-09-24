@@ -7,49 +7,49 @@
     border: #D13539 1px solid;
     box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.1);
     padding: 30px;
-  
+
     display: flex;
     flex-direction: column;
-  }
-  
-  .salonMainDivHR {
+}
+
+.salonMainDivHR {
     background: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.4),
-      rgba(0, 0, 0, 1),
-      rgba(0, 0, 0, 0.4)
+            to right,
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 1),
+            rgba(0, 0, 0, 0.4)
     );
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  }
-  
-  /*Top*/
-  .salonMainTop {
+}
+
+/*Top*/
+.salonMainTop {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 0.5em;
-  }
-  
-  .salonMainTop1 {
+}
+
+.salonMainTop1 {
     display: flex;
     flex-direction: row;
     align-items: center;
     text-align: center;
     gap: 5%;
-  }
-  
-  .imgTopSalon {
+}
+
+.imgTopSalon {
     height: 50px;
     width: 50px;
     border-radius: 10px;
-  }
-  
-  .spanTopSalon {
+}
+
+.spanTopSalon {
     font-size: 1.2em;
     font-weight: 500;
-  }
-  
-  .callButtonTopSalon {
+}
+
+.callButtonTopSalon {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -63,59 +63,61 @@
     color: white;
     font-size: 1.1em;
     font-weight: 430;
-  }
-  
-  /*Center*/
-  .salonMainCenter {
+}
+
+/*Center*/
+.salonMainCenter {
     display: flex;
     flex-direction: column;
     gap: 0.6em;
-  }
-  
-  .salonMainCenterSpan {
+}
+
+.salonMainCenterSpan {
     font-size: 1.2em;
     font-weight: 400;
-  }
-  
-  .salonMainCenterSpan2 {
+}
+
+.salonMainCenterSpan2 {
     font-size: 1.05em;
     font-weight: 400;
     text-decoration: underline;
-  }
-  
-  .salonMainCenterDescription {
+}
+
+.salonMainCenterDescription {
     max-height: 7em;
     overflow-y: auto;
     color: gray;
     font-size: small;
-  }
-  
-  /*Bottom*/
-  .salonMainBottom {
+}
+
+/*Bottom*/
+.salonMainBottom {
     display: flex;
     flex-direction: column;
     gap: 0.6em;
-  }
-  
-  .salonMainBottom2 {
+}
+
+.salonMainBottom2 {
     display: flex;
     flex-direction: column;
     gap: 0.2em;
-  }
-  .salonMainBottomDate {
+}
+
+.salonMainBottomDate {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 0.5em;
-  }
-  
-  .salonMainBottomAdress {
+}
+
+.salonMainBottomAdress {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 0.5em;
-  }
-  .salonMainBottomButton {
+}
+
+.salonMainBottomButton {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -129,13 +131,15 @@
     color: white;
     font-size: 1.1em;
     font-weight: 400;
-  }
-  .svgbottom {
+}
+
+.svgbottom {
     color: #D13539;
-  }
-  .spanBottom {
+}
+
+.spanBottom {
     color: rgb(71, 67, 67);
-  }
+}
 
 
 /* User Div */
@@ -152,19 +156,19 @@
     gap: 15px;
 }
 
-.UserDivTop{
+.UserDivTop {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.UserInfo{
+.UserInfo {
     display: flex;
     flex-direction: column;
 }
 
 
-.imgTopUser{
+.imgTopUser {
     height: 60px;
     width: 60px;
     border-radius: 50px;
@@ -187,13 +191,59 @@
     font-weight: 430;
 }
 
-.UserName{
+.UserName {
     font-weight: 400;
     font-size: 1.2em;
 }
 
-.UserCity{
+.UserCity {
     font-weight: 300;
     font-size: 1.1em;
     color: gray;
+}
+
+
+.salon-contact-dark {
+    background-color: #0e1111;
+    .salonMainTop {
+
+        .salonMainTop1 {
+
+            .spanTopSalon {
+                color: #f6f6f6;
+            }
+        }
+    }
+
+    .salonMainCenter {
+        .salonMainCenterSpan, .salonMainCenterDescription, .salonMainCenterSpan2 {
+            color: #f6f6f6;
+        }
+    }
+
+    .salonMainBottom {
+        .salonMainBottom2 {
+            .salonMainBottomDate {
+                .spanBottom {
+                    color: #f6f6f6;
+                }
+            }
+            .salonMainBottomAdress{
+                .spanBottom{
+                    color: #f6f6f6;
+                }
+            }
+        }
+    }
+}
+
+.user-contact-dark{
+    background-color: #0e1111;
+    .UserDivTop{
+        .UserInfo{
+            .UserName,.UserCity{
+                color:#f6f6f6;
+            }
+        }
+    }
 }
