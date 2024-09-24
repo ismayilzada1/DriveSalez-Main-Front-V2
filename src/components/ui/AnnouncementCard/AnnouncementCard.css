@@ -86,13 +86,13 @@
 
 .announcement-card {
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+    transform: translateZ(0);
 }
 
 .announcement-card:hover {
     transform: scale(1.03);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .list-group-item {
