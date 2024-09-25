@@ -1,0 +1,16 @@
+.profile-nav{
+    .nav-link{
+        color: #ffcece;
+        background-color: #de303a !important;
+        box-shadow: 0 4px 6px rgba(255, 0, 0, 0.2), 0 1px 3px rgba(255, 0, 0, 0.3) !important;
+
+    }
+
+    .nav-link.active{
+        color: #ffffff;
+    }
+}
+
+.profile-nav-dark{
+    background-color: #393939;
+}

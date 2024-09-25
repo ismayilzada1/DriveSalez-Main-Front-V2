@@ -10,7 +10,7 @@ import { setActiveTab } from '../../Store/ActiveTab/ActiveTabSlice';
 const Profile=()=>{
 
     const {t}=useTranslation();
-
+    const theme = useSelector((state) => state.theme.theme);
     const dispatch = useDispatch();
     const activeTab = useSelector((state) => state.tab.activeTab);
 
@@ -31,7 +31,8 @@ const Profile=()=>{
         <>
             <div className="mt-3">
                 <nav>
-                    <div className="nav nav-tabs mb-3" id="nav-tab" role="tablist">
+                    <div className={`nav profile-nav nav-tabs mb-3 ${theme === 'dark' ? 'profile-nav-dark' : ''}`} id="nav-tab" role="tablist">
+
                         <button className="nav-link active me-4" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true" onClick={() => handleTabClick('nav-home-tab')}>
                             <svg className='me-2' width="27" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.4" d="M16.6756 2H7.33333C3.92889 2 2 3.92889 2 7.33333V16.6667C2 20.0711 3.92889 22 7.33333 22H16.6756C20.08 22 22 20.0711 22 16.6667V7.33333C22 3.92889 20.08 2 16.6756 2Z" fill="currentColor"></path>

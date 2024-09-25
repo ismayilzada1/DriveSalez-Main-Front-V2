@@ -15,7 +15,7 @@ const MyAnnouncementsTab = () => {
 
 
     const dispatch = useDispatch ();
-
+    const theme = useSelector((state) => state.theme.theme);
     const {accessToken}=useSelector(state => state.auth);
     const {t}=useTranslation();
 
@@ -55,7 +55,7 @@ const MyAnnouncementsTab = () => {
         <div className="mt-3">
 
             <nav>
-                <div className="nav nav-tabs mb-3" id="nav-tab" role="tablist">
+                <div className={`nav nav-tabs profile-nav mb-3 ${theme === 'dark' ? 'profile-nav-dark' : ''}`} id="nav-tab" role="tablist">
                     <button className="nav-link me-4 active" id="nav-all-announcements-tab" data-bs-toggle="tab"
                             data-bs-target="#nav-all-announcements" type="button" role="tab"
                             aria-controls="nav-all-announcements" aria-selected="false">
