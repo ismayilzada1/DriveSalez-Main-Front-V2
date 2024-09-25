@@ -22,6 +22,7 @@ import DealershipCard from "../../components/ui/DealershipCard/DealershipCard";
 
 const Dealerships = () => {
   const dispatch = useDispatch();
+  const theme = useSelector((state) => state.theme.theme);
   const {
     allAnnouncements,
     premiumAnnouncements,
@@ -146,7 +147,7 @@ const Dealerships = () => {
                 <div className="pt-3">
 
                     <div className="d-flex justify-content-between align-items-center">
-                        <h2 className="text-dark">{t("officialRepresentatives")}</h2>
+                        <h2 className={`text-dark ${theme === 'dark' ? 'dark-theme-label' : ''}`}>{t("officialRepresentatives")}</h2>
                     </div>
 
 
@@ -178,10 +179,10 @@ const Dealerships = () => {
                 )}
 
 
-                <div className="regular-announcements-container pt-3">
+                <div className="regular-announcements-container pt-3 mb-5">
 
                     <div className="d-flex justify-content-between align-items-center">
-                        <h2 className="text-dark">{t("dealerships")}</h2>
+                        <h2 className={`text-dark ${theme === 'dark' ? 'dark-theme-label' : ''}`}>{t("dealerships")}</h2>
                     </div>
 
 
