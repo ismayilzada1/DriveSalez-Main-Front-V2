@@ -1,0 +1,92 @@
+.search-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+}
+
+.search-toggle img {
+    transition: transform 0.2s ease;
+}
+
+.search-toggle:hover img {
+    transform: scale(1.1);
+}
+
+.search-toggle .bg-primary {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.search-toggle:hover .bg-primary {
+    opacity: 0.1;
+}
+
+.sub-drop {
+    width: 200px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.sub-drop .card {
+    border: none;
+}
+
+.iq-sub-card {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+
+
+.iq-sub-card img {
+    margin-right: 10px;
+}
+
+.iq-sub-card img {
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.2s ease;
+}
+
+
+
+.list-group-flush {
+    padding: 0;
+    margin: 0;
+}
+
+.list-group-flush .list-group-item {
+    border: none;
+    padding: 0;
+}
+
+.dark-mode-dropdown{
+    background-color: #212121;
+}
+
+.dark-mode-dropdown:hover{
+    background-color: #4e4e4e;
+}
+
+.dark-mode-dropdown a{
+    color: #f6f6f6 ;
+}

@@ -1,18 +1,20 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import Logo from '../../../../components/ui/Logo';
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import {useSelector} from "react-redux";
-import { useDispatch } from 'react-redux';
-import { registerUser } from '../../../../Store/Auth/authActions';
+import {useDispatch} from 'react-redux';
+import {registerUser} from '../../../../Store/Auth/authActions';
 import {useTranslation} from "react-i18next";
 import './Register.css'
 import {Helmet} from "react-helmet";
+import LanguageDropdown from "../../../../components/ui/LanguageDropdown";
+
 function Register() {
 
     const dispatch = useDispatch();
-    const { loading, error } = useSelector((state) => state.auth);
+    const {loading, error} = useSelector((state) => state.auth);
 
-
+    const theme = useSelector((state) => state.theme.theme);
     const navigate = useNavigate();
 
     const [termsChecked, setTermsChecked] = useState(false);
@@ -30,8 +32,8 @@ function Register() {
     });
 
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData((prevData) => ({ ...prevData, [name]: value }));
+        const {name, value} = e.target;
+        setFormData((prevData) => ({...prevData, [name]: value}));
     };
 
     const handleSignUp = async () => {
@@ -50,7 +52,7 @@ function Register() {
             firstName: formData.FirstName,
             lastName: formData.LastName,
             email: formData.Email,
-            phoneNumbers: [{ id: 0, phoneNumber: formData.PhoneNumber }],
+            phoneNumbers: [{id: 0, phoneNumber: formData.PhoneNumber}],
             password: formData.Password,
             confirmPassword: formData.ConfirmPassword,
         };
@@ -58,22 +60,16 @@ function Register() {
         try {
             const response = await dispatch(registerUser(requestBody));
             // console.log (response);
-            if(response){
+            if (response) {
                 navigate('/auth/verifyEmail');
             }
-        }
-        catch (error) {
+        } catch (error) {
         }
     };
 
 
-    const {t, i18n} = useTranslation ();
+    const {t, i18n} = useTranslation();
 
-    const handleLanguageChange = async (lang,e) => {
-        e.preventDefault();
-        await i18n.changeLanguage (lang);
-        localStorage.setItem('lng',lang);
-    }
 
     return (
         <div className="wrapper">
@@ -83,71 +79,32 @@ function Register() {
             </Helmet>
             <div className="top-right-dropdown">
                 <ul className="navbar-nav ms-auto align-items-center navbar-list mb-2 mb-lg-0">
-                 <li className="nav-item dropdown">
-                    <a href="#" className="search-toggle nav-link" id="flagDropdown"
-                       data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src={`../../assets/images/flag/flag-${i18n.language}.png`} className="img-fluid"
-                             alt="user" style={{height: '30px', minWidth: '30px', width: '30px'}}/>
-                        <span className="bg-primary"></span>
-                    </a>
-                    <div className="sub-drop dropdown-menu dropdown-menu-end p-0"
-                         aria-labelledby="dropdownMenuButton2">
-                        <div className="card shadow-none m-0 border-0">
-                            <div className=" p-0 ">
-                                <ul className="list-group list-group-flush p-0">
-                                    <li className="iq-sub-card list-group-item"
-                                        onClick={(e) => handleLanguageChange ('en',e)}><a className="p-0" href="#"><img
-                                        src="../assets/images/flag/flag-en.png" alt="img-flaf"
-                                        className="img-fluid me-2"
-                                        style={{height: '30px', minWidth: '30px', width: '30px'}}/>English</a>
-                                    </li>
-                                    <li className="iq-sub-card list-group-item"
-                                        onClick={(e) => handleLanguageChange ('aze',e)}><a className="p-0"
-                                                                                           href="#"><img
-                                        src="../assets/images/flag/flag-aze.png" alt="img-flaf"
-                                        className="img-fluid me-2" style={{
-                                        height: '30px',
-                                        minWidth: '30px',
-                                        width: '30px'
-                                    }}/>Azerbaijani</a></li>
-                                    <li className="iq-sub-card list-group-item"
-                                        onClick={(e) => handleLanguageChange ('ru',e)}><a className="p-0" href="#"><img
-                                        src="../assets/images/flag/flag-ru.png" alt="img-flaf"
-                                        className="img-fluid me-2"
-                                        style={{height: '30px', minWidth: '30px', width: '30px'}}/>Russian</a>
-                                    </li>
-                                    <li className="iq-sub-card list-group-item"
-                                        onClick={(e) => handleLanguageChange ('tr',e)}><a className="p-0" href="#"><img
-                                        src="../assets/images/flag/flag-tr.png" alt="img-flaf"
-                                        className="img-fluid me-2"
-                                        style={{height: '30px', minWidth: '30px', width: '30px'}}/>Turkish</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </li>
+
+                    <li className="nav-item dropdown">
+                        <LanguageDropdown></LanguageDropdown>
+                    </li>
+
                 </ul>
             </div>
-            <div className="main-auth-page">
-                <Logo size="190px" />
+            <div className={`main-auth-page ${theme === 'dark' ? 'main-auth-page-dark' : ''}`}>
+                <Logo size="190px"/>
 
                 <div className="clip-board">
                     <div className="container">
                         <div className="row auth-details-card">
                             <div className="col-lg-12">
-                                <div className="card iq-auth-card mb-0 row">
+                                <div className="card iq-auth-card mb-0 row auth-login-card">
                                     <img
                                         src="../../assets/images/auth/01.webp"
                                         alt="background"
                                         className="img-fluid w-75 position-absolute"
-                                        style={{ top: '8%' }}
+                                        style={{top: '8%'}}
                                     />
                                     <div className="card-body col-5 offset-7">
                                         <div className="auth-form">
-                                            <h2 className="text-center mb-3">{t("nav.signUp")}</h2>
+                                            <h2 className={`text-center mb-3 ${theme === 'dark' ? 'dark-theme-label' : ''}`}>{t("nav.signUp")}</h2>
                                             <form>
-                                                <p className="text-center"> {t("nav.createAccount")}</p>
+                                                <p className={`text-center ${theme === 'dark' ? 'dark-theme-label' : ''}`}> {t("nav.createAccount")}</p>
                                                 <div className="row text-start mb-3">
                                                     <div className="col-md-6">
                                                         <div className="form-floating">
@@ -247,7 +204,7 @@ function Register() {
                                                         onChange={handleCheckboxChange}
                                                     />
                                                     <label
-                                                        className="ms-2 form-check-label"
+                                                        className={`ms-2 form-check-label ${theme === 'dark' ? 'dark-theme-label' : ''}`}
                                                         htmlFor="termsCondition"
                                                     >
                                                         {t("nav.termsCondition")}
@@ -265,7 +222,9 @@ function Register() {
                                                 </div>
 
                                                 {alert.show && (
-                                                    <div className={`alert ${alert.type === 'success' ? 'alert-success' : 'alert-warning'} mt-3`} role="alert">
+                                                    <div
+                                                        className={`alert ${alert.type === 'success' ? 'alert-success' : 'alert-warning'} mt-3`}
+                                                        role="alert">
                                                         {alert.message}
                                                     </div>
                                                 )}

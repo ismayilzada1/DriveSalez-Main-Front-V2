@@ -4,11 +4,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.1); /* Semi-transparent background */
+    background: rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999; /* Ensure it's on top of other content */
+    z-index: 999;
 }
 
 
@@ -18,4 +18,16 @@
 }
 .clip-board{
     height: 90vh !important;
+}
+
+.main-auth-page-dark{
+    background-color: #573030 !important;
+
+    .auth-login-card{
+        background-color: #4e3333 !important;
+    }
+}
+
+.main-auth-page-dark:before{
+    background-color: #4e3333 !important;
 }

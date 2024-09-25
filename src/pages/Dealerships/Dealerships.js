@@ -22,6 +22,7 @@ import DealershipCard from "../../components/ui/DealershipCard/DealershipCard";
 
 const Dealerships = () => {
   const dispatch = useDispatch();
+  const theme = useSelector((state) => state.theme.theme);
   const {
     allAnnouncements,
     premiumAnnouncements,
@@ -73,7 +74,6 @@ const Dealerships = () => {
     }
   };
 
-  const { t, i18n } = useTranslation();
 
   // if (error) {
   //     return <p>Error: {error}</p>;
@@ -147,7 +147,7 @@ const Dealerships = () => {
                 <div className="pt-3">
 
                     <div className="d-flex justify-content-between align-items-center">
-                        <h2 className="text-dark">{t("officialRepresentatives")}</h2>
+                        <h2 className={`text-dark ${theme === 'dark' ? 'dark-theme-label' : ''}`}>{t("officialRepresentatives")}</h2>
                     </div>
 
 
@@ -157,9 +157,20 @@ const Dealerships = () => {
                         hasMore={hasMore}
                         scrollThreshold={0.6}
                     >
-                       {/*Her should be dealership cards*/}
-                       {/* 2 cards in a row*/}
-
+                        <div className="dealership-cards-container">
+                            {ann.map((announcement, index) => (
+                                <DealershipCard
+                                    key={index}
+                                    imgSrc={announcement.imgSrc}
+                                    description={announcement.description}
+                                    phoneNumber={announcement.phoneNumber}
+                                    name={announcement.name}
+                                    announcementNumber={announcement.announcementNumber}
+                                    isOfficial={announcement.isOfficial}
+                                    onClick={handleCardClick}
+                                />
+                            ))}
+                        </div>
                     </InfiniteScroll>
 
 
@@ -168,10 +179,10 @@ const Dealerships = () => {
                 )}
 
 
-                <div className="regular-announcements-container pt-3">
+                <div className="regular-announcements-container pt-3 mb-5">
 
                     <div className="d-flex justify-content-between align-items-center">
-                        <h2 className="text-dark">{t("dealerships")}</h2>
+                        <h2 className={`text-dark ${theme === 'dark' ? 'dark-theme-label' : ''}`}>{t("dealerships")}</h2>
                     </div>
 
 
@@ -181,68 +192,28 @@ const Dealerships = () => {
                         hasMore={hasMore}
                         scrollThreshold={0.6}
                     >
-
-                        {/*Her should be dealership cards*/}
-                        {/* 2 cards in a row*/}
-
+                        <div className="dealership-cards-container">
+                            {ann.map((announcement, index) => (
+                                <DealershipCard
+                                    key={index}
+                                    imgSrc={announcement.imgSrc}
+                                    description={announcement.description}
+                                    phoneNumber={announcement.phoneNumber}
+                                    name={announcement.name}
+                                    announcementNumber={announcement.announcementNumber}
+                                    isOfficial={announcement.isOfficial}
+                                    onClick={handleCardClick}
+                                />
+                            ))}
+                        </div>
                     </InfiniteScroll>
 
                 </div>
 
             </div>
 
-            <InfiniteScroll
-              dataLength={premiumAnnouncements.length}
-              next={fetchData}
-              hasMore={hasMore}
-              scrollThreshold={0.6}
-            >
-              <div className="dealership-cards-container">
-                {ann.map((announcement, index) => (
-                  <DealershipCard
-                    key={index}
-                    imgSrc={announcement.imgSrc}
-                    description={announcement.description}
-                    phoneNumber={announcement.phoneNumber}
-                    name={announcement.name}
-                    announcementNumber={announcement.announcementNumber}
-                    isOfficial={announcement.isOfficial}
-                    onClick={handleCardClick}
-                  />
-                ))}
-              </div>
-            </InfiniteScroll>
-          </div>
-        )}
 
-        <div className="regular-announcements-container pt-3">
-          <div className="d-flex justify-content-between align-items-center">
-            <h2 className="text-dark">{t("dealerships")}</h2>
-          </div>
 
-          <InfiniteScroll
-            dataLength={allAnnouncements.length}
-            next={fetchData}
-            hasMore={hasMore}
-            scrollThreshold={0.6}
-          >
-            <div className="dealership-cards-container">
-              {ann.map((announcement, index) => (
-                <DealershipCard
-                  key={index}
-                  imgSrc={announcement.imgSrc}
-                  description={announcement.description}
-                  phoneNumber={announcement.phoneNumber}
-                  name={announcement.name}
-                  announcementNumber={announcement.announcementNumber}
-                  isOfficial={announcement.isOfficial}
-                  onClick={handleCardClick}
-                />
-              ))}
-            </div>
-          </InfiniteScroll>
-        </div>
-      </div>
     </Row>
   );
 };

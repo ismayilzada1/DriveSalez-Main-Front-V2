@@ -13,6 +13,7 @@ import {setAnnouncements, setPageNumber, setFilterParams} from '../../../Store/A
 import '../../../i18n'
 import {useTranslation} from "react-i18next";
 import { toggleTheme } from '../../../Store/Theme/ThemeSlice';
+import LanguageDropdown from "../LanguageDropdown";
 
 
 const Header = () => {
@@ -266,53 +267,11 @@ const Header = () => {
                         </li>
 
 
-                        <li className="nav-item dropdown">
-                            <a href="#" className="search-toggle nav-link" id="flagDropdown"
-                               data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src={`../assets/images/flag/flag-${i18n.language}.png`} className="img-fluid"
-                                     alt="user" style={{height: '30px', minWidth: '30px', width: '30px'}}/>
-                                <span className="bg-primary"></span>
-                            </a>
-                            <div className="sub-drop dropdown-menu dropdown-menu-end p-0"
-                                 aria-labelledby="dropdownMenuButton2">
-                                <div className="card shadow-none m-0 border-0">
-                                    <div className=" p-0 ">
-                                        <ul className="list-group list-group-flush p-0">
-                                            <li className={`iq-sub-card  ${theme === 'dark' ? 'dark-mode-bg' : 'list-group-item'}`}
-                                                onClick={(e) => handleLanguageChange('en', e)}><a className={`p-0 ${theme === 'dark' ? 'dark-theme-label' : ''}`}
-                                                                                                  href="#"><img
-                                                src="../assets/images/flag/flag-en.png" alt="img-flaf"
-                                                className={`img-fluid me-2 `}
-                                                style={{height: '30px', minWidth: '30px', width: '30px'}}/>English</a>
-                                            </li>
-                                            <li className={`iq-sub-card  ${theme === 'dark' ? 'dark-mode-bg' : 'list-group-item'}`}
-                                                onClick={(e) => handleLanguageChange('aze', e)}><a className={`p-0 ${theme === 'dark' ? 'dark-theme-label' : ''}`}
-                                                                                                   href="#"><img
-                                                src="../assets/images/flag/flag-aze.png" alt="img-flaf"
-                                                className="img-fluid me-2" style={{
-                                                height: '30px',
-                                                minWidth: '30px',
-                                                width: '30px'
-                                            }}/>Azerbaijani</a></li>
-                                            <li className={`iq-sub-card  ${theme === 'dark' ? 'dark-mode-bg' : 'list-group-item'}`}
-                                                onClick={(e) => handleLanguageChange('ru', e)}><a className={`p-0 ${theme === 'dark' ? 'dark-theme-label' : ''}`}
-                                                                                                  href="#"><img
-                                                src="../assets/images/flag/flag-ru.png" alt="img-flaf"
-                                                className="img-fluid me-2"
-                                                style={{height: '30px', minWidth: '30px', width: '30px'}}/>Russian</a>
-                                            </li>
-                                            <li className={`iq-sub-card  ${theme === 'dark' ? 'dark-mode-bg' : 'list-group-item'}`}
-                                                onClick={(e) => handleLanguageChange('tr', e)}><a className={`p-0 ${theme === 'dark' ? 'dark-theme-label' : ''}`}
-                                                                                                  href="#"><img
-                                                src="../assets/images/flag/flag-tr.png" alt="img-flaf"
-                                                className="img-fluid me-2"
-                                                style={{height: '30px', minWidth: '30px', width: '30px'}}/>Turkish</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+
+                        <li className={"nav-item dropdown"}>
+                            <LanguageDropdown></LanguageDropdown>
                         </li>
+
 
                         <li className="nav-item dropdown d-lg-none position-relative">
                             <a

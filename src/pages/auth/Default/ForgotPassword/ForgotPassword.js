@@ -11,6 +11,7 @@ const ForgotPassword = () => {
     const navigate = useNavigate();
     const loading = useSelector((state) => state.auth.loading);
     const error = useSelector((state) => state.auth.error);
+    const theme = useSelector((state) => state.theme.theme);
 
     const [email, setEmail] = useState("");
 
@@ -40,21 +41,21 @@ const ForgotPassword = () => {
 
     return (
             <div className="wrapper">
-                <div className="main-auth-page">
+                <div className={`main-auth-page ${theme === 'dark' ? 'main-auth-page-dark' : ''}`}>
                     <Logo size="190px" />
                     <div className="clip-board">
                         <div className="container">
                             <div className="row auth-details-card">
                                 <div className="col-lg-12">
-                                    <div className="card iq-auth-card mb-0 row">
+                                    <div className="card iq-auth-card mb-0 row auth-login-card">
                                         <img src="../../assets/images/auth/01.webp" alt="background" className="img-fluid w-75 position-absolute" />
                                         <div className="card-body col-5 offset-7">
                                             <div className="auth-form">
                                                 <div className="text-center">
-                                                    <h2 >Forgot Password ?</h2>
+                                                    <h2 className={`${theme === 'dark' ? 'dark-theme-label' : ''}`}>Forgot Password ?</h2>
                                                 </div>
                                                 <div>
-                                                    <h4 className="mt-3 text-center" style={{fontWeight:400}}>Enter your  email</h4>
+                                                    <h4 className={`mt-3 text-center ${theme === 'dark' ? 'dark-theme-label' : ''}`} style={{fontWeight:400}}>Enter your  email</h4>
                                                     <div className="form-floating mb-3">
                                                         <input type="text" className="form-control" value={email} onChange={(e) => setEmail(e.target.value)} id="floatingInput" placeholder="123456" />
                                                         <label htmlFor="floatingInput">E-Mail</label>
