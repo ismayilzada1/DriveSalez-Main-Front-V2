@@ -35,7 +35,20 @@
 
 .business-auth-page:before{
     background-color: #bed6f8;
+
 }
+
+.business-auth-page-dark{
+    background-color: #646d7a !important;
+
+    .business-login-card{
+        background-color: #485461 !important;
+    }
+}
+.business-auth-page-dark:before{
+    background-color: #485461 !important;
+}
+
 
 .business-login-card{
     background-color: #bed6f8 !important;

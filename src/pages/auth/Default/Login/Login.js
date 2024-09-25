@@ -6,13 +6,14 @@ import {useDispatch, useSelector} from 'react-redux';
 import {loginUser} from '../../../../Store/Auth/authActions';
 import {useTranslation} from "react-i18next";
 import {Helmet} from "react-helmet";
+import LanguageDropdown from "../../../../components/ui/LanguageDropdown";
 
 const Login = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const {loading, error} = useSelector((state) => state.auth);
-
+    const theme = useSelector((state) => state.theme.theme);
     const [Email, setEmail] = useState('');
     const [Password, setPassword] = useState('');
     const [rememberMe, setRememberMe] = useState(false);
@@ -42,11 +43,8 @@ const Login = () => {
 
     const {t, i18n} = useTranslation();
 
-    const handleLanguageChange = async (lang, e) => {
-        e.preventDefault();
-        await i18n.changeLanguage(lang);
-        localStorage.setItem('lng', lang);
-    }
+
+
 
     return (
 
@@ -59,62 +57,18 @@ const Login = () => {
 
             <div className="top-right-dropdown">
                 <ul className="navbar-nav ms-auto align-items-center navbar-list mb-2 mb-lg-0">
-                    <li className="nav-item dropdown">
-                        <a href="#" className="search-toggle nav-link" id="flagDropdown"
-                           data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src={`../../assets/images/flag/flag-${i18n.language}.png`} className="img-fluid"
-                                 alt="user" style={{height: '30px', minWidth: '30px', width: '30px'}}/>
-                            <span className="bg-primary"></span>
-                        </a>
-                        <div className="sub-drop dropdown-menu dropdown-menu-end p-0"
-                             aria-labelledby="dropdownMenuButton2">
-                            <div className="card shadow-none m-0 border-0">
-                                <div className=" p-0 ">
-                                    <ul className="list-group list-group-flush p-0">
-                                        <li className="iq-sub-card list-group-item"
-                                            onClick={(e) => handleLanguageChange('en', e)}><a className="p-0"
-                                                                                              href="#"><img
-                                            src="../assets/images/flag/flag-en.png" alt="img-flaf"
-                                            className="img-fluid me-2"
-                                            style={{height: '30px', minWidth: '30px', width: '30px'}}/>English</a>
-                                        </li>
-                                        <li className="iq-sub-card list-group-item"
-                                            onClick={(e) => handleLanguageChange('aze', e)}><a className="p-0"
-                                                                                               href="#"><img
-                                            src="../assets/images/flag/flag-aze.png" alt="img-flaf"
-                                            className="img-fluid me-2" style={{
-                                            height: '30px',
-                                            minWidth: '30px',
-                                            width: '30px'
-                                        }}/>Azerbaijani</a></li>
-                                        <li className="iq-sub-card list-group-item"
-                                            onClick={(e) => handleLanguageChange('ru', e)}><a className="p-0"
-                                                                                              href="#"><img
-                                            src="../assets/images/flag/flag-ru.png" alt="img-flaf"
-                                            className="img-fluid me-2"
-                                            style={{height: '30px', minWidth: '30px', width: '30px'}}/>Russian</a>
-                                        </li>
-                                        <li className="iq-sub-card list-group-item"
-                                            onClick={(e) => handleLanguageChange('tr', e)}><a className="p-0"
-                                                                                              href="#"><img
-                                            src="../assets/images/flag/flag-tr.png" alt="img-flaf"
-                                            className="img-fluid me-2"
-                                            style={{height: '30px', minWidth: '30px', width: '30px'}}/>Turkish</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                    <li className={"nav-item dropdown"}>
+                        <LanguageDropdown></LanguageDropdown>
                     </li>
                 </ul>
             </div>
-            <div className="main-auth-page">
+            <div className={`main-auth-page ${theme === 'dark' ? 'main-auth-page-dark' : ''}`}>
                 <Logo size="190px"/>
                 <div className="clip-board">
                     <div className="container">
                         <div className="row auth-details-card">
                             <div className="col-lg-12">
-                                <div className="card iq-auth-card mb-0 row">
+                                <div className="card iq-auth-card mb-0 row auth-login-card">
                                     <img
                                         src="../../assets/images/auth/01.webp"
                                         alt="background"
@@ -123,9 +77,9 @@ const Login = () => {
                                     />
                                     <div className="card-body col-5 offset-7">
                                         <div className="auth-form">
-                                            <h2 className="text-center mb-3">{t("nav.signIn")}</h2>
+                                            <h2 className={`text-center mb-3 ${theme === 'dark' ? 'dark-theme-label' : ''}`}>{t("nav.signIn")}</h2>
                                             <form>
-                                                <p className="text-center">{t("nav.signInToStayConnected")}</p>
+                                                <p className={`text-center ${theme === 'dark' ? 'dark-theme-label' : ''}`}>{t("nav.signInToStayConnected")}</p>
                                                 <div className="row text-start mb-3">
                                                     <div className="col-12 mb-3">
                                                         <div className="form-floating">
@@ -166,7 +120,7 @@ const Login = () => {
                                                                 onChange={handleRememberMeChange}
                                                             />
                                                             <label
-                                                                className="form-check-label"
+                                                                className={`form-check-label ${theme === 'dark' ? 'dark-theme-label' : ''}`}
                                                                 htmlFor="Remember"
                                                             >
                                                                 {t("nav.rememberMe")}?
@@ -190,7 +144,9 @@ const Login = () => {
 
 
                                                 {error &&
-                                                    <div className="alert alert-primary rounded-0 alert-dismissible fade show mt-1" role="alert">
+                                                    <div
+                                                        className="alert alert-primary rounded-0 alert-dismissible fade show mt-1"
+                                                        role="alert">
                                                         <span>{error}</span>
                                                     </div>
                                                 }

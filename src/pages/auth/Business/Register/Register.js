@@ -6,13 +6,14 @@ import {useDispatch, useSelector} from 'react-redux';
 import {loginUser} from '../../../../Store/Auth/authActions';
 import {useTranslation} from "react-i18next";
 import {Helmet} from "react-helmet";
+import LanguageDropdown from "../../../../components/ui/LanguageDropdown";
 
 const RegisterBusiness = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const {loading, error} = useSelector((state) => state.auth);
-
+    const theme = useSelector((state) => state.theme.theme);
     const [Email, setEmail] = useState('');
     const [Password, setPassword] = useState('');
 
@@ -72,56 +73,12 @@ const RegisterBusiness = () => {
 
             <div className="top-right-dropdown">
                 <ul className="navbar-nav ms-auto align-items-center navbar-list mb-2 mb-lg-0">
-                    <li className="nav-item dropdown">
-                        <a href="#" className="search-toggle nav-link" id="flagDropdown"
-                           data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src={`../../assets/images/flag/flag-${i18n.language}.png`} className="img-fluid"
-                                 alt="user" style={{height: '30px', minWidth: '30px', width: '30px'}}/>
-                            <span className="bg-primary"></span>
-                        </a>
-                        <div className="sub-drop dropdown-menu dropdown-menu-end p-0"
-                             aria-labelledby="dropdownMenuButton2">
-                            <div className="card shadow-none m-0 border-0">
-                                <div className=" p-0 ">
-                                    <ul className="list-group list-group-flush p-0">
-                                        <li className="iq-sub-card list-group-item"
-                                            onClick={(e) => handleLanguageChange('en', e)}><a className="p-0"
-                                                                                              href="#"><img
-                                            src="../assets/images/flag/flag-en.png" alt="img-flaf"
-                                            className="img-fluid me-2"
-                                            style={{height: '30px', minWidth: '30px', width: '30px'}}/>English</a>
-                                        </li>
-                                        <li className="iq-sub-card list-group-item"
-                                            onClick={(e) => handleLanguageChange('aze', e)}><a className="p-0"
-                                                                                               href="#"><img
-                                            src="../assets/images/flag/flag-aze.png" alt="img-flaf"
-                                            className="img-fluid me-2" style={{
-                                            height: '30px',
-                                            minWidth: '30px',
-                                            width: '30px'
-                                        }}/>Azerbaijani</a></li>
-                                        <li className="iq-sub-card list-group-item"
-                                            onClick={(e) => handleLanguageChange('ru', e)}><a className="p-0"
-                                                                                              href="#"><img
-                                            src="../assets/images/flag/flag-ru.png" alt="img-flaf"
-                                            className="img-fluid me-2"
-                                            style={{height: '30px', minWidth: '30px', width: '30px'}}/>Russian</a>
-                                        </li>
-                                        <li className="iq-sub-card list-group-item"
-                                            onClick={(e) => handleLanguageChange('tr', e)}><a className="p-0"
-                                                                                              href="#"><img
-                                            src="../assets/images/flag/flag-tr.png" alt="img-flaf"
-                                            className="img-fluid me-2"
-                                            style={{height: '30px', minWidth: '30px', width: '30px'}}/>Turkish</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                    <li className={"nav-item dropdown"}>
+                        <LanguageDropdown></LanguageDropdown>
                     </li>
                 </ul>
             </div>
-            <div className="main-auth-page business-auth-page">
+            <div className={`main-auth-page business-auth-page ${theme === 'dark' ? 'business-auth-page-dark' : ''}`}>
                 <Logo size="190px"/>
                 <div className="clip-board">
                     <div className="container">
@@ -136,9 +93,9 @@ const RegisterBusiness = () => {
                                     />
                                     <div className="card-body col-5 offset-7">
                                         <div className="auth-form">
-                                            <h2 className="text-center mb-3">{t("nav.businessAccount")}</h2>
+                                            <h2 className={`text-center mb-3 ${theme === 'dark' ? 'dark-theme-label' : ''}`}>{t("nav.businessAccount")}</h2>
                                             <form>
-                                                <p className="text-center">{t("nav.createAccountBusiness")}</p>
+                                                <p className={`text-center ${theme === 'dark' ? 'dark-theme-label' : ''}`}>{t("nav.createAccountBusiness")}</p>
 
                                                 <div className="row text-start mb-3">
                                                     <div className="col-md-6">
