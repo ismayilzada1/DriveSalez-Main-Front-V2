@@ -55,6 +55,7 @@ const Dealerships = () => {
         if (response && response.length === 0) {
           return <p>No announcement found.</p>;
         }
+
       })
       .catch((error) => {
         console.error("Error fetching announcements:", error);
@@ -122,23 +123,72 @@ const Dealerships = () => {
     // Click logic here (when card clicked)!!
   };
 
-  return (
-    <Row className="wrapper">
-      <Helmet>
-        <title>Drivesalez - Dealerships</title>
-        <meta
-          name="description"
-          content={
-            "Welcome to DriveSalez - the largest pan-Azerbaijan online car market."
-          }
-        />
-      </Helmet>
 
-      <div className="container-fluid pt-3">
-        {(true || premiumAnnouncements.length > 0) && ( // remove true after testing
-          <div className="pt-3">
-            <div className="d-flex justify-content-between align-items-center">
-              <h2 className="text-dark">{t("officialRepresentatives")}</h2>
+
+    const {t, i18n} = useTranslation();
+
+    // if (error) {
+    //     return <p>Error: {error}</p>;
+    // }
+
+    return (
+        <Row className="wrapper dealerships-container">
+
+            <Helmet>
+                <title>Drivesalez - Dealerships</title>
+                <meta name='description' content={"Welcome to DriveSalez - the largest pan-Azerbaijan online car market."}/>
+            </Helmet>
+
+
+
+            <div className="container-fluid pt-3">
+                {(true || premiumAnnouncements.length > 0) && (     // remove true after testing
+
+                <div className="pt-3">
+
+                    <div className="d-flex justify-content-between align-items-center">
+                        <h2 className="text-dark">{t("officialRepresentatives")}</h2>
+                    </div>
+
+
+                    <InfiniteScroll
+                        dataLength={premiumAnnouncements.length}
+                        next={fetchData}
+                        hasMore={hasMore}
+                        scrollThreshold={0.6}
+                    >
+                       {/*Her should be dealership cards*/}
+                       {/* 2 cards in a row*/}
+
+                    </InfiniteScroll>
+
+
+                </div>
+
+                )}
+
+
+                <div className="regular-announcements-container pt-3">
+
+                    <div className="d-flex justify-content-between align-items-center">
+                        <h2 className="text-dark">{t("dealerships")}</h2>
+                    </div>
+
+
+                    <InfiniteScroll
+                        dataLength={allAnnouncements.length}
+                        next={fetchData}
+                        hasMore={hasMore}
+                        scrollThreshold={0.6}
+                    >
+
+                        {/*Her should be dealership cards*/}
+                        {/* 2 cards in a row*/}
+
+                    </InfiniteScroll>
+
+                </div>
+
             </div>
 
             <InfiniteScroll

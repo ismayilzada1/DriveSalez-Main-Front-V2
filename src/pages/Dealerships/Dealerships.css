@@ -1,4 +1,4 @@
-.wrapper{
+.dealerships-container{
     padding-top:40px !important;
 }
 
@@ -24,12 +24,12 @@
 }
 
 .custom-form-check:hover{
-    background-color: #f6542c;
+    background-color: #cb3034;
     color:white;
 }
 
 .custom-dropdown{
-    background-color: #f6542c !important;
+    background-color: #D13539 !important;
     border:0;
 }
 

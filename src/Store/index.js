@@ -6,9 +6,10 @@ import persistReducer from "redux-persist/es/persistReducer";
 import authReducer from "./Auth/AuthSlice"
 import announcementReducer from "./Announcement/AnnouncementSlice"
 import themeReducer from "./Theme/ThemeSlice"
+import tabSlice from "./ActiveTab/ActiveTabSlice";
 
 const reducers=combineReducers(
-    {auth:authReducer,announcement:announcementReducer,theme:themeReducer}
+    {auth:authReducer,announcement:announcementReducer,theme:themeReducer,tab:tabSlice}
 );
 
 const config={

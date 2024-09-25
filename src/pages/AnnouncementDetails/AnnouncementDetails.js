@@ -7,6 +7,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {SetAnnouncement} from '../../Store/Announcement/AnnouncementActions'
 import LoadingPage from "../../components/ui/LoadingPage";
 import {useTranslation} from "react-i18next";
+import AnnouncementDetailisSalon from "../../components/ui/AnnouncementDetailisSalon/AnnouncementDetailisSalon";
 
 const AnnouncementDetails = () => {
 
@@ -27,11 +28,11 @@ const AnnouncementDetails = () => {
         },
         year:{
             id:3,
-            year:2020
+            year:2013
         },
         fuelType:{
             id:4,
-            fuelType:"Diesel"
+            fuelType:"Gasoline"
         },
         isBrandNew:false,
         bodyType:{
@@ -40,12 +41,12 @@ const AnnouncementDetails = () => {
         },
         color:{
             id:6,
-            color:"Black"
+            color:"Blue"
         },
-        horsePower:440,
+        horsePower:575,
         gearboxType:{
             id:7,
-            gearboxType: "Manual"
+            gearboxType: "Robotic"
         },
         drivetrainType:{
             id:8,
@@ -68,23 +69,47 @@ const AnnouncementDetails = () => {
             id:1,
             option:"ABS"
         },{
-            id:1,
-            option:"ABS"
+            id:2,
+            option:"Lyuk"
         },{
-            id:1,
-            option:"ABS"
+            id:3,
+            option:"Kondisioner"
         },{
-            id:1,
-            option:"ABS"
+            id:4,
+            option:"Park radar"
         }],
-        engineVolume:4200,
-        mileage:49000,
+        engineVolume:4400,
+        mileage:80000,
         mileageType:"KM",
-        imageUrls:[{url:"https://www.bmw.az/content/dam/bmw/common/all-models/m-series/series-overview/bmw-m-series-seo-overview-ms-04.jpg"},{url:"https://www.topgear.com/sites/default/files/2023/08/P90492179_highRes_bmw-i7-xdrive60-m-sp%20%281%29.jpg"}],
+        imageUrls:[
+            {
+                url:"https://turbo.azstatic.com/uploads/full/2024%2F09%2F23%2F19%2F31%2F09%2Fc2b70444-6b24-4dd9-a1cb-3d0b551a0cfc%2F11375_qXr7-N1ppBcS2a5TEaxWRQ.jpg"}
+            ,
+            {
+                url:"https://turbo.azstatic.com/uploads/full/2024%2F09%2F23%2F19%2F32%2F28%2Fef6d4d73-c722-4c88-ba83-a3d0bd337bf8%2F76402_Kt6M8xdUQ8mUvNPSzi54jw.jpg"},
+            {
+                url:"https://turbo.azstatic.com/uploads/full/2024%2F09%2F23%2F19%2F32%2F47%2Fa1c3e9d4-7218-4d23-a53a-78374b5ffb99%2F26954_DWgEQQqRrb1W5yDQKFgsVA.jpg"},
+            {
+                url:"https://turbo.azstatic.com/uploads/full/2024%2F09%2F23%2F19%2F32%2F28%2F1661f8bd-4b5e-440c-92a9-bfeb37cd5469%2F26954_DWgEQQqRrb1W5yDQKFgsVA.jpg"},
+            {
+                url:"https://turbo.azstatic.com/uploads/full/2024%2F09%2F23%2F19%2F32%2F48%2F84408599-0c0e-4d31-ad04-36e2375b7003%2F26954_DWgEQQqRrb1W5yDQKFgsVA.jpg"},
+
+        ],
         barter:false,
         onCredit:false,
-        description:"no description",
-        price:49000,
+        description:"Bmw M5 F10 Competition Package. 2014 M.Y\n" +
+            "Downpipe.\n" +
+            "Bezkraskadır.\n" +
+            "Maşın ideal vəziyyətdədir.\n" +
+            "Yalnız 98 benzinlə idarə edilib.\n" +
+            "Risk zonaları qoruyucu plenka ilə üzlənib.\n" +
+            "Kasko Siğortalıdır.\n" +
+            "Alıcı istənilən yerdə yoxlatdıra bilər.\n" +
+            "Real alıcı ilə maşına baxdıqdan sonra qiymətdə razılaşmaq olar.\n" +
+            "TEST DRİVE VERİLMİR !!\n" +
+            "Qeyri ciddi şəxslər narahat etməsin !\n" +
+            "Barter edilmir !",
+        price:85000,
         currency:{
             id:8,
             currencyName:"AZN"
@@ -112,7 +137,7 @@ const AnnouncementDetails = () => {
     const navigate = useNavigate();
 
     const{t}=useTranslation();
-
+    const theme = useSelector((state) => state.theme.theme);
 
     const dispatch = useDispatch ();
 
@@ -276,6 +301,27 @@ const AnnouncementDetails = () => {
         return timestamp
     }
 
+
+
+    const salonDetails = {
+        isSalon: true,
+        phoneNumber: "0555778899",
+        salonName: "Suraxanı Salonu",
+        adress: "Suraxanı, Neriman Nerimanov 34a",
+        workinTime: "7:00-10:00",
+        announcementNumber: "15",
+        description: "Suraxanı Salonu – Azərbaycanda avtomobil dünyasının ən prestijli məkanlarından biridir. Biz, ən son model avtomobilləri və lüks markaları bir araya gətirərək, müştərilərimizə üstün keyfiyyət və rahatlıq təqdim edirik.",
+        SalonImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6YY1dAud4mB5-5N0T3vGW0QlgNfF1PAIc4A&s",
+        slogan: "Adiliyin sərhədlərini aş!",
+        UserName: "Logman",
+        UserSurname: "Dovsaneli",
+        UserCity: "Baki",
+        UserImage: "https://uploads.commoninja.com/searchengine/wordpress/user-avatar-reloaded.png"
+       // Userin nomresinnen salonunki birdi (yani hansi nomre gelse fergi yoxdu at "phoneNumber"-in icine cixacaq orda")
+    };
+
+
+
     return (
         <>
             <Helmet>
@@ -356,76 +402,23 @@ const AnnouncementDetails = () => {
                                 <div className="col-lg-4">
                                     <ul>
                                         <li>
-                                            <a href='#tabs-1' onClick={() => handleTabClick ('tabs-1')}>
+                                            <AnnouncementDetailisSalon {...salonDetails} />
+                                        </li>
+                                        <li className={`${theme === 'dark' ? 'announcement-details-tab-dark' : ''}`}>
+                                            <a href='#tabs-1' onClick={() => handleTabClick('tabs-1')}>
                                                 <i className="fa fa-cog"></i> {t("vehicleSpecs")}
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href='#tabs-2' onClick={() => handleTabClick ('tabs-2')}>
-                                                <i className="fa fa-info-circle"></i> {t("vehicleDescription")}
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href='#tabs-3' onClick={() => handleTabClick ('tabs-3')}>
+
+                                        <li className={`mb-5 ${theme === 'dark' ? 'announcement-details-tab-dark' : ''}`}>
+                                            <a href='#tabs-2' onClick={() => handleTabClick('tabs-2')}>
                                                 <i className="fa fa-plus-circle"></i> {t("vehicleExtras")}
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href='#tabs-4' onClick={() => handleTabClick ('tabs-4')}>
-                                                <i className="fa fa-phone"></i> {t("contactDetails")}
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <div className="salonMainDiv">
-                                                <div className="salonMainTop">
-                                                    <div className="salonMainTop1">
-                                                        <img className="imgTopSalon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6YY1dAud4mB5-5N0T3vGW0QlgNfF1PAIc4A&s"/>
-                                                        <span className="spanTopSalon">Lorem Ipsum</span>
-                                                    </div>
-                                                    <button className="callButtonTopSalon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 17">
-                                                            <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
-                                                        </svg>
-                                                       {t("Call")}
-                                                    </button>
-                                                    
-                                                </div>
-                                                <hr className="salonMainDivHR"/>
-                                                <div className="salonMainCenter">
-                                                    <span className="salonMainCenterSpan">Lorem ipsum dolor sit amet</span>
-                                                    <div className="salonMainCenterDescription">Lorem ipsum dolor sit amet,
-                                                         consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.
-                                                    </div>
-                                                    <span className="salonMainCenterSpan2">17 {t("announcements")}</span>
-                                                </div>
-                                                <hr className="salonMainDivHR"/>
-                                                <div className="salonMainBottom">
-                                                    <div className="salonMainBottom2">
-                                                    <div className="salonMainBottomDate">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-clock-fill" viewBox="0 0 16 16"  className="svgbottom">
-                                                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
-                                                        </svg>
-                                                        <span className="spanBottom">Hər gün: 09:30–20:30</span>
-                                                    </div>
-                                                    <div className="salonMainBottomAdress">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16" className="svgbottom">
-                                                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
-                                                        </svg>
-                                                        <span className="spanBottom">Bakı ş., Nəsimi r., Abbas Səhhət küç., 67-69</span>
-                                                    </div>
-                                                    </div>
-                                                    <button className="salonMainBottomButton">
-                                                        {t("Visit salon")}
-                                                    </button>
 
-                                                </div>
-                                            </div>
-                                        </li>
                                     </ul>
-                                    
+
                                 </div>
-
-
 
 
                                 <div className="col-lg-8">
@@ -434,96 +427,114 @@ const AnnouncementDetails = () => {
                                                  className={`fade-in-element ${activeTab === 'tabs-1' ? 'active-tab' : ''}`}>
 
 
-                                            <h4>{t("vehicleSpecs")}</h4>
+                                            <h4 className={`${theme === 'dark' ? 'announcement-details-tab-label' : ''}`}>{t("vehicleSpecs")}</h4>
 
                                             <div className="row">
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t('mainLabelMake')}</label>
                                                     <p>{make?.makeName}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t('labelVehicleModel')}</label>
                                                     <p>{model?.modelName}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t('labelBodyType')}</label>
                                                     <p>{bodyType?.bodyType}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t("firstRegistration")}</label>
                                                     <p>{year?.year}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t("mileage")}</label>
                                                     <p>{mileage} {mileageType}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t("fuelType")}</label>
                                                     <p>{fuelType?.fuelType}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t("engineVolume")}</label>
                                                     <p>{engineVolume} cc</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t("labelHorsePower")}</label>
                                                     <p>{horsePower}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t("labelGearboxType")}</label>
                                                     <p>{gearboxType?.gearboxType}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t("seatCount")}</label>
                                                     <p>{seatCount}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t("labelMarketVersion")}</label>
                                                     <p>{marketVersion?.marketVersion}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t("labelWheelDrive")}</label>
                                                     <p>{drivetrainType?.drivetrainType}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t("ownerQuantity")}</label>
                                                     <p>{ownerQuantity}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t("brandNew")}</label>
                                                     <p>{isBrandNew ? t("Yes") : t("No")}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t("labelVehicleColor")}</label>
                                                     <p>{color?.color}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t("barter")}</label>
                                                     <p>{barter ? t("Yes") : t("No")}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6">
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label>{t("onCredit")}</label>
                                                     <p>{onCredit ? t("Yes") : t("No")}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-12">
+                                                <div
+                                                    className={`col-6 col-sm-12 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
                                                     <label style={{fontSize: '1.4em'}}>{t("labelPrice")}</label>
                                                     <p className="main-price text-success font-weight-bold"
                                                        style={{fontSize: '2.2em'}}>
@@ -531,15 +542,22 @@ const AnnouncementDetails = () => {
                                                     </p>
                                                 </div>
 
-                                                <p>{t("announcementNumber")}:  {id}</p>
 
-                                                <div className=" col-6col-sm-6">
-                                                    <p>{t("expirationDate")}: {formatTimestamp (expirationDate)}</p>
+                                                <div
+                                                    className={`col-6 col-sm-12 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
+                                                    <p>{t("announcementNumber")}: {id}</p>
                                                 </div>
 
-                                                <div className="col-6 col-sm-6 d-flex align-items-center" >
-                                                    <p><i className="far fa-eye me-2" ></i>
-                                                    <span>{viewCount} {t("views")}</span>
+
+                                                <div
+                                                    className={`col-6 col-sm-6 ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
+                                                    <p>{t("expirationDate")}: {formatTimestamp(expirationDate)}</p>
+                                                </div>
+
+                                                <div
+                                                    className={`col-6 col-sm-6 d-flex align-items-center ${theme === 'dark' ? 'announcement-details-label-dark' : ''}`}>
+                                                    <p><i className="far fa-eye me-2"></i>
+                                                        <span>{viewCount} {t("views")}</span>
                                                     </p>
                                                 </div>
 
@@ -549,20 +567,27 @@ const AnnouncementDetails = () => {
                                         </article>
                                         <article id='tabs-2'
                                                  className={`fade-in-element ${activeTab === 'tabs-2' ? 'active-tab' : ''}`}>
-                                            <h4>{t("vehicleDescription")}</h4>
+
+                                        <h4 className={`${theme === 'dark' ? 'announcement-details-tab-label' : ''}`}>{t("vehicleDescription")}</h4>
 
                                             <div className='row'>
-                                                <p className='col-sm-12' style={{maxWidth: '800px', margin: '0 auto',maxHeight: '400px', overflowY: 'auto' }}>
+                                                <p className={`col-sm-12 ${theme === 'dark' ? 'dark-theme-label2' : ''}`} style={{
+                                                    maxWidth: '800px',
+                                                    margin: '0 auto',
+                                                    maxHeight: '400px',
+                                                    overflowY: 'auto'
+                                                }}>
                                                     {description.split('\n').map((line, index) => (
-                                                    <React.Fragment key={index}>
-                                                        {line}
-                                                        <br />
-                                                    </React.Fragment>
+                                                        <React.Fragment key={index}>
+                                                            {line}
+                                                            <br/>
+                                                        </React.Fragment>
                                                     ))}
                                                 </p>
 
                                                 {vinCode && (
-                                                    <p className='col-sm-12 font-weight-bold mt-3' style={{fontSize: '1.2em'}}>
+                                                    <p className={`col-sm-12 font-weight-bold mt-3 ${theme === 'dark' ? 'dark-theme-label2' : ''}`}
+                                                       style={{fontSize: '1.2em'}}>
                                                         {t("vinCode")} :
                                                         <a
                                                             href={`https://www.google.com/search?q=${vinCode}&tbm=isch`}
@@ -579,28 +604,27 @@ const AnnouncementDetails = () => {
 
 
                                             </div>
-                                        </article>
-                                        <article id='tabs-3'
-                                                 className={`fade-in-element ${activeTab === 'tabs-3' ? 'active-tab' : ''}`}>
-                                            <h4>{t("vehicleExtras")}</h4>
+
+
+                                            <h4 className={`${theme === 'dark' ? 'announcement-details-tab-label' : ''}`}>{t("vehicleExtras")}</h4>
 
                                             <div className="row">
-                                                {options?.map ((option, index) => (
-                                                    <div className="col-6 col-sm-6">
-                                                        <p>{option.option}</p>
+                                                {options?.map((option, index) => (
+                                                    <div className={`col-6 col-sm-6`}>
+                                                        <p className={`announcement-details-option ${theme === 'dark' ? 'announcement-details-option-dark' : ''}`}>{option.option}</p>
                                                     </div>
                                                 ))}
                                             </div>
 
                                             {conditions && conditions.length > 0 && (
                                                 <div>
-                                                    <h4>{t("vehicleConditions")}</h4>
+                                                    <h4 className={`${theme === 'dark' ? 'announcement-details-tab-label' : ''}`}>{t("vehicleConditions")}</h4>
                                                     <div className="row">
-                                                        {conditions.map ((condition, index) => (
+                                                        {conditions.map((condition, index) => (
                                                             <div key={condition.id} className="col-sm-6">
-                                                                <p className={'mb-1'}
+                                                                <p className={`mb-1 ${theme === 'dark' ? 'dark-theme-label3' : ''}`}
                                                                    style={{fontWeight: "bold"}}>{condition.condition}</p>
-                                                                <p>{condition.description}</p>
+                                                                <p className={`announcement-details-option ${theme === 'dark' ? 'announcement-details-option-dark' : ''}`}>{condition.description}</p>
                                                             </div>
                                                         ))}
                                                     </div>
@@ -609,45 +633,6 @@ const AnnouncementDetails = () => {
 
 
                                         </article>
-                                        <article id='tabs-4'
-                                                 className={`fade-in-element ${activeTab === 'tabs-4' ? 'active-tab' : ''}`}>
-                                            <h4>{t("contactDetails")}</h4>
-
-                                            <div className="row">
-                                                <div className="col-sm-6">
-                                                    <label>{t("name")} {t("surname")}</label>
-
-                                                    <p>{firstName} {lastName}</p>
-                                                </div>
-
-                                                <div className="col-sm-6">
-                                                    <label>{t("email")}</label>
-                                                    <p><a href="#">{email}</a></p>
-                                                </div>
-
-                                                <div className="col-sm-6">
-                                                    <label>{t("mainLabelCountry")}</label>
-                                                    <p>{country?.countryName}</p>
-                                                </div>
-
-                                                <div className="col-sm-6">
-                                                    <label>{t("labelCity")}</label>
-                                                    <p>{city?.cityName}</p>
-                                                </div>
-
-
-                                                <div className="col-sm-6">
-                                                    <label className="mb-2">{t("mobilePhones")}</label>
-                                                    {phoneNumbers?.map ((phone, index) => (
-                                                        <p key={index} className="m-2">
-                                                            {phone.phoneNumber}
-                                                        </p>
-                                                    ))}
-                                                </div>
-
-                                            </div>
-                                        </article>
-
                                     </section>
                                 </div>
                             </div>
@@ -671,16 +656,16 @@ const AnnouncementDetails = () => {
                                 src={Images[selectedImageIndex]}
                                 alt={`Slide ${selectedImageIndex}`}
                                 className="modal-image"
-                                onClick={(e) => e.stopPropagation ()}
+                                onClick={(e) => e.stopPropagation()}
                             />
                             <div className="thumbnails-container">
-                                {Images?.map ((image, index) => (
+                                {Images?.map((image, index) => (
                                     <img
                                         key={index}
                                         src={image}
                                         alt={`Thumbnail ${index}`}
                                         className={`thumbnail-image ${selectedImageIndex === index ? 'active' : ''}`}
-                                        onClick={() => handleThumbnailClick (index)}
+                                        onClick={() => handleThumbnailClick(index)}
                                     />
                                 ))}
                             </div>

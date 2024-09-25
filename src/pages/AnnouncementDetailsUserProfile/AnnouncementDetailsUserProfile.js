@@ -79,6 +79,8 @@ const AnnouncementDetailsUserProfile = () => {
         return () => clearTimeout(transitionTimeout);
     }, [isTransitioning]);
 
+
+
     useEffect(() => {
         const carousel = document.getElementById("carouselExampleCaptions");
 
@@ -258,6 +260,7 @@ const AnnouncementDetailsUserProfile = () => {
         }
 
     }
+
 
     return (
         <>

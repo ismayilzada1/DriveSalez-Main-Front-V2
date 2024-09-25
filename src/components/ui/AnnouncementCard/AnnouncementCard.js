@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./AnnouncementCard.css";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import {useSelector} from "react-redux";
 
 const AnnouncementCard = (props) => {
   const navigate = useNavigate();
@@ -26,6 +27,8 @@ const AnnouncementCard = (props) => {
 
   const { t } = useTranslation();
 
+  const theme = useSelector((state) => state.theme.theme);
+
   const createLabelValue = (label, value) => (
     <li className="list-group-item m-0 p-2">
       <span className="label info-key">{t(label)}:</span>
@@ -47,7 +50,7 @@ const AnnouncementCard = (props) => {
   return (
     <a>
       <div
-        className="card me-3 iq-mb-3 announcement-card"
+        className={`card me-3 iq-mb-3 announcement-card ${theme === 'dark' ? 'announcement-card-dark' : ''}`}
         onClick={handleCardClick}
       >
         {imageUrl && (
@@ -58,11 +61,7 @@ const AnnouncementCard = (props) => {
           />
         )}
 
-        {isPremium && (
-          <div className="premium-announcement-icon" title="Premium">
-            <i className="bi bi-gem"></i>
-          </div>
-        )}
+  
 
         <div className="barter-and-credit-icon">
           {barter && (
@@ -76,6 +75,12 @@ const AnnouncementCard = (props) => {
         {vinCode && (
           <div className="vin-code-icon" title="VIN CODE">
             VIN
+          </div>
+          
+        )}
+        {isPremium && (
+          <div className="premium-announcement-icon" title="Premium">
+            <i className="bi bi-gem"></i>
           </div>
         )}
 
@@ -93,6 +98,7 @@ const AnnouncementCard = (props) => {
           <h5 className="card-title text-success float-start h3 mt-2">
             {price} {currency?.currencyName}
           </h5>
+
         </div>
       </div>
     </a>

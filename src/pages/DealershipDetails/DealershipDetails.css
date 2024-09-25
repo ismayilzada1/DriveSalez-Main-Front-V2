@@ -1,0 +1,68 @@
+.dealership-details-card {
+ border-radius: 8px;
+ overflow: hidden;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ background-color: #192843;
+}
+
+
+
+.dealership-details-card .img-fluid {
+ height: auto;
+ max-height: 600px;
+ object-fit: cover;
+}
+
+.dealership-details-card .logo {
+ max-width: 150px;
+}
+
+.dealership-details-card .btn-primary {
+ background-color: #007bff;
+ border-color: #007bff;
+ width: 100%;
+}
+
+.dealership-details-card .btn-light {
+ width: 100%;
+}
+
+.bi {
+ margin-right: 8px;
+}
+
+
+
+.divider {
+ padding: 0 10px;
+ color: #626161;
+}
+
+
+@media (max-width: 768px) {
+ .dealership-details-card .logo {
+  max-width: 80px;
+ }
+
+ .dealership-details-card h3 {
+  font-size: 1.5rem;
+ }
+
+ .dealership-details-card .btn-primary,
+ .dealership-details-card .btn-light {
+  font-size: 0.8rem;
+ }
+
+ .dealership-details-card .d-flex {
+  align-items: center;
+ }
+
+ .dealership-details-card .col-lg-4 {
+  padding: 10px;
+ }
+
+ .dealership-details-card-btns-container{
+  width: 100%;
+ }
+
+}

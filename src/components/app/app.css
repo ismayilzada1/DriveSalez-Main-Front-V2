@@ -9,6 +9,13 @@
     height:100vh;
 }
 
+.app-container-dark{
+    display: flex;
+    flex-direction: column;
+    height:100vh;
+    background-color:#121212;
+}
+
 .font{
     font-family: 'PT Sans', sans-serif !important;
     font-size: 100% !important;
@@ -28,6 +35,25 @@
     font-family: 'PT Sans', sans-serif !important;
     font-size: 100% !important;
 }
+
+
+*{
+    transition: background-color 0.5s ease-in-out !important;
+}
+
+html,
+body {
+    background: #F9FAFA;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.body-dark,
+.html-dark{
+    background:#141412;
+}
+
+
 
 
 @media screen and (max-width: 500px) {

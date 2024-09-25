@@ -26,6 +26,7 @@ import AboutUs from "./pages/AboutUs";
 import PremiumAnnouncements from "./pages/PremiumAnnouncements";
 import Dealerships from "./pages/Dealerships";
 import RegisterBusiness from "./pages/auth/Business/Register"
+import DealershipDetails from "./pages/DealershipDetails";
 
 
 const routes=[
@@ -64,26 +65,30 @@ const routes=[
             {
                 path:'new-announcement',
                 element:<NewAnnouncement/>,
-                // auth:true
+                // auth:false
             },
             {
                 path:'AnnouncementDetails/:id',
                 element:<AnnouncementDetails/>
             },
             {
+                path:'dealerships/:id',
+                element:<DealershipDetails/>
+            },
+            {
                 path:'profile',
                 element:<Profile/>,
-                auth:true
+                auth:false
             },
             {
                 path:'updateAccount',
                 element:<UpdateAccount/>,
-                auth:true
+                auth:false
             },
             {
                 path:'AnnouncementDetailsUserProfile/:id',
                 element:<AnnouncementDetailsUserProfile/>,
-                auth:true
+                auth:false
             },
 
         ]
@@ -120,7 +125,7 @@ const routes=[
             {
                 path:'changePassword',
                 element:<ChangePassword/>,
-                auth:true
+                auth:false
             },
         ]
     },

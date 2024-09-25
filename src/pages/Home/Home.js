@@ -29,6 +29,7 @@ const Home = () => {
     pageNumber,
     hasMore,
   } = useSelector((state) => state.announcement);
+    const theme = useSelector((state) => state.theme.theme);
 
   const pageSize = 4;
 
@@ -85,9 +86,9 @@ const Home = () => {
     year: { id: 6, year: "2021" },
     currency: { id: 7, currencyName: "AZN" },
     imageUrl: { url: "https://i.ytimg.com/vi/iZt7Fwu91FI/maxresdefault.jpg" },
-    isPremium: false,
-    barter: false,
-    onCredit: false,
+    isPremium: true,
+    barter: true,
+    onCredit: true,
     vinCode: "dsa56d16as1d2sad16as5d1s6das",
   };
 
@@ -167,11 +168,64 @@ const Home = () => {
       {/*    </div>*/}
       {/*</div>*/}
 
-       {cars.map((car) => (
-        <div className="col-lg-3 mb-2" key={car.id}>
-          <AnnouncementCard {...car} />
-        </div>
-      ))} 
+
+      <div className="container-fluid pt-3">
+          {premiumAnnouncements.length > 0 && (
+
+          <div className="pt-3">
+
+              <div className="d-flex justify-content-between align-items-center">
+                  <h2 className={`text-dark ${theme === 'dark' ? 'dark-theme-label' : ''}`}>Premium Announcements</h2>
+                  <div>
+                      <a href="">Show All</a>
+                  </div>
+              </div>
+
+                  <div className="pt-3">
+                      <div
+                          className="d-flex flex-row flex-wrap justify-content-start align-items-center announcement-cards-container">
+                          {cars?.map((car, index) => (
+                              <div key={index} className="col-lg-3 mb-2">
+                                  <AnnouncementCard {...car} />
+                              </div>
+                          ))}
+                      </div>
+                  </div>
+
+
+          </div>
+
+          )}
+
+          <div className="regular-announcements-container pt-3">
+
+              <div className="d-flex justify-content-between align-items-center">
+                  <h2 className={` ${theme === 'dark' ? 'dark-theme-label' : 'text-dark'}`}>All Announcements</h2>
+              </div>
+
+              <InfiniteScroll
+                  dataLength={cars.length}
+                  next={fetchData}
+                  hasMore={hasMore}
+                  scrollThreshold={0.6}
+              >
+                  <div className="pt-3 ">
+                      <div
+                          className="d-flex flex-row flex-wrap justify-content-start align-items-center announcement-cards-container">
+                          {cars?.map((car, index) => (
+                              <div key={index} className="col-lg-3 mb-2">
+                                  <AnnouncementCard {...car} />
+                              </div>
+                          ))}
+                      </div>
+                  </div>
+
+              </InfiniteScroll>
+
+          </div>
+      </div>
+
+
     </Row>
   );
 };
