@@ -10,6 +10,7 @@ import {useTranslation} from "react-i18next";
 const AccountTab = () => {
 
     const {accessToken}=useSelector(state => state.auth)
+    const theme = useSelector((state) => state.theme.theme);
     const {t}=useTranslation();
 
     const commonDataService=new CommonDataService();

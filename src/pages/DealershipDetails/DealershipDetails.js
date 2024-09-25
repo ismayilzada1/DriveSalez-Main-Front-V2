@@ -21,6 +21,7 @@ import {useTranslation} from "react-i18next";
 
 const DealershipDetails = () => {
     const dispatch = useDispatch();
+    const theme = useSelector((state) => state.theme.theme);
     const {
         allAnnouncements,
         premiumAnnouncements,
@@ -116,8 +117,8 @@ const DealershipDetails = () => {
 
             <div className={"d-flex  align-items-center mb-3 mt-3"}>
                 <a href="/dealerships" className={"blue-link"}>{t("dealerships")}</a>
-                <span className="divider">•</span>
-                <p className={"p-0 m-0"}>Prestige Auto</p>
+                <span className={`divider ${theme === 'dark' ? 'dark-theme-label3' : ''}`}>•</span>
+                <p className={`p-0 m-0 ${theme === 'dark' ? 'dark-theme-label3' : ''}`}>Prestige Auto</p>
             </div>
 
             <div className="dealership-details-card container">

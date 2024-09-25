@@ -8,3 +8,13 @@
 .spinner-container {
     text-align: center;
 }
+
+
+.loading-page-dark{
+    background-color: #3a3a3a;
+}
+.spinner-container{
+    .spinner-border{
+        color:rgba(222, 48, 58,1) !important;
+    }
+}

@@ -78,7 +78,7 @@ const routes=[
             {
                 path:'profile',
                 element:<Profile/>,
-                auth:false
+                // auth:false
             },
             {
                 path:'updateAccount',
