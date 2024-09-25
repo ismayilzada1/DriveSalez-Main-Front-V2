@@ -73,7 +73,6 @@ const Dealerships = () => {
     }
   };
 
-  const { t, i18n } = useTranslation();
 
   // if (error) {
   //     return <p>Error: {error}</p>;
@@ -157,9 +156,20 @@ const Dealerships = () => {
                         hasMore={hasMore}
                         scrollThreshold={0.6}
                     >
-                       {/*Her should be dealership cards*/}
-                       {/* 2 cards in a row*/}
-
+                        <div className="dealership-cards-container">
+                            {ann.map((announcement, index) => (
+                                <DealershipCard
+                                    key={index}
+                                    imgSrc={announcement.imgSrc}
+                                    description={announcement.description}
+                                    phoneNumber={announcement.phoneNumber}
+                                    name={announcement.name}
+                                    announcementNumber={announcement.announcementNumber}
+                                    isOfficial={announcement.isOfficial}
+                                    onClick={handleCardClick}
+                                />
+                            ))}
+                        </div>
                     </InfiniteScroll>
 
 
@@ -181,68 +191,28 @@ const Dealerships = () => {
                         hasMore={hasMore}
                         scrollThreshold={0.6}
                     >
-
-                        {/*Her should be dealership cards*/}
-                        {/* 2 cards in a row*/}
-
+                        <div className="dealership-cards-container">
+                            {ann.map((announcement, index) => (
+                                <DealershipCard
+                                    key={index}
+                                    imgSrc={announcement.imgSrc}
+                                    description={announcement.description}
+                                    phoneNumber={announcement.phoneNumber}
+                                    name={announcement.name}
+                                    announcementNumber={announcement.announcementNumber}
+                                    isOfficial={announcement.isOfficial}
+                                    onClick={handleCardClick}
+                                />
+                            ))}
+                        </div>
                     </InfiniteScroll>
 
                 </div>
 
             </div>
 
-            <InfiniteScroll
-              dataLength={premiumAnnouncements.length}
-              next={fetchData}
-              hasMore={hasMore}
-              scrollThreshold={0.6}
-            >
-              <div className="dealership-cards-container">
-                {ann.map((announcement, index) => (
-                  <DealershipCard
-                    key={index}
-                    imgSrc={announcement.imgSrc}
-                    description={announcement.description}
-                    phoneNumber={announcement.phoneNumber}
-                    name={announcement.name}
-                    announcementNumber={announcement.announcementNumber}
-                    isOfficial={announcement.isOfficial}
-                    onClick={handleCardClick}
-                  />
-                ))}
-              </div>
-            </InfiniteScroll>
-          </div>
-        )}
 
-        <div className="regular-announcements-container pt-3">
-          <div className="d-flex justify-content-between align-items-center">
-            <h2 className="text-dark">{t("dealerships")}</h2>
-          </div>
 
-          <InfiniteScroll
-            dataLength={allAnnouncements.length}
-            next={fetchData}
-            hasMore={hasMore}
-            scrollThreshold={0.6}
-          >
-            <div className="dealership-cards-container">
-              {ann.map((announcement, index) => (
-                <DealershipCard
-                  key={index}
-                  imgSrc={announcement.imgSrc}
-                  description={announcement.description}
-                  phoneNumber={announcement.phoneNumber}
-                  name={announcement.name}
-                  announcementNumber={announcement.announcementNumber}
-                  isOfficial={announcement.isOfficial}
-                  onClick={handleCardClick}
-                />
-              ))}
-            </div>
-          </InfiniteScroll>
-        </div>
-      </div>
     </Row>
   );
 };
