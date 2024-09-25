@@ -11,6 +11,7 @@ const NewAnnouncement=()=> {
 
 
     const { accessToken } = useSelector((state) => state.auth);
+    const theme = useSelector((state) => state.theme.theme);
     const [userLimit,setUserLimit]=useState('');
     const dispatch = useDispatch();
 
@@ -406,7 +407,7 @@ const NewAnnouncement=()=> {
     const CustomDropdown = ({ options, OnChange, value, mainLabel, dataProperty, id }) => (
         <div className="form-group col-md-6">
 
-            <label className="form-label" htmlFor={id}>
+            <label className={`form-label ${theme === 'dark' ? 'dark-theme-label3' : ''}`} htmlFor={id}>
                 {mainLabel}:
                 <span className="required-input">*</span>
             </label>
@@ -435,14 +436,14 @@ const NewAnnouncement=()=> {
 
     return (
 
-        <div className="card">
+        <div className={`card ${theme === 'dark' ? 'new-announcement-card-dark' : ''}`}>
             {isLoading ? (
                 <LoadingPage />
             ) : (
                 <>
-            <div className="card-header d-flex justify-content-between">
+            <div className={`card-header d-flex justify-content-between`}>
                 <div className="header-title">
-                    <h4 className="card-title">Vehicle Information</h4>
+                    <h4 className={`card-title ${theme === 'dark' ? 'dark-theme-label' : ''}`}>Vehicle Information</h4>
                 </div>
             </div>
             <div className="card-body">
@@ -508,7 +509,7 @@ const NewAnnouncement=()=> {
 
 
                             <div className="form-group col-md-6">
-                                <label className="form-label" htmlFor="mobno">Mileage</label>
+                                <label className={`form-label ${theme === 'dark' ? 'dark-theme-label3' : ''}`} htmlFor="mobno">Mileage</label>
                                 <span className="required-input">*</span>
                                 <div className="input-group">
                                     <input onChange={handleInputChange} type="number"
@@ -519,14 +520,14 @@ const NewAnnouncement=()=> {
                                                    checked={formData?.distanceUnit == 'KM'} type="radio"
                                                    className="form-check-input" id="radio_KM" name="distanceUnit"
                                                    value={"KM"}/>
-                                            <label className="form-check-label" htmlFor="radio_KM">KM</label>
+                                            <label  className={`form-check-label ${theme === 'dark' ? 'dark-theme-label3' : ''}`} htmlFor="radio_KM">KM</label>
                                         </div>
                                         <div className="form-check form-check-inline">
                                             <input onChange={(e) => handleSelectChange(e, 'distanceUnit')}
                                                    checked={formData?.distanceUnit == 'MI'} type="radio"
                                                    className="form-check-input" id="radio_MI" name="distanceUnit"
                                                    value={"MI"}/>
-                                            <label className="form-check-label" htmlFor="radio_MI">MI</label>
+                                            <label className={`form-check-label ${theme === 'dark' ? 'dark-theme-label3' : ''}`} htmlFor="radio_MI">MI</label>
                                         </div>
                                     </div>
                                 </div>
@@ -549,13 +550,13 @@ const NewAnnouncement=()=> {
                                 value={formData?.color}
                             />
                             <div className="form-group col-md-6">
-                                <label className="form-label" htmlFor="pno">Owner Quantity:</label>
+                                <label className={`form-label ${theme === 'dark' ? 'dark-theme-label3' : ''}`} htmlFor="pno">Owner Quantity:</label>
                                 <span className="required-input">*</span>
                                 <input onChange={handleInputChange} type="number" name="ownerQuantity"
                                        className="form-control rounded" min="0"/>
                             </div>
                             <div className="form-group col-md-6">
-                                <label className="form-label" htmlFor="pno">Engine Volume:</label>
+                                <label className={`form-label ${theme === 'dark' ? 'dark-theme-label3' : ''}`} htmlFor="pno">Engine Volume:</label>
                                 <span className="required-input">*</span>
                                 <input onChange={handleInputChange} name="engineVolume" type="number"
                                        className="form-control rounded" min="0"/>
@@ -569,13 +570,13 @@ const NewAnnouncement=()=> {
                                 value={formData?.marketVersion}
                             />
                             <div className="form-group col-md-6">
-                                <label className="form-label" htmlFor="pno">Horse Power:</label>
+                                <label  className={`form-label ${theme === 'dark' ? 'dark-theme-label3' : ''}`} htmlFor="pno">Horse Power:</label>
                                 <span className="required-input">*</span>
                                 <input onChange={handleInputChange} name="horsePower" type="number"
                                        className="form-control rounded" min="0"/>
                             </div>
                             <div className="form-group col-md-6">
-                                <label className="form-label" htmlFor="pno">Seat Count:</label>
+                                <label className={`form-label ${theme === 'dark' ? 'dark-theme-label3' : ''}`} htmlFor="pno">Seat Count:</label>
                                 <span className="required-input">*</span>
                                 <input onChange={handleInputChange} name="seatCount" type="number"
                                        className="form-control rounded" min="0"/>
@@ -583,14 +584,14 @@ const NewAnnouncement=()=> {
 
 
                             <div className="form-group col-md-12">
-                                <label className="form-label" htmlFor="pno">VIN Code:</label>
+                                <label  className={`form-label ${theme === 'dark' ? 'dark-theme-label3' : ''}`} htmlFor="pno">VIN Code:</label>
                                 <input onChange={handleInputChange} name="vinCode" type="text"
                                        className="form-control rounded"/>
                             </div>
 
                             <div className="form-group col-md-12">
 
-                                <label className="form-label" htmlFor="photos">Upload Images:</label>
+                                <label  className={`form-label ${theme === 'dark' ? 'dark-theme-label3' : ''}`} htmlFor="photos">Upload Images:</label>
                                 <span className="required-input">*</span>
                                 <div className={"image-boxes-container"}>
 
@@ -753,7 +754,7 @@ const NewAnnouncement=()=> {
                             </div>
 
                             <div className="form-group col-md-12">
-                                <label className="form-label" htmlFor="pno">Options:</label>
+                                <label className={`form-label ${theme === 'dark' ? 'dark-theme-label3' : ''}`} htmlFor="pno">Options:</label>
                                 <div className="row">
                                     {
                                         carOptions.map((option) => (
@@ -787,7 +788,7 @@ const NewAnnouncement=()=> {
                             </div>
 
                             <div className="form-group col-md-12">
-                                <label className="form-label" htmlFor="pno">Conditions:</label>
+                                <label className={`form-label ${theme === 'dark' ? 'dark-theme-label3' : ''}`} htmlFor="pno">Conditions:</label>
                                 <div className="row">
                                     {
                                         carConditions.map((condition) => (
@@ -824,7 +825,7 @@ const NewAnnouncement=()=> {
                         </div>
 
                         <hr/>
-                            <h5 className="mb-3">Announcement Information</h5>
+                            <h5 className={`mb-3 ${theme === 'dark' ? 'dark-theme-label' : ''}`}>Announcement Information</h5>
                             <div className="row">
 
                                 <CustomDropdown
@@ -846,23 +847,23 @@ const NewAnnouncement=()=> {
                                 />
 
                                 <div className="form-group col-md-4">
-                                    <label className="form-label pe-2" htmlFor="credit_checkbox">Credit: </label>
+                                    <label className={`form-label pe-2 ${theme === 'dark' ? 'dark-theme-label3' : ''}`} htmlFor="credit_checkbox">Credit: </label>
                                     <input onChange={(e) => handleSelectChange(e, 'credit')} name="credit" type="checkbox" className="form-check-input" id="credit_checkbox"/>
                                 </div>
 
                                 <div className="form-group col-md-4">
-                                    <label className="form-label pe-2" htmlFor="brandNew_checkbox">Brand New: </label>
+                                    <label className={`form-label pe-2 ${theme === 'dark' ? 'dark-theme-label3' : ''}`} htmlFor="brandNew_checkbox">Brand New: </label>
                                     <input onChange={(e) => handleSelectChange(e, 'brandNew')} name="brandNew" type="checkbox" className="form-check-input" id="brandNew_checkbox"/>
                                 </div>
 
                                 <div className="form-group col-md-4">
-                                    <label className="form-label pe-2" htmlFor="barter_checkbox">Barter:</label>
+                                    <label className={`form-label pe-2 ${theme === 'dark' ? 'dark-theme-label3' : ''}`} htmlFor="barter_checkbox">Barter:</label>
                                     <input onChange={(e) => handleSelectChange(e, 'barter')} name="barter" type="checkbox" className="form-check-input" id="barter_checkbox"/>
                                 </div>
 
 
                                 <div className="form-group col-md-12">
-                                    <label className="form-label" htmlFor="mobno">Price</label>
+                                    <label className={`form-label ${theme === 'dark' ? 'dark-theme-label3' : ''}`} htmlFor="mobno">Price</label>
                                     <span className="required-input">*</span>
                                     <div className="input-group">
                                         <input onChange={handleInputChange} name="price" type="number"
@@ -871,30 +872,30 @@ const NewAnnouncement=()=> {
                                             <div className="form-check form-check-inline">
                                                 <input onChange={(e) => handleSelectChange(e, 'priceCurrency')}
                                                        checked={formData?.priceCurrency == '1'} type="radio"
-                                                       className="form-check-input" id="radio_AZN" name="priceCurrency"
+                                                       className={`form-check-input`} id="radio_AZN" name="priceCurrency"
                                                        value="1"/>
-                                                <label className="form-check-label" htmlFor="radio_AZN">AZN</label>
+                                                <label className={`form-check-label ${theme === 'dark' ? 'dark-theme-label3' : ''}`} htmlFor="radio_AZN">AZN</label>
                                             </div>
                                             <div className="form-check form-check-inline">
                                                 <input onChange={(e) => handleSelectChange(e, 'priceCurrency')}
                                                        checked={formData?.priceCurrency == '2'} type="radio"
                                                        className="form-check-input" id="radio_USD" name="priceCurrency"
                                                        value="2"/>
-                                                <label className="form-check-label" htmlFor="radio_USD">USD</label>
+                                                <label className={`form-check-label ${theme === 'dark' ? 'dark-theme-label3' : ''}`} htmlFor="radio_USD">USD</label>
                                             </div>
                                             <div className="form-check form-check-inline">
                                                 <input onChange={(e) => handleSelectChange(e, 'priceCurrency')}
                                                        checked={formData?.priceCurrency == '3'} type="radio"
                                                        className="form-check-input" id="radio_EUR" name="priceCurrency"
                                                        value="3"/>
-                                                <label className="form-check-label" htmlFor="radio_EUR">EUR</label>
+                                                <label className={`form-check-label ${theme === 'dark' ? 'dark-theme-label3' : ''}`} htmlFor="radio_EUR">EUR</label>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div className="form-group col-md-12">
-                                    <label className="form-label" htmlFor="pno">Description:</label>
+                                    <label className={`form-label  ${theme === 'dark' ? 'dark-theme-label3' : ''}`} htmlFor="pno">Description:</label>
                                     <span className="required-input">*</span>
                                     <textarea onChange={handleInputChange} name="description"
                                               className="form-control rounded"></textarea>
@@ -903,13 +904,13 @@ const NewAnnouncement=()=> {
 
                                 <div className="form-group col-md-12">
                                     <div className='d-flex flex-column justify-content-center'>
-                                        <label className="form-label" htmlFor="pno">Premium Announcement Credit: {premiumLimit}</label>
-                                        <label className="form-label" htmlFor="pno">Regular Announcement Credit: {regularLimit}</label>
+                                        <label className={`form-label ${theme === 'dark' ? 'dark-theme-label3' : ''}`} htmlFor="pno">Premium Announcement Credit: {premiumLimit}</label>
+                                        <label className={`form-label  ${theme === 'dark' ? 'dark-theme-label3' : ''}`} htmlFor="pno">Regular Announcement Credit: {regularLimit}</label>
                                     </div>
                                 </div>
 
                                 <div className='form-group col-md-12'>
-                                    <Form.Group className='d-flex flex-row  align-items-center' controlId="premiumRadio">
+                                    <Form.Group className={`d-flex flex-row  align-items-center ${theme === 'dark' ? 'dark-theme-label3' : ''}`} controlId="premiumRadio">
                                         <Form.Check
                                             type="radio"
                                             label="Regular"

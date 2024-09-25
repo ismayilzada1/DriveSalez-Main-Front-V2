@@ -151,3 +151,12 @@
 }
 
 
+.new-announcement-card-dark{
+    .card-header{
+        background-color: #353535;
+    }
+
+    .card-body{
+        background-color:#353535;
+    }
+}
