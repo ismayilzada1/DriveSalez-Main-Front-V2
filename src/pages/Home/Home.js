@@ -112,6 +112,63 @@ const Home = () => {
 
       <HomeFilter />
 
+      {/*<div className="container-fluid pt-3">*/}
+      {/*    {premiumAnnouncements.length > 0 && (*/}
+
+      {/*    <div className="pt-3">*/}
+
+      {/*        <div className="d-flex justify-content-between align-items-center">*/}
+      {/*            <h2 className="text-dark">Premium Announcements</h2>*/}
+      {/*            <div>*/}
+      {/*                <a href="">Show All</a>*/}
+      {/*            </div>*/}
+      {/*        </div>*/}
+      {/*        */}
+      {/*            <div className="pt-3">*/}
+      {/*                <div*/}
+      {/*                    className="d-flex flex-row flex-wrap justify-content-start align-items-center announcement-cards-container">*/}
+      {/*                    {premiumAnnouncements?.map((car, index) => (*/}
+      {/*                        <div key={index} className="col-lg-3 mb-2">*/}
+      {/*                            <AnnouncementCard {...car} />*/}
+      {/*                        </div>*/}
+      {/*                    ))}*/}
+      {/*                </div>*/}
+      {/*            </div>*/}
+      {/*        */}
+
+      {/*    </div>*/}
+
+      {/*    )}*/}
+
+      {/*    <div className="regular-announcements-container pt-3">*/}
+
+      {/*        <div className="d-flex justify-content-between align-items-center">*/}
+      {/*            <h2 className="text-dark">All Announcements</h2>*/}
+      {/*        </div>*/}
+
+      {/*        <InfiniteScroll*/}
+      {/*            dataLength={allAnnouncements.length}*/}
+      {/*            next={fetchData}*/}
+      {/*            hasMore={hasMore}*/}
+      {/*            scrollThreshold={0.6}*/}
+      {/*        >*/}
+      {/*            <div className="pt-3 ">*/}
+      {/*                <div*/}
+      {/*                    className="d-flex flex-row flex-wrap justify-content-start align-items-center announcement-cards-container">*/}
+      {/*                    {allAnnouncements?.map((car, index) => (*/}
+      {/*                        <div key={index} className="col-lg-3 mb-2">*/}
+      {/*                            <AnnouncementCard {...car} />*/}
+      {/*                        </div>*/}
+      {/*                    ))}*/}
+      {/*                </div>*/}
+      {/*            </div>*/}
+
+      {/*        </InfiniteScroll>*/}
+
+      {/*    </div>*/}
+      {/*</div>*/}
+
+
       <div className="container-fluid pt-3">
           {premiumAnnouncements.length > 0 && (
 
