@@ -204,3 +204,25 @@
     flex-direction: row;
   }
 }
+
+
+.dealership-card-dark{
+  border: 3px solid rgba(250,255, 255, 0.2);
+
+  .dataContainer{
+
+    .dataContainer2{
+      .NameDataContainer,.DescriptionDataContainer{
+        color:#f5f5f5;
+      }
+      .AnnouncementsDataContainer{
+       color: #c1c1c1;
+      }
+      .PhoneDataContainer{
+        span{
+          color: #c1c1c1;
+        }
+      }
+    }
+  }
+}
